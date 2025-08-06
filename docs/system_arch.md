@@ -1,9 +1,8 @@
 ## 1 整体架构
 
 !!! Abstract ""
-    待补充。
 
-![整体架构](./img/system-arch.png){ width="900px" }
+![整体架构](./img/index/system-arch.png){ width="900px" }
 
 ## 2 技术栈
 
