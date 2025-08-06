@@ -16,3 +16,6 @@
     - 官网：https://dataease.cn/sqlbot/
     - 邮箱：support@fit2cloud.com
     - 电话：400-052-0755
+    - 微信交流群：    
+    ![企业微信](<img/index/QR_code.png>){ width="135px" }
+
