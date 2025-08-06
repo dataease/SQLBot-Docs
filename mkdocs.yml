@@ -65,7 +65,7 @@ nav:
             - 用户管理: system/user.md
             - 工作空间: system/workspace.md
             - AI 模型配置: system/model.md
-            - 嵌入式管理：: system/user.md
+            - 嵌入式管理: system/user.md
     - 实践教程:
             - MaxKB 使用 SQLbot: faq/Offline_install_OllamaModel.md
 
