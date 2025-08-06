@@ -5,8 +5,10 @@
 	```sh
 	# 进入项目目录
 	cd sqlbot-release-v1.x.y-offline
+
 	# 运行安装脚本
 	/bin/bash install.sh
+
 	# 查看 SQLBot 状态
 	sctl status
 	```

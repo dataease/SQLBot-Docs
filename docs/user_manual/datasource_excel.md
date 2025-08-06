@@ -17,7 +17,7 @@
     以下是将本地 Excel/CSV 文件作为数据源导入的详细流程：
 
 !!! Tip ""
-    步骤一：选择数据源类型。在【新建数据源】页面选择 “本地 Excel/CSV” 作为数据源类型。
+    步骤一：选择数据源类型。在【新建数据源】页面选择 "本地 Excel/CSV" 作为数据源类型。
 
 ![支持的数据源类型](../img/user_manual/datasource/datasource_list.png)
 

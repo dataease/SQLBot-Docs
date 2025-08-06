@@ -35,7 +35,7 @@
 
     以 root 用户通过 ssh 协议登录到部署服务器, 对安装包进行解压：
     ```
-    tar -zxvf SQLBot-v1.0.0-x86_64-offline-installer.tar.gz
+    tar -zxvf sqlbot-v1.0.0-x86_64-offline-installer.tar.gz
     ```
 
 ### 4.2 设置安装参数（可选）
@@ -103,6 +103,7 @@
 
     ```
     用户名：admin
+
     默认密码：SQLBot@123456
     ```
 ![访问SQLBot](../img/installation/login_sqlbot.png)

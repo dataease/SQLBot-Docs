@@ -49,6 +49,7 @@
 
     ```
     用户名：admin
+
     默认密码：SQLBot@123456
     ```
 ![访问SQLBot](../img/installation/login_sqlbot.png)

@@ -2,14 +2,14 @@
 
 !!! Abstract ""
 
-    关于 1Panel 的安装部署与基础功能介绍，请参考 [1Panel 官方文档](https://1panel.cn/docs/) 。在完成了 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    
+    关于 1Panel 的安装部署与基础功能介绍，请参考 [**1Panel 官方文档**](https://1panel.cn/docs/) 。完成 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    
 
 ![1panel](../img/installation/1panel_index.png)
 
 ### 2 安装 PostgreSQL 数据库
 
 !!! Abstract ""
-    在安装 SQLBot 之前，需要先在 1Panel 上安装好所需的软件 PostgreSQL。在应用商店中选择 PostgreSQL 点击安装，选择 17.5 版本。
+    在安装 SQLBot 之前，需要先在 1Panel 上安装好所需的数据库 PostgreSQL。在应用商店中选择 PostgreSQL 点击安装，选择 17.5 版本。
 
 ![安装PostgreSQL1](../img/installation/install_pgsql.png)
 
@@ -17,7 +17,7 @@
     进行参数设置，设置完成后，点击确认。
 
     * 名称：创建的 PostgreSQL 应用的名称。
-    * root 用户密码：安装的 PostgreSQL 应用的 root 用户密码。
+    * 用户密码：安装的 PostgreSQL 应用的 root 用户和密码。
     * 端口：PostgreSQL 应用的服务端口。
     * 容器名称：PostgreSQL 应用容器名称。
     * CPU 限制：PostgreSQL 应用可以使用的 CPU 核心数。
@@ -26,9 +26,7 @@
 ![PostgreSQL参数设置](../img/installation/pgsql_info.png)
 
 !!! Abstract ""
-    点击安装完成后，页面自动跳转到已安装应用列表，等待安装的 PostgreSQL 应用状态变为已启动。
-
-    通过应用商店安装的 PostgreSQL 数据库应用，会自动出现在数据库实例列表中。
+    点击安装，完成后页面自动跳转到已安装应用列表，等待安装的 PostgreSQL 应用状态变为已启动。
 
 
 ![PostgreSQL状态](../img/installation/pgsql_success.png)
@@ -62,11 +60,11 @@
 ## 4 访问 SQLBot
 
 !!! Abstract ""
-    安装成功后，通过浏览器访问如下页面登录 SQLBot：
+    安装成功后即可通过浏览器访问地址 `http://目标服务器 IP 地址:8000`，并使用默认的管理员用户和密码登录 SQLBot。
 
     ```
-    地址: http://目标服务器IP地址:8000
     用户名: admin
+
     密码: SQLBot@123456
     ```
 
