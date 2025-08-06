@@ -51,4 +51,4 @@ jobs:
           ACCESS_KEY_SECRET: ${{ secrets.SQLBOT_OSS_SK }}
           ACCESS_KEY_BUCKET: ${{ secrets.SQLBOT_OSS_BUCKET }}
         run: |
-          ossutil cp -r -f ./${{ github.ref_name }}/ oss://$ACCESS_KEY_BUCKET/ --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=oss-cn-zhangjiakou.aliyuncs.com --exclude '.git*' 
+          ossutil cp -r -f ./ oss://$ACCESS_KEY_BUCKET/ --access-key-id=$ACCESS_KEY_ID --access-key-secret=$ACCESS_KEY_SECRET --endpoint=oss-cn-zhangjiakou.aliyuncs.com --exclude '.git*' 
