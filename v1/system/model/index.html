@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#ai" class="md-skip">
           跳转至
         </a>
       
@@ -1169,20 +1169,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      3 模型管理
+      2 模型管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 模型管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 添加模型
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
-      3 支持的供应商及模型
+      2.2 编辑模型
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 删除模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 系统默认模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1363,20 +1396,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      3 模型管理
+      2 模型管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 模型管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 添加模型
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
-      3 支持的供应商及模型
+      2.2 编辑模型
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 删除模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 系统默认模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1399,245 +1465,38 @@
   
 
 
-<h1 id="_1">模型概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="ai">AI 模型配置<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
 <h2 id="1">1 功能概述<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
-<p>MaxKB 支持与多种供应商模型的集成，支持对接当前主流的大型模型。这包括但不限于本地部署的私有模型如 Llama 3 和 Qwen 2，国内提供的公共模型服务例如 DeepSeek、SILICONFLOW、Kimi、智谱 AI 和百度千帆，以及国际知名的公共模型服务如 OpenAI、Azure OpenAI、Anthropic 和 Gemini。集成的模型类型广泛，涵盖文本生成、向量分析、排序算法、语音识别、语音合成、计算机视觉模型以及图像生成等，满足多样化的业务需求和应用场景。</p>
-<p>【模型】用来管理各类大型模型，为后续知识库和应用提供模型使用；</p>
-<ul>
-<li>共享模型：系统管理员在【共享资源】中创建共享模型后，可以授权给指定工作空间。</li>
-<li>全部工具：用户可以创建模型，其他用户<a href="../../user_manual/X-Pack/authorization_resources.md"><strong>资源授权</strong></a>后可以查看、使用和维护。</li>
-</ul>
-<p><strong>注意</strong>：共享资源为企业版 X-Pack 功能。</p>
+<p>SQLBot 支持集成主流大语言模型（LLM），如 DeepSeek、阿里云百炼、百度千帆等，用户可在系统中配置模型接入信息，实现基于自然语言的智能问数能力。</p>
+<p>模型配置集中在【AI 模型配置】页面进行管理，支持添加、编辑、删除模型，以及设置默认模型，用于控制智能问数时的底层模型调用逻辑。</p>
 </div>
-<p><img alt="模型" src="../../img/model/model_view.png" /></p>
-<h2 id="3">3 模型管理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><img alt="模型" src="../../img/user_manual/system/model_index.png" /></p>
+<h2 id="2">2 模型管理<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 添加模型<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
-<p>左侧选择全部模型后，选择对应供应商，【添加模型】进行模型添加。</p>
+<p>点击【添加模型】，可选择模型提供商（如 DeepSeek、阿里云百炼等），填写模型名称、基础模型类型、API 地址、Key、模型参数（如温度、最大响应长度等）后保存，即可完成配置。</p>
+<p>模型参数需与所接入平台保持一致，确保调用成功。</p>
 </div>
-<p><img alt="模型" src="../../img/model/create_model.png" /></p>
+<p><img alt="模型" src="../../img/user_manual/system/add_model_supplier.png" /></p>
+<p><img alt="模型" src="../../img/user_manual/system/model_info.png" /></p>
+<h3 id="22">2.2 编辑模型<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
-<p>支持编辑、模型参数设置和删除。</p>
+<p>已配置的模型支持随时调整参数，点击【编辑】可修改模型名称、API Key、地址及模型参数等信息，保存后生效。</p>
+<p>建议在不影响当前业务使用的情况下进行编辑操作。</p>
 </div>
-<p><img alt="模型" src="../../img/model/edit_model.png" /></p>
+<p><img alt="模型" src="../../img/user_manual/system/edit_model.png" /></p>
+<h3 id="23">2.3 删除模型<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
-<p>支持按模型名称、模型类型、创建者查询。</p>
+<p>如某模型已废弃或不再使用，点击【删除】确认后移除。删除后该模型将不可被问数功能调用。</p>
 </div>
-<p><img alt="模型" src="../../img/model/search_model.png" /></p>
+<p><img alt="模型" src="../../img/user_manual/system/delete_model.png" /></p>
+<h3 id="24">2.4 系统默认模型<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
-<p>模型删除需要二次确认，确认后将直接删除模型。</p>
+<p>当系统配置了多个模型时，可在页面右上角点击【系统默认模型】，从下拉列表中选择一个模型作为默认使用模型。</p>
+<p>默认模型将作为 SQLBot 智能问数时的首选调用对象，直接影响问数结果表现。切换默认模型后立即生效，建议结合模型质量与稳定性做出选择。</p>
 </div>
-<p><img alt="模型" src="../../img/model/delete_model.png" /></p>
-<h2 id="3_1">3 支持的供应商及模型<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>各供应商支持的类型详情见下表（按字母排序）：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;">大语言模型</th>
-<th style="text-align: center;">向量模型</th>
-<th style="text-align: center;">重排模型</th>
-<th style="text-align: center;">语音识别</th>
-<th style="text-align: center;">语音合成</th>
-<th style="text-align: center;">视觉模型</th>
-<th style="text-align: center;">图片生成</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>阿里云百炼</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>Anthropic</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Amazon Bedrock</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Azure OpenAI</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>DeepSeek</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Gemini</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>kimi</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>OpenAI</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>SILICONFLOW</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>腾讯云</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>腾讯混元</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>火山引擎</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>千帆大模型</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>讯飞星火</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>智谱 AI</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-<tr>
-<td>本地模型</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Ollama</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>vLLM</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Xorbits Inference</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-<td style="text-align: center;">&#10004;</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><img alt="模型" src="../../img/user_manual/system/sys_model.png" /></p>
 
 
 
