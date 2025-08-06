@@ -6,7 +6,7 @@
 
 ![1panel](../img/installation/1panel_index.png)
 
-### 2 安装 PostgreSQL 数据库
+## 2 安装 PostgreSQL 数据库
 
 !!! Abstract ""
     在安装 SQLBot 之前，需要先在 1Panel 上安装好所需的数据库 PostgreSQL。在应用商店中选择 PostgreSQL 点击安装，选择 17.5 版本。
