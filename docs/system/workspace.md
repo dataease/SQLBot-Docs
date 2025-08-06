@@ -17,7 +17,7 @@
 ## 1 空间管理
 
 !!! Abstract ""
-    系统管理员可创建新的工作空间。创打开创建工作空间对话框，填写工作空间名称。
+    系统管理员可创建新的工作空间。点击创建工作空间按钮，填写工作空间名称。
 
 ![空间管理](../img/user_manual/system/reate_workspace.png)
 
@@ -47,7 +47,7 @@
 
 
 !!! Abstract ""
-    移除成员点击【移除】后，该用户从所授权空间移除。
+    点击【移除】按钮，移除成员后，该用户从所授权空间移除。
 
 ![空间管理](../img/user_manual/system/delete_workspacenumber.png)
 
