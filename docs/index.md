@@ -8,7 +8,7 @@
 
 ## 1 界面展示
 
-![界面展示图](img/index/start_chat.gif)
+![界面展示图](img/index/index.gif)
 
 
 ## 2 产品优势 
