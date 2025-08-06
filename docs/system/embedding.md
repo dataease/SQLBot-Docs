@@ -3,13 +3,18 @@
 !!! Abstract ""
     SQLBot 支持通过【小助手】的方式将智能问数能力嵌入到外部系统页面中，用户可直接在嵌入页面中，通过自然语言提问并获取基于业务数据的实时分析结果。
 
-    系统提供【基础应用】与【高级应用】两类嵌入模式，满足从快速部署到精细权限管控的不同集成需求。
+![嵌入式应用](../img/user_manual/system/embedded_index.png)
 
-![模型](../img/user_manual/system/embedded_index.png)
 
-![模型](../img/user_manual/system/embed_choose.png)
+![嵌入式效果](../img/user_manual/system/embed_effect.png)
+
 
 ## 2 应用类型与配置
+!!! Abstract ""
+    系统提供【基础应用】与【高级应用】两类嵌入模式，满足从快速部署到精细权限管控的不同集成需求。
+
+
+![嵌入式应用类型](../img/user_manual/system/embed_choose.png)
 
 ### 2.1 基础应用
 !!! Abstract ""
@@ -21,9 +26,9 @@
 
     适用场景：数据权限要求不高的页面，如运营看板、知识库、内网主页等。
 
-![模型](../img/user_manual/system/add_simple_app.png)
+![嵌入式简单应用](../img/user_manual/system/add_simple_app.png)
 
-![模型](../img/user_manual/system/simple_wor_data.png)
+![嵌入式简单应用](../img/user_manual/system/simple_wor_data.png)
 
 ### 2.2 高级应用
 !!! Abstract ""
@@ -33,9 +38,13 @@
 
     适用场景：企业管理系统、客户门户、需要按用户数据隔离的 B2B 系统等。
 
-![模型](../img/user_manual/system/add_ad_app.png)
+![嵌入式高级应用](../img/user_manual/system/add_ad_app.png)
 
-![模型](../img/user_manual/system/interface_info.png)
+
+!!! Abstract ""
+    在接口地址配置完成后，点击【添加接口凭证】，进入如下配置窗口。
+
+![嵌入式高级应用](../img/user_manual/system/interface_info.png)
 
 ### 2.3 嵌入代码获取
 !!! Abstract ""
@@ -45,22 +54,22 @@
 
     - 浏览器测试代码：支持在浏览器控制台快速运行测试，验证集成效果。
 
-![模型](../img/user_manual/system/embedded_code.png)
+![嵌入式代码](../img/user_manual/system/embedded_code.png)
 
 
 ## 3 应用管理功能
 !!! Abstract ""
     在应用上点击【编辑】按钮，可进入应用详情页，修改名称、描述、跨域设置、数据源配置等内容。保存后立即生效。
 
-![模型](../img/user_manual/system/app_edit.png)
+![嵌入式应用编辑](../img/user_manual/system/app_edit.png)
 
 !!! Abstract ""
     点击【删除】按钮后，系统将弹出确认框。确认后，该应用将被彻底移除，嵌入代码失效。
 
-![模型](../img/user_manual/system/delete_app.png)
+![嵌入式应用删除](../img/user_manual/system/delete_app.png)
 
 !!! Abstract ""
     在页面右上角的搜索栏中输入应用名称关键词，系统将筛选展示符合条件的应用，支持快速定位和管理。
 
-![模型](../img/user_manual/system/search_app.png)
+![嵌入式应用搜索](../img/user_manual/system/search_app.png)
 

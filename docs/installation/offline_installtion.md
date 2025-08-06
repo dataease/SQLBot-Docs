@@ -12,7 +12,7 @@
 ## 2 下载离线安装包
 
 !!! Abstract ""
-    打开[**飞致云开源社区 SQLBot 社区版下载**](https://community.fit2cloud.com/#/products/maxkb/downloads) 页面下载最新版本安装包，并上传至部署服务器（以 v1.0.0 为例说明安装部署过程）。
+    打开[**飞致云开源社区 SQLBot 社区版下载**](https://community.fit2cloud.com/#/products/sqlbot/downloads) 页面下载最新版本安装包，并上传至部署服务器（以 v1.0.0 为例说明安装部署过程）。
 
 
 ## 3 端口要求
