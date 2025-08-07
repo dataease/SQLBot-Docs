@@ -12,13 +12,13 @@
         <meta name="author" content="SQLBot 开源项目组">
       
       
-        <link rel="canonical" href="https://sqlbot.cn/docs/v1/system_arch/">
+        <link rel="canonical" href="https://sqlbot.cn/docs/v1/mcp_server/">
       
       
-        <link rel="prev" href="../changelog/">
+        <link rel="prev" href="../system/embedding/">
       
       
-        <link rel="next" href="../installation/1panel_installtion/">
+        <link rel="next" href="../contact/">
       
       
       <link rel="icon" href="../img/facio.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>系统架构 - SQLBot 文档</title>
+        <title>MCP 服务 - SQLBot 文档</title>
       
     
     
@@ -207,7 +207,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              系统架构
+              MCP 服务
             
           </span>
         </div>
@@ -423,30 +423,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    系统架构
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../system_arch/" class="md-nav__link">
         
   
   
@@ -457,42 +437,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 整体架构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 技术栈
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1220,10 +1164,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../mcp_server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MCP 服务
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1234,6 +1198,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 服务配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 MCP 工具说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 MCP 工具说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-mcp_start" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 mcp_start 工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mcp_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 mcp_question 工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 对接流程说明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 使用示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 使用示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-maxkb" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 MaxKB 集成示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-dify" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Dify 集成示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1287,18 +1353,84 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1 整体架构
+      1 服务配置
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-mcp" class="md-nav__link">
     <span class="md-ellipsis">
-      2 技术栈
+      2 MCP 工具说明
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2 MCP 工具说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-mcp_start" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 mcp_start 工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mcp_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 mcp_question 工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 对接流程说明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 使用示例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 使用示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-maxkb" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 MaxKB 集成示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-dify" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Dify 集成示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1321,20 +1453,126 @@
   
 
 
-  <h1>系统架构</h1>
+  <h1>MCP 服务</h1>
 
-<h2 id="1">1 整体架构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract"></div>
-<p><img alt="整体架构" src="../img/index/system-arch.png" width="900px" /></p>
-<h2 id="2">2 技术栈<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
+<div class="admonition tip">
+<p>SQLBot 支持通过 MCP 进行服务端图表渲染与智能问数处理。</p>
+</div>
+<h2 id="1">1 服务配置<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p>SQLBot MCP Server 默认监听端口为 8001，使用 SSE 协议进行通信。基本配置如下：</p>
+<div class="highlight"><pre><span></span><code>{
+   &quot;sqlbot_mcp&quot;: {
+       &quot;url&quot;: &quot;http://&lt;your-server-ip&gt;:8001/mcp&quot;, // 将 IP 替换为部署机器的地址
+       &quot;transport&quot;: &quot;sse&quot;
+    }
+}
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p>修改 SQLBot 的 .env 配置文件：</p>
+<div class="highlight"><pre><span></span><code># MCP 服务图片路径，默认路径
+MCP_IMAGE_PATH=/opt/sqlbot/images
+
+# MCP 后端图表渲染服务地址
+MCP_IMAGE_HOST=http://localhost:3000
+
+# 图片访问 URL：{MCP 服务地址}/images/
+SERVER_IMAGE_HOST=https://&lt;your-server-ip&gt;/images/
+</code></pre></div>
+</div>
+<h2 id="2-mcp">2 MCP 工具说明<a class="headerlink" href="#2-mcp" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p>SQLBot 的 MCP Server 提供两个内置工具：mcp_start 和 mcp_question，分别用于初始化对话和提交问题。</p>
+</div>
+<h3 id="21-mcp_start">2.1 mcp_start 工具<a class="headerlink" href="#21-mcp_start" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>用于启动一次智能问数对话，获取 access_token 和 chat_id。</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>SQLBot 用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>SQLBot 用户密码</td>
+</tr>
+</tbody>
+</table>
+<p>返回示例：
+<div class="highlight"><pre><span></span><code>{
+    &quot;code&quot;: 0,
+    &quot;data&quot;: {
+        &quot;access_token&quot;: &quot;&lt;JWT_TOKEN&gt;&quot;,
+        &quot;chat_id&quot;: 1330
+    },
+    &quot;msg&quot;: null
+}
+</code></pre></div>
+ - access_token：身份验证使用；</p>
 <ul>
-<li>后端：<a href="https://www.python.org/">Python</a></li>
-<li>前端：<a href="https://vuejs.org/">Vue.js</a>、<a href="https://element.eleme.cn/">Element</a></li>
-<li>中间件：<a href="https://www.postgresql.org/">PostgreSQL</a></li>
-<li>基础设施：<a href="https://www.docker.com/">Docker</a></li>
+<li>chat_id：唯一对话上下文 ID，后续问数保持一致可维持上下文状态。</li>
 </ul>
 </div>
+<h3 id="22-mcp_question">2.2 mcp_question 工具<a class="headerlink" href="#22-mcp_question" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>用于在已初始化的问数上下文中提交用户问题，并返回对应 SQL、可视化结果及图表图片地址。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>mcp_start</code> 返回的 <code>access_token</code></td>
+</tr>
+<tr>
+<td>chat_id</td>
+<td><code>mcp_start</code> 返回的 <code>chat_id</code></td>
+</tr>
+<tr>
+<td>question</td>
+<td>用户的提问问题</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p>返回结果示例（Markdown 格式）：</p>
+<div class="highlight"><pre><span></span><code>```sql SELECT &quot;s&quot;.&quot;区域&quot;, COUNT(*) AS &quot;count&quot; FROM &quot;public&quot;.&quot;Sheet1_c27345b66e&quot; &quot;s&quot; GROUP BY &quot;s&quot;.&quot;区域&quot; ORDER BY &quot;s&quot;.&quot;区域&quot; ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
+</code></pre></div>
+</div>
+<h3 id="23">2.3 对接流程说明<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>对接步骤：</p>
+<ul>
+<li>步骤 1：调用 mcp_start 工具。 获取初始化问数所需的 access_token 和 chat_id。</li>
+<li>步骤 2：调用 mcp_question 工具使用上一步返回的 access_token 和 chat_id，传入用户自然语言问题 question，提交问题请求。</li>
+</ul>
+<p>建议：</p>
+<ul>
+<li>每次调用 mcp_start 会生成新的 chat_id；</li>
+<li>对话过程中保持 chat_id 一致，才能维持上下文；</li>
+<li>建议缓存 access_token 和 chat_id，在一次对话中只调用一次 mcp_start。</li>
+</ul>
+</div>
+<h2 id="3">3 使用示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31-maxkb">3.1 MaxKB 集成示例<a class="headerlink" href="#31-maxkb" title="Permanent link">&para;</a></h3>
+<p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
+<p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
+<h3 id="32-dify">3.2 Dify 集成示例<a class="headerlink" href="#32-dify" title="Permanent link">&para;</a></h3>
+<p><img alt="集成示例" src="../img/dify_mcp.png" /></p>
+<p><img alt="集成示例" src="../img/dify_mcp_effect.png" /></p>
 
 
 
