@@ -1474,10 +1474,11 @@
 <div class="highlight"><pre><span></span><code># MCP 服务图片路径，默认路径
 MCP_IMAGE_PATH=/opt/sqlbot/images
 
-# MCP 后端图表渲染服务地址
+# MCP 后端渲染服务地址，默认路径
 MCP_IMAGE_HOST=http://localhost:3000
 
-# 图片访问 URL：{MCP 服务地址}/images/
+# 图片访问路径， {sqlbot mcp 服务ip/域名}[: {sqlbot mcp 服务端⼝}]/images/ 
+# 注意跨域 、https 、http协议安全等可能导致图片无法加载的问题
 SERVER_IMAGE_HOST=https://&lt;your-server-ip&gt;/images/
 </code></pre></div>
 </div>
@@ -1568,8 +1569,24 @@ SERVER_IMAGE_HOST=https://&lt;your-server-ip&gt;/images/
 </div>
 <h2 id="3">3 使用示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31-maxkb">3.1 MaxKB 集成示例<a class="headerlink" href="#31-maxkb" title="Permanent link">&para;</a></h3>
-<p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
+<div class="admonition tip">
+<p>步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。</p>
+<p>步骤⼆： 添加⼀个 AI 对话 ，启用⼯具中的 MCP 功能 ，填⼊ MCP Sever 配置 。</p>
+<p>步骤三： 选择 AI 模型和编辑提示词 ，提示词参考如下：</p>
+<div class="highlight"><pre><span></span><code># 回答要求：
+按需调用 mcp_start 和 mcp_question ⼯具获取信息回答问题 。
+mcp_start 账号密码：
+username:{{global.username}} password:{{global.password}}
+⼯具调用逻辑：
+首先调用 mcp_start ⼯具， 获取 access_token 和 chat_id ， 帮我记住这两个参数， 之后不要重复调用 mcp_start ，直接使用 即可； 然后再调用 mcp_question ⼯具， 其中 token 和 chat_id 参数是调用 mcp_start ⼯具返回， question 是用户提问 。
+# 用户提问：
+{{开始.question}}
+# 输出要求：
+mcp_question 的返回 ，请直接输出展示 。
+</code></pre></div>
+</div>
 <p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
+<p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
 <h3 id="32-dify">3.2 Dify 集成示例<a class="headerlink" href="#32-dify" title="Permanent link">&para;</a></h3>
 <p><img alt="集成示例" src="../img/dify_mcp.png" /></p>
 <p><img alt="集成示例" src="../img/dify_mcp_effect.png" /></p>
