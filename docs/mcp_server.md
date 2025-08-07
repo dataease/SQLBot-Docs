@@ -21,10 +21,11 @@
     # MCP 服务图片路径，默认路径
     MCP_IMAGE_PATH=/opt/sqlbot/images
 
-    # MCP 后端图表渲染服务地址
+    # MCP 后端渲染服务地址，默认路径
     MCP_IMAGE_HOST=http://localhost:3000
 
-    # 图片访问 URL：{MCP 服务地址}/images/
+    # 图片访问路径， {sqlbot mcp 服务ip/域名}[: {sqlbot mcp 服务端⼝}]/images/ 
+    # 注意跨域 、https 、http协议安全等可能导致图片无法加载的问题
     SERVER_IMAGE_HOST=https://<your-server-ip>/images/
 
     ```
@@ -90,9 +91,30 @@
 ## 3 使用示例
 
 ###  3.1 MaxKB 集成示例
-![集成示例](img/maxkb_effect.png)
+!!! Tip ""
+    步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。
+
+    步骤⼆： 添加⼀个 AI 对话 ，启用⼯具中的 MCP 功能 ，填⼊ MCP Sever 配置 。
+
+    步骤三： 选择 AI 模型和编辑提示词 ，提示词参考如下：
+    
+    ```
+    # 回答要求：
+    按需调用 mcp_start 和 mcp_question ⼯具获取信息回答问题 。
+    mcp_start 账号密码：
+    username:{{global.username}} password:{{global.password}}
+    ⼯具调用逻辑：
+    首先调用 mcp_start ⼯具， 获取 access_token 和 chat_id ， 帮我记住这两个参数， 之后不要重复调用 mcp_start ，直接使用 即可； 然后再调用 mcp_question ⼯具， 其中 token 和 chat_id 参数是调用 mcp_start ⼯具返回， question 是用户提问 。
+    # 用户提问：
+    {{开始.question}}
+    # 输出要求：
+    mcp_question 的返回 ，请直接输出展示 。
+
+    ```
 
 ![集成示例](img/maxkb_ai_effect.png)
+
+![集成示例](img/maxkb_effect.png)
 
 ###  3.2 Dify 集成示例
 ![集成示例](img/dify_mcp.png)
