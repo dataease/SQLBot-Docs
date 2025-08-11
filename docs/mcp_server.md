@@ -117,6 +117,59 @@
 ![集成示例](img/maxkb_effect.png)
 
 ###  3.2 Dify 集成示例
+!!! Tip ""
+    步骤⼀： 进入需要配置的工作空间，创建或进入一个 Chatflow 类型的应用。
+
+    步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）
+
+    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    
+
+    配置 MCP 工具参数（以 mcp_start 为例）：
+
+    - 输入参数：
+    ```
+    {
+    "username": "{{username}}",
+    "password": "{{password}}"
+    }
+    
+    ```
+     - MCP 服务配置：
+    ```
+    {
+    "sqlbot_mcp": {
+    "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+    "transport": "sse"
+    }
+    }
+    ```
+    - MCP 工具返回包含 chat_id 和 access_token 的 JSON。解析返回值，添加 代码执行 节点（Python）来解析 JSON：
+    ```
+    import json
+    
+    def main(arg1: str) -> dict:
+    json_obj = json.loads(arg1)
+    return {
+    "chat_id": json_obj["data"]["chat_id"],
+    "access_token": json_obj["data"]["access_token"]
+    }
+
+    ```
+     添加变量赋值节点，将 chat_id 和 access_token 存储为全局变量，供后续 MCP 调用使用。
+
+    - 执行后续 MCP 业务调用
+
+          ```
+          {
+          "sqlbot_mcp": {
+          "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+          "transport": "sse"
+              }
+          }
+          ```
+     步骤四：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
+
+
 ![集成示例](img/dify_mcp.png)
 
 ![集成示例](img/dify_mcp_effect.png)
