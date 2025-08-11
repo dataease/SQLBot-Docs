@@ -1588,6 +1588,52 @@ mcp_question 的返回 ，请直接输出展示 。
 <p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
 <p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
 <h3 id="32-dify">3.2 Dify 集成示例<a class="headerlink" href="#32-dify" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>步骤⼀： 进入需要配置的工作空间，创建或进入一个 Chatflow 类型的应用。</p>
+<p>步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）</p>
+<p>步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    </p>
+<p>配置 MCP 工具参数（以 mcp_start 为例）：</p>
+<ul>
+<li>输入参数：
+<div class="highlight"><pre><span></span><code>{
+&quot;username&quot;: &quot;{{username}}&quot;,
+&quot;password&quot;: &quot;{{password}}&quot;
+}
+</code></pre></div></li>
+<li>MCP 服务配置：
+<div class="highlight"><pre><span></span><code>{
+&quot;sqlbot_mcp&quot;: {
+&quot;uri&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
+&quot;transport&quot;: &quot;sse&quot;
+}
+}
+</code></pre></div></li>
+<li>
+<p>MCP 工具返回包含 chat_id 和 access_token 的 JSON。解析返回值，添加 代码执行 节点（Python）来解析 JSON：
+<div class="highlight"><pre><span></span><code>import json
+
+def main(arg1: str) -&gt; dict:
+json_obj = json.loads(arg1)
+return {
+&quot;chat_id&quot;: json_obj[&quot;data&quot;][&quot;chat_id&quot;],
+&quot;access_token&quot;: json_obj[&quot;data&quot;][&quot;access_token&quot;]
+}
+</code></pre></div>
+ 添加变量赋值节点，将 chat_id 和 access_token 存储为全局变量，供后续 MCP 调用使用。</p>
+</li>
+<li>
+<p>执行后续 MCP 业务调用</p>
+<div class="highlight"><pre><span></span><code>{
+&quot;sqlbot_mcp&quot;: {
+&quot;uri&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
+&quot;transport&quot;: &quot;sse&quot;
+    }
+}
+</code></pre></div>
+</li>
+</ul>
+<p>步骤四：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。</p>
+</div>
 <p><img alt="集成示例" src="../img/dify_mcp.png" /></p>
 <p><img alt="集成示例" src="../img/dify_mcp_effect.png" /></p>
 
