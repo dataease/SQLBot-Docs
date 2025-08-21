@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../img/facio.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
@@ -1570,7 +1570,8 @@ SERVER_IMAGE_HOST=https://&lt;your-server-ip&gt;/images/
 <h2 id="3">3 使用示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31-maxkb">3.1 MaxKB 集成示例<a class="headerlink" href="#31-maxkb" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
-<p>步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。</p>
+<p>示例一:
+步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。</p>
 <p>步骤⼆： 添加⼀个 AI 对话 ，启用⼯具中的 MCP 功能 ，填⼊ MCP Sever 配置 。</p>
 <p>步骤三： 选择 AI 模型和编辑提示词 ，提示词参考如下：</p>
 <div class="highlight"><pre><span></span><code># 回答要求：
@@ -1586,6 +1587,49 @@ mcp_question 的返回 ，请直接输出展示 。
 </code></pre></div>
 </div>
 <p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
+<div class="admonition tip">
+<p>示例二：</p>
+<p>步骤⼀： 创建或进入一个高级编排类型的应用。</p>
+<p>步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）</p>
+<p>步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    </p>
+<p>配置 MCP 工具：</p>
+<ul>
+<li>输入全局变量：
+<div class="highlight"><pre><span></span><code>{
+&quot;username&quot;: &quot;{{username}}&quot;,
+&quot;password&quot;: &quot;{{password}}&quot;
+}
+</code></pre></div></li>
+<li>MCP Server Config 服务配置：
+<div class="highlight"><pre><span></span><code>{
+&quot;sqlbot_mcp&quot;: {
+&quot;uri&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
+&quot;transport&quot;: &quot;sse&quot;
+}
+}
+</code></pre></div></li>
+<li>
+<p>MCP 工具返回包含 chat_id 和 access_token 的 JSON。解析返回值，添加工具节点（Python）来解析 JSON：
+<div class="highlight"><pre><span></span><code>import json
+def main1(data):
+json_obj = json.loads(data[0])
+return {&quot;token&quot;:json_obj[&quot;data&quot;][&quot;access_token&quot;], &quot;chat_id&quot;:json_obj[&quot;data&quot;][&quot;chat_id&quot;]}
+</code></pre></div>
+ 添加变量赋值节点，将 chat_id 和 access_token 存储为会话变量，供后续 MCP 调用使用。</p>
+</li>
+<li>
+<p>执行后续 MCP 业务调用，MCP Server Config 配置：</p>
+<div class="highlight"><pre><span></span><code>{
+&quot;sqlbot_mcp&quot;: {
+&quot;uri&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
+&quot;transport&quot;: &quot;sse&quot;
+    }
+}
+</code></pre></div>
+</li>
+</ul>
+<p>步骤四：在流程末尾添加指定回复节点，将 MCP 的输出结果作为回复内容。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。</p>
+</div>
 <p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
 <h3 id="32-dify">3.2 Dify 集成示例<a class="headerlink" href="#32-dify" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
@@ -1723,11 +1767,11 @@ return {
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
     
     
     
-      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
     <script>
