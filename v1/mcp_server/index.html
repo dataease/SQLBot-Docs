@@ -1570,8 +1570,8 @@ SERVER_IMAGE_HOST=https://&lt;your-server-ip&gt;/images/
 <h2 id="3">3 使用示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31-maxkb">3.1 MaxKB 集成示例<a class="headerlink" href="#31-maxkb" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
-<p>示例一:
-步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。</p>
+<p>方式一:</p>
+<p>步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。</p>
 <p>步骤⼆： 添加⼀个 AI 对话 ，启用⼯具中的 MCP 功能 ，填⼊ MCP Sever 配置 。</p>
 <p>步骤三： 选择 AI 模型和编辑提示词 ，提示词参考如下：</p>
 <div class="highlight"><pre><span></span><code># 回答要求：
@@ -1588,7 +1588,7 @@ mcp_question 的返回 ，请直接输出展示 。
 </div>
 <p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
 <div class="admonition tip">
-<p>示例二：</p>
+<p>方式二：</p>
 <p>步骤⼀： 创建或进入一个高级编排类型的应用。</p>
 <p>步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）</p>
 <p>步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    </p>
