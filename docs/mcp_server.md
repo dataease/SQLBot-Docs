@@ -170,7 +170,7 @@
 !!! Tip ""
     步骤⼀： 进入需要配置的工作空间，创建或进入一个 Chatflow 类型的应用。
 
-    步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）
+    步骤二： 添加输入节点，在节点中定义输入变量： username（必填） 、password（必填）；
 
     步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    
 
@@ -223,3 +223,215 @@
 ![集成示例](img/dify_mcp.png)
 
 ![集成示例](img/dify_mcp_effect.png)
+
+###  3.2 Coze 集成示例
+!!! Tip ""
+    方式一：
+
+    步骤⼀：进入工作空间，创建一个新的应用或进入已有应用。
+
+    步骤二：在开始节点中设置输入变量： username（必填） 、password（必填）；
+
+    步骤三：在开始节点后添加文本处理节点（文本处理节点用于字符串拼接），传入 username 和 password，编辑表达式如下：
+    ```
+    {"username":"{{String1}}","password":"{{String2}}"}
+    ```
+    步骤四：调用 MCP 工具 mcp_start。在文本处理节点后添加 MCP SSE Client 工具节点，设置如下：
+
+    - 输入变量：文本处理节点输出
+
+    - 工具名称：mcp_start
+
+    - SSE URL：`http://SQLBot_MCP_IP:8001/mcp`
+
+    步骤五：MCP 将返回包含 chat_id 和 access_token 的 JSON。添加 Python 代码节点，解析 MCP 返回的 JSON，示例代码如下：
+    ```
+    import json
+    
+    def main(args) -> dict:
+    # 从args获取params字典
+    params = args.params
+    
+    # 从params字典获取input值（这是我们需要的JSON字符串）
+    input_json_str = params.get('input')
+    
+    # 解析JSON字符串
+    json_obj = json.loads(input_json_str)
+    
+    # 获取data部分
+    data = json_obj.get('data')
+    
+    # 提取所需字段
+    chat_id = data.get('chat_id')
+    access_token = data.get('access_token')
+    
+    return {
+     "chat_id": chat_id,
+     "access_token": access_token
+    }
+    ```
+    设置输出：返回 access_token（String）和 chat_id（String）。
+
+    步骤六：添加文本处理节点，将代码节点返回的 access_token 和 chat_id 与开始节点的 question 变量进行拼接，表达式如下：
+    ```
+    {"token":"{{String1}}","chat_id":"{{String2}}","question":"{{String3}}"}
+    ```
+    步骤七：调用 MCP 工具 mcp_question。在文本处理节点后添加 MCP SSE Client 工具节点，设置如下：
+
+    - 输入变量：文本处理节点输出
+
+    - 工具名称：mcp_question
+
+    - SSE URL：http://<host>:8001/mcp
+    
+    步骤八：在结束节点将 MCP 返回的内容回复给用户。输入有效的 username、password 以及 question，即可测试登录及 MCP 功能调用是否正常。
+
+
+![集成示例](img/coze1.png)
+
+![集成示例](img/coze2.png)
+
+!!! Tip ""
+    方式二：
+
+    步骤⼀：进入工作空间，创建一个新的应用或进入已有应用。
+
+    步骤二：定义输入变量。在开始节点中设置以下必填输入变量：username、password、question。
+
+    步骤三：添加大模型节点，选择合适的模型。添加技能：MCP Compatible/call_tool。配置输入参数如下：
+    ```
+    {
+    "sqlbot_mcp": {
+    "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+    "transport": "sse"
+    }
+    }
+    ```
+    传入开始节点的 username 、 password 以及 question 参数，添加系统提示词。提示词参考：
+    ```
+    # 回答要求：
+    按需调用 mcp_start 和 mcp_question 工具获取信息回答问题。
+    
+    mcp_start 账号密码：
+    {{username}}
+    {{password}}
+    
+    工具调用逻辑：
+    首先调用 mcp_start 工具，获取 access_token 和 chat_id ，帮我记住这两个参数，之后不要重复调用 mcp_start，直接使用即可；然后再调用 mcp_question 工具，其中 token 和 chat_id 参数是调用 mcp_start 工具返回，question 是用户提问。
+    
+    
+    # 用户提问：
+    {{question}}
+    
+    # 输出要求
+    - 如果 mcp_question 中有图片，请直接返回图片
+    - 请将 mcp_question 的执行结果中的数据、SQL以及图片内容展示
+    - 请将 mcp_question 的执行过程在结尾进行总结
+
+    # 限制
+    - 不要输出MCP详细执行过程
+    - 生成内容不要放在 mcp_question 执行过程中
+    - 严格按照输出要求输出内容，不要输出MCP调用过程
+    ```
+
+    步骤四：添加结束节点，将大模型返回的内容回复给用户。输入有效的 username 与 password 以及输入 question，测试登录及 MCP 功能调用是否正常。
+
+
+
+
+
+![集成示例](img/coze3.png)
+
+![集成示例](img/coze4.png)
+
+
+
+###  3.4 n8n 集成示例
+
+!!! Tip ""
+    方式一：
+
+    步骤⼀：进入 My project，创建或进入一个 workflow。
+
+    步骤二：添加表单触发器节点，节点中定义表单元素： username（必填） 、password（必填）、question（必填）。
+
+    步骤三：添加 AI Agent 节点，编辑提示词，提示词参考如下：
+    ```
+    # 回答要求：
+    按需调用 mcp_start 和 mcp_question 工具获取信息回答问题。
+    
+    mcp_start 账号密码：
+    username:{{ $json.username }}
+    password:{{ $json.password }}
+    
+    工具调用逻辑：
+    首先调用 mcp_start 工具，获取 access_token 和 chat_id ，帮我记住这两个参数，之后不要重复调用 mcp_start，直接使用即可；然后再调用 mcp_question 工具，其中 token 和 chat_id 参数是调用 mcp_start 工具返回，question 是用户提问。
+    
+    
+    # 用户提问：
+    {{ $json.question }}
+    
+    # 输出要求
+    - 如果 mcp_question 中有图片，请直接返回图片
+    - 请将 mcp_question 的执行结果中的数据、SQL以及图片内容展示
+    - 请将 mcp_question 的执行过程在结尾进行总结
+    
+    # 限制
+    - 不要输出MCP详细执行过程
+    - 生成内容不要放在 mcp_question 执行过程中
+    - 严格按照输出要求输出内容，不要输出MCP调用过程
+    ```
+    步骤四：添加 model 节点，配置 AI 模型，填写 api key。 
+
+    步骤五：调用 MCP Clien 工具，在 Parameters 的 Endpoint 填入 SQLBot 填入 MCP 服务地址：`http://SQLBot_MCP_IP:8001/mcp`。
+
+    点击【Execute workflow】输入有效的 username 与 password 以及输入 question，测试登录及 MCP 功能调用是否正常。
+
+![集成示例](img/n8n1.png)
+
+![集成示例](img/n8n2.png)
+
+!!! Tip ""
+    方式二：
+
+    步骤⼀：进入 My project，创建或进入一个 workflow。
+
+    步骤二：添加聊天触发器节点。
+
+    步骤三：添加 AI Agent 节点，编辑提示词，提示词参考如下：
+    ```
+    # 回答要求：
+    按需调用 mcp_start 和 mcp_question 工具获取信息回答问题。
+    
+    mcp_start 账号密码：
+    username:admin
+    password:SQLBot@123456
+    
+    工具调用逻辑：
+    首先调用 mcp_start 工具，获取 access_token 和 chat_id ，帮我记住这两个参数，之后不要重复调用 mcp_start，直接使用即可；然后再调用 mcp_question 工具，其中 token 和 chat_id 参数是调用 mcp_start 工具返回，question 是用户提问。
+    
+    
+    # 用户提问：
+    {{ $json.chatInput }}
+    
+    # 输出要求
+    - 如果 mcp_question 中有图片，请直接返回图片
+    - 请将 mcp_question 的执行结果中的数据、SQL以及图片内容展示
+    - 请将 mcp_question 的执行过程在结尾进行总结
+
+    # 限制
+    - 不要输出MCP详细执行过程
+    - 生成内容不要放在 mcp_question 执行过程中
+    - 严格按照输出要求输出内容，不要输出MCP调用过程
+    ```
+    步骤四：添加 model 节点，配置 AI 模型，填写 api key。
+
+    步骤五：调用 MCP Clien 工具，在 Parameters 的 Endpoint 填入 SQLBot 填入 MCP 服务地址：`http://SQLBot_MCP_IP:8001/mcp`。
+
+    点击【Execute workflow】，测试登录及 MCP 功能调用是否正常。
+
+
+![集成示例](img/n8n3.png)
+
+![集成示例](img/n8n4.png)
+    
