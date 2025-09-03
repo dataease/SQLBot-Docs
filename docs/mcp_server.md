@@ -224,7 +224,7 @@
 
 ![集成示例](img/dify_mcp_effect.png)
 
-###  3.2 Coze 集成示例
+###  3.3 Coze 集成示例
 !!! Tip ""
     方式一：
 
