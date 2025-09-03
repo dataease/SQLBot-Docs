@@ -1448,6 +1448,24 @@
 <p>在接口地址配置完成后，点击【添加接口凭证】，进入如下配置窗口。</p>
 </div>
 <p><img alt="嵌入式高级应用" src="../../img/user_manual/system/interface_info.png" /></p>
+<div class="admonition abstract">
+<p>配置流程：</p>
+<ul>
+<li>
+<p>输入接口 URL：用于配置外部系统提供的接口地址。通过接口获取数据源信息、表的元数据信息、数据的过滤规则和虚拟表信息等。</p>
+</li>
+<li>
+<p>添加接口凭证：</p>
+<ul>
+<li>凭证名称：自定义命名，用于标识该凭证，方便后续管理和使用。</li>
+<li>源系统凭证类型：获取目标系统认证信息的方式，如localstorage、custom、cookie 等，用于接口调用时的身份认证。</li>
+<li>目标凭证名称：目标系统中认证信息的名称，例如 "sessionId" 等。</li>
+<li>目标凭证位置：获取的认证信息在请求中的放置的位置，如 Header、Cookie、Param。</li>
+<li>目标凭证：具体的凭证值，填写后系统会根据配置在请求时自动带上，一般无需填写，系统自动按类型获取。</li>
+</ul>
+</li>
+</ul>
+</div>
 <h3 id="23">2.3 嵌入代码获取<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
 <p>每个应用创建成功后，系统会自动生成可嵌入前端的 JavaScript 代码：</p>
