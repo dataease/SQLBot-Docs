@@ -1647,7 +1647,7 @@ username:{{global.username}} password:{{global.password}}
 mcp_question 的返回 ，请直接输出展示 。
 </code></pre></div>
 </div>
-<p><img alt="集成示例" src="../img/maxkb_ai_effect.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/maxkb_ai_effect.png" /></p>
 <div class="admonition tip">
 <p>方式二：</p>
 <p>步骤⼀： 创建或进入一个高级编排类型的应用。</p>
@@ -1691,7 +1691,7 @@ return {&quot;token&quot;:json_obj[&quot;data&quot;][&quot;access_token&quot;], 
 </ul>
 <p>步骤四：在流程末尾添加指定回复节点，将 MCP 的输出结果作为回复内容。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/maxkb_effect.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/maxkb_effect.png" /></p>
 <h3 id="32-dify">3.2 Dify 集成示例<a class="headerlink" href="#32-dify" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p>步骤⼀： 进入需要配置的工作空间，创建或进入一个 Chatflow 类型的应用。</p>
@@ -1739,8 +1739,8 @@ return {
 </ul>
 <p>步骤四：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/dify_mcp.png" /></p>
-<p><img alt="集成示例" src="../img/dify_mcp_effect.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/dify_mcp.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/dify_mcp_effect.png" /></p>
 <h3 id="33-coze">3.3 Coze 集成示例<a class="headerlink" href="#33-coze" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p>方式一：</p>
@@ -1804,8 +1804,8 @@ return {
 </ul>
 <p>步骤八：在结束节点将 MCP 返回的内容回复给用户。输入有效的 username、password 以及 question，即可测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/coze1.png" /></p>
-<p><img alt="集成示例" src="../img/coze2.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/coze1.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/coze2.png" /></p>
 <div class="admonition tip">
 <p>方式二：</p>
 <p>步骤⼀：进入工作空间，创建一个新的应用或进入已有应用。</p>
@@ -1845,8 +1845,8 @@ mcp_start 账号密码：
 </code></pre></div></p>
 <p>步骤四：添加结束节点，将大模型返回的内容回复给用户。输入有效的 username 与 password 以及输入 question，测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/coze3.png" /></p>
-<p><img alt="集成示例" src="../img/coze4.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/coze3.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/coze4.png" /></p>
 <h3 id="34-n8n">3.4 n8n 集成示例<a class="headerlink" href="#34-n8n" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p>方式一：</p>
@@ -1881,8 +1881,8 @@ password:{{ $json.password }}
 <p>步骤五：调用 MCP Clien 工具，在 Parameters 的 Endpoint 填入 SQLBot 填入 MCP 服务地址：<code>http://SQLBot_MCP_IP:8001/mcp</code>。</p>
 <p>点击【Execute workflow】输入有效的 username 与 password 以及输入 question，测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/n8n1.png" /></p>
-<p><img alt="集成示例" src="../img/n8n2.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/n8n1.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/n8n2.png" /></p>
 <div class="admonition tip">
 <p>方式二：</p>
 <p>步骤⼀：进入 My project，创建或进入一个 workflow。</p>
@@ -1916,8 +1916,8 @@ password:SQLBot@123456
 <p>步骤五：调用 MCP Clien 工具，在 Parameters 的 Endpoint 填入 SQLBot 填入 MCP 服务地址：<code>http://SQLBot_MCP_IP:8001/mcp</code>。</p>
 <p>点击【Execute workflow】，测试登录及 MCP 功能调用是否正常。</p>
 </div>
-<p><img alt="集成示例" src="../img/n8n3.png" /></p>
-<p><img alt="集成示例" src="../img/n8n4.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/n8n3.png" /></p>
+<p><img alt="集成示例" src="../img/mcp/n8n4.png" /></p>
 
 
 
