@@ -66,6 +66,7 @@ nav:
             - 工作空间: system/workspace.md
             - AI 模型配置: system/model.md
             - 嵌入式管理: system/embedding.md
+            - 系统设置: system/system.md
     - MCP 服务 : mcp_server.md
     - 联系我们: contact.md
     
