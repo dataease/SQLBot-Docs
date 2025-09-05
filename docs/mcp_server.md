@@ -114,7 +114,7 @@
 
     ```
 
-![集成示例](img/maxkb_ai_effect.png)
+![集成示例](img/mcp/maxkb_ai_effect.png)
 !!! Tip ""
     方式二：
 
@@ -164,7 +164,7 @@
           ```
      步骤四：在流程末尾添加指定回复节点，将 MCP 的输出结果作为回复内容。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
 
-![集成示例](img/maxkb_effect.png)
+![集成示例](img/mcp/maxkb_effect.png)
 
 ###  3.2 Dify 集成示例
 !!! Tip ""
@@ -220,9 +220,9 @@
      步骤四：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
 
 
-![集成示例](img/dify_mcp.png)
+![集成示例](img/mcp/dify_mcp.png)
 
-![集成示例](img/dify_mcp_effect.png)
+![集成示例](img/mcp/dify_mcp_effect.png)
 
 ###  3.3 Coze 集成示例
 !!! Tip ""
@@ -287,9 +287,9 @@
     步骤八：在结束节点将 MCP 返回的内容回复给用户。输入有效的 username、password 以及 question，即可测试登录及 MCP 功能调用是否正常。
 
 
-![集成示例](img/coze1.png)
+![集成示例](img/mcp/coze1.png)
 
-![集成示例](img/coze2.png)
+![集成示例](img/mcp/coze2.png)
 
 !!! Tip ""
     方式二：
@@ -340,9 +340,9 @@
 
 
 
-![集成示例](img/coze3.png)
+![集成示例](img/mcp/coze3.png)
 
-![集成示例](img/coze4.png)
+![集成示例](img/mcp/coze4.png)
 
 
 
@@ -387,9 +387,9 @@
 
     点击【Execute workflow】输入有效的 username 与 password 以及输入 question，测试登录及 MCP 功能调用是否正常。
 
-![集成示例](img/n8n1.png)
+![集成示例](img/mcp/n8n1.png)
 
-![集成示例](img/n8n2.png)
+![集成示例](img/mcp/n8n2.png)
 
 !!! Tip ""
     方式二：
@@ -431,7 +431,7 @@
     点击【Execute workflow】，测试登录及 MCP 功能调用是否正常。
 
 
-![集成示例](img/n8n3.png)
+![集成示例](img/mcp/n8n3.png)
 
-![集成示例](img/n8n4.png)
+![集成示例](img/mcp/n8n4.png)
     
