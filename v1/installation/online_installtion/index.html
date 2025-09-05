@@ -1416,20 +1416,25 @@
 <td style="text-align: left;">Web 服务端口</td>
 <td style="text-align: left;">默认 Web 服务访问端口，可根据实际情况进行更改</td>
 </tr>
+<tr>
+<td>8001</td>
+<td style="text-align: left;">MCP 服务端口</td>
+<td style="text-align: left;">默认 MCP 服务访问端口，可根据实际情况进行更改</td>
+</tr>
 </tbody>
 </table>
 <h2 id="3">3 安装部署<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>在配置 Docker 环境的操作系统中，进行以下操作：</p>
-<div class="highlight"><pre><span></span><code># 创建目录
-mkdir -p /opt/sqlbot
-cd /opt/sqlbot
-
-#下载 docker-compose.yaml
-curl -o docker-compose.yaml https://raw.githubusercontent.com/dataease/SQLBot/main/docker-compose.yaml
-
-#启动服务
-docker compose up -d
+<div class="highlight"><pre><span></span><code>docker run -d \
+    --name sqlbot \
+    --restart unless-stopped \
+    -p 8000:8000 \
+    -v ./data/sqlbot/excel:/opt/sqlbot/data/excel \
+    -v ./data/sqlbot/images:/opt/sqlbot/images \
+    -v ./data/sqlbot/logs:/opt/sqlbot/logs \
+    -v ./data/postgresql:/var/lib/postgresql/data \
+    dataease/sqlbot:v1.1.1
 </code></pre></div>
 </div>
 <h1 id="4">4 登录访问<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
