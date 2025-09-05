@@ -557,9 +557,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-postgresql" class="md-nav__link">
+  <a href="#2-sqlbot" class="md-nav__link">
     <span class="md-ellipsis">
-      2 安装 PostgreSQL 数据库
+      2 安装 SQLBot
     </span>
   </a>
   
@@ -568,16 +568,7 @@
         <li class="md-nav__item">
   <a href="#3-sqlbot" class="md-nav__link">
     <span class="md-ellipsis">
-      3 安装 SQLBot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-sqlbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 访问 SQLBot
+      3 访问 SQLBot
     </span>
   </a>
   
@@ -1364,9 +1355,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-postgresql" class="md-nav__link">
+  <a href="#2-sqlbot" class="md-nav__link">
     <span class="md-ellipsis">
-      2 安装 PostgreSQL 数据库
+      2 安装 SQLBot
     </span>
   </a>
   
@@ -1375,16 +1366,7 @@
         <li class="md-nav__item">
   <a href="#3-sqlbot" class="md-nav__link">
     <span class="md-ellipsis">
-      3 安装 SQLBot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-sqlbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 访问 SQLBot
+      3 访问 SQLBot
     </span>
   </a>
   
@@ -1416,28 +1398,7 @@
 <p>关于 1Panel 的安装部署与基础功能介绍，请参考 <a href="https://1panel.cn/docs/"><strong>1Panel 官方文档</strong></a> 。完成 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    </p>
 </div>
 <p><img alt="1panel" src="../../img/installation/1panel_index.png" /></p>
-<h2 id="2-postgresql">2 安装 PostgreSQL 数据库<a class="headerlink" href="#2-postgresql" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>在安装 SQLBot 之前，需要先在 1Panel 上安装好所需的数据库 PostgreSQL。在应用商店中选择 PostgreSQL 点击安装，选择 17.5 版本。</p>
-</div>
-<p><img alt="安装PostgreSQL1" src="../../img/installation/install_pgsql.png" /></p>
-<div class="admonition abstract">
-<p>进行参数设置，设置完成后，点击确认。</p>
-<ul>
-<li>名称：创建的 PostgreSQL 应用的名称。</li>
-<li>用户密码：安装的 PostgreSQL 应用的 root 用户和密码。</li>
-<li>端口：PostgreSQL 应用的服务端口。</li>
-<li>容器名称：PostgreSQL 应用容器名称。</li>
-<li>CPU 限制：PostgreSQL 应用可以使用的 CPU 核心数。</li>
-<li>内存限制：PostgreSQL 应用可以使用的内存大小。</li>
-</ul>
-</div>
-<p><img alt="PostgreSQL参数设置" src="../../img/installation/pgsql_info.png" /></p>
-<div class="admonition abstract">
-<p>点击安装，完成后页面自动跳转到已安装应用列表，等待安装的 PostgreSQL 应用状态变为已启动。</p>
-</div>
-<p><img alt="PostgreSQL状态" src="../../img/installation/pgsql_success.png" /></p>
-<h2 id="3-sqlbot">3 安装 SQLBot<a class="headerlink" href="#3-sqlbot" title="Permanent link">&para;</a></h2>
+<h2 id="2-sqlbot">2 安装 SQLBot<a class="headerlink" href="#2-sqlbot" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>安装好 PostgreSQL 后，进入应用商店应用列表，找到 SQLBot 应用进行安装。</p>
 </div>
@@ -1446,13 +1407,9 @@
 <p>在应用详情页选择最新的 SQLBot 版本进行安装，进行相关参数设置。</p>
 <ul>
 <li>名称：要创建的 SQLBot 应用的名称。</li>
-<li>数据库服务：SQLBot 应用使用的数据库应用，支持下拉选择已安装的数据库应用，1Panel 会自动配置 SQLBot 使用 PostgreSQL 数据库。</li>
-<li>数据库名：SQLBot 应用使用的数据库名称，SQLBot 会在选中的数据库中自动创建这个数据库。</li>
-<li>数据库用户：SQLBot 应用使用的数据库用户名，SQLBot 会在选中的数据库中自动创建这个用户，并添加对应的数据库授权。</li>
-<li>数据库用户密码：SQLBot 应用使用的数据库用户密码，SQLBot 会在选中的数据库中自动为上一步创建的用户配置该密码。</li>
 <li>管理员：SQLBot 应用初始化创建的超级管理员用户名。</li>
 <li>管理员密码：SQLBot 应用初始化创建的超级管理员密码（后续登录系统可以更改）。</li>
-<li>端口：SQLBot 应用的服务端口设置为 8000。</li>
+<li>端口：SQLBot 应用的服务端口设置为 8000,MCP 服务端口设置为 8100。</li>
 <li>图片服务器地址：<strong><a href="http://xx.xx.xx.xxx:8000/images/">http://xx.xx.xx.xxx:8000/images/</a></strong></li>
 <li>端口外部访问：SQLBot 应用可以使用 IP:PORT 进行访问（SQLBot 应用必须打开外部端口访问）。</li>
 </ul>
@@ -1462,7 +1419,7 @@
 <p>点击开始安装后，页面自动跳转到已安装应用列表，等待安装的 SQLBot 应用状态变为已启动。</p>
 </div>
 <p><img alt="SQLBot安装状态" src="../../img/installation/sqlbot_success.png" /></p>
-<h2 id="4-sqlbot">4 访问 SQLBot<a class="headerlink" href="#4-sqlbot" title="Permanent link">&para;</a></h2>
+<h2 id="3-sqlbot">3 访问 SQLBot<a class="headerlink" href="#3-sqlbot" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>安装成功后即可通过浏览器访问地址 <code>http://目标服务器 IP 地址:8000</code>，并使用默认的管理员用户和密码登录 SQLBot。</p>
 <div class="highlight"><pre><span></span><code>用户名: admin
