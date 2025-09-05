@@ -18,7 +18,8 @@
 | 端口   | 作用       | 说明                        |
 |------|:---------|:--------------------------|
 | 22   | SSH      | 安装、升级及管理使用                |
-| 8000 | Web 服务端口 | 默认 Web 服务访问端口，可根据实际情况进行更改 |    
+| 8000 | Web 服务端口 | 默认 Web 服务访问端口，可根据实际情况进行更改 |
+| 8001 | MCP 服务端口 | 默认 MCP 服务访问端口，可根据实际情况进行更改 |    
 
 
 
@@ -29,16 +30,15 @@
     在配置 Docker 环境的操作系统中，进行以下操作：
 
     ```
-    
-    # 创建目录
-    mkdir -p /opt/sqlbot
-    cd /opt/sqlbot
-
-    #下载 docker-compose.yaml
-    curl -o docker-compose.yaml https://raw.githubusercontent.com/dataease/SQLBot/main/docker-compose.yaml
-
-    #启动服务
-    docker compose up -d
+    docker run -d \
+        --name sqlbot \
+        --restart unless-stopped \
+        -p 8000:8000 \
+        -v ./data/sqlbot/excel:/opt/sqlbot/data/excel \
+        -v ./data/sqlbot/images:/opt/sqlbot/images \
+        -v ./data/sqlbot/logs:/opt/sqlbot/logs \
+        -v ./data/postgresql:/var/lib/postgresql/data \
+        dataease/sqlbot:v1.1.1
     ```
 
 # 4 登录访问
