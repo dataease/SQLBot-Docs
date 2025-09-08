@@ -152,5 +152,14 @@ aside.md-banner.md-banner--warning {
   display: block;  
 }
 
+.md-footer-copyright {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+  height: 60px;            /* 可根据页面底部高度调整 */
+  text-align: center;
+  padding: 0 10px;         /* 避免紧贴两边 */
+}
+
 
 
