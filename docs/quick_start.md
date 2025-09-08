@@ -12,7 +12,7 @@
     默认密码：SQLBot@123456
     ```
     
-    注意：需要先在 1Panel 中安装好所需的 PostgreSQL 数据库（17.5 版本）。详细步骤参考 [**1Panel 快速安装 SQLBot**](../installation/1panel_installtion/) 。
+    详细步骤参考 [**1Panel 快速安装 SQLBot**](../installation/1panel_installtion/) 。
 
 ## 2 界面介绍
 
