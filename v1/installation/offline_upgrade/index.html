@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/facio.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -1296,6 +1296,9 @@
 
   <h1>离线升级</h1>
 
+<div class="admonition abstract">
+<p>注意：自 v1.1.0 版本起，系统内置了向量模型，对应的 PostgreSQL 需支持相应的向量扩展。因此，我们对镜像进行了改造，将 PostgreSQL 及其扩展一并内置到 All-in-One 镜像中。 受此调整影响，v1.0.0 版本无法直接升级至 v1.1.0，建议用户全新安装 v1.1.0 版本。</p>
+</div>
 <div class="admonition abstract">
 <p>按照本文档 <a href="../offline_installtion/"><strong>离线安装</strong></a> 步骤，下载新版本安装包并上传解压后，重新执行安装命令进行升级。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 进入项目目录</span>
