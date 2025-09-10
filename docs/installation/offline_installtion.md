@@ -54,7 +54,7 @@
     SQLBOT_MCP_PORT=8001
     
     # 数据库配置
-    ## 是否使用外部数据库
+    ## 是否使用外部数据库（仅限支持向量扩展的 PG 数据库）
     SQLBOT_EXTERNAL_DB=false
     ## 数据库地址
     SQLBOT_DB_HOST=sqlbot-db
@@ -79,7 +79,7 @@
     ## 缓存类型
     SQLBOT_CACHE_TYPE="memory"
     ## MCP 图片存储路径
-    SQLBOT_SERVER_IMAGE_HOST=https://YOUR_SERVER_IP:MCP_PORT/images/
+    SQLBOT_SERVER_IMAGE_HOST=http://YOUR_SERVER_IP:MCP_PORT/images/
     ```
 
 
