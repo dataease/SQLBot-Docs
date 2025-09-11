@@ -1835,6 +1835,7 @@
 <p>本文以阿里云新加坡区操作系统为 Ubuntu 22.04 的 ECS 实例为例，演示 Ollama 安装及其与 SQLBot 对接。</p>
 </div>
 <h2 id="ollama">安装Ollama<a class="headerlink" href="#ollama" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
 <p>执行以下命令安装 Ollama：
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div></p>
@@ -1852,7 +1853,9 @@
 Created<span class="w"> </span>symlink<span class="w"> </span>/etc/systemd/system/default.target.wants/ollama.service<span class="w"> </span>→<span class="w"> </span>/etc/systemd/system/ollama.service.
 &gt;&gt;&gt;<span class="w"> </span>NVIDIA<span class="w"> </span>GPU<span class="w"> </span>installed.
 </code></pre></div></p>
+</div>
 <h2 id="ollama_1">修改Ollama配置<a class="headerlink" href="#ollama_1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
 <p>修改文件ollama.service，让 Ollama 访问可被外部访问
 <div class="highlight"><pre><span></span><code>vim<span class="w"> </span>/etc/systemd/system/ollama.service
 </code></pre></div></p>
@@ -1878,12 +1881,16 @@ Environment=&quot;OLLAMA_ORIGINS=*
 [Install]
 WantedBy=default.target
 </code></pre></div></p>
+</div>
 <h2 id="ollama_2">重启Ollama服务<a class="headerlink" href="#ollama_2" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
 <p>执行命令重启 Ollama:
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>daemon-reload<span class="p">;</span>service<span class="w"> </span>ollama<span class="w"> </span>restart
 </code></pre></div></p>
+</div>
 <h2 id="_1">安装运行大模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="qwen3-openai">安装Qwen3模型（兼容 OpenAI）<a class="headerlink" href="#qwen3-openai" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>此处以 qwen3-14b 为例，执行以下命令安装大模型：
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>qwen3:14b
 </code></pre></div></p>
@@ -1900,7 +1907,9 @@ writing<span class="w"> </span>manifest
 success
 &gt;&gt;&gt;<span class="w"> </span>Send<span class="w"> </span>a<span class="w"> </span>message<span class="w"> </span><span class="o">(</span>/?<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">help</span><span class="o">)</span>
 </code></pre></div></p>
+</div>
 <h3 id="deepseek-r1-openai">安装DeepSeek R1 模型（不兼容 OpenAI）<a class="headerlink" href="#deepseek-r1-openai" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>deepseek-r1:8b
 </code></pre></div>
 <p>输出如下：
@@ -1915,23 +1924,29 @@ verifying<span class="w"> </span>sha256<span class="w"> </span>digest
 writing<span class="w"> </span>manifest
 success
 </code></pre></div></p>
+</div>
 <h2 id="ollama_3">确认Ollama服务状态<a class="headerlink" href="#ollama_3" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
 <p>在 SQLBot 服务器上访问 Ollama 服务，确认网络是通的：
 <div class="highlight"><pre><span></span><code>root@iZt4n4e3wmu6ddsc0hb3wbZ:~#nc<span class="w"> </span>-zv<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span><span class="m">11434</span>
 Connection<span class="w"> </span>to<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span>port<span class="w"> </span><span class="m">11434</span><span class="w"> </span><span class="o">[</span>tcp/*<span class="o">]</span><span class="w"> </span>succeeded!
 </code></pre></div></p>
+</div>
 <h2 id="openwebui">安装 OpenWebUI（可选）<a class="headerlink" href="#openwebui" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>OpenWebUI 可在 web 界面上与大模型进行交互，非必需。</p>
 </div>
 <h3 id="docker">安装docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>在服务器上安装 Docker，本文使用 DataEase 项目组编写安装脚本进行安装，用户可自行选择如何安装 Docker。
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://resource.fit2cloud.com/get-docker-linux.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 
 <span class="c1"># 设置 docker 开机自启，并启动 docker 服务</span>
 systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker<span class="p">;</span><span class="w"> </span>systemctl<span class="w"> </span>daemon-reload<span class="p">;</span><span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start
 </code></pre></div></p>
+</div>
 <h3 id="openwebui_1">安装OpenWebUI<a class="headerlink" href="#openwebui_1" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>按官方示例，以 docker 直接启动 OpenWebUI，它会自动关联本地 Ollama。
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span>--add-host<span class="o">=</span>host.docker.internal:host-gateway<span class="w"> </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span>--name<span class="w"> </span>open-webui<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>ghcr.io/open-webui/open-webui:main
 </code></pre></div></p>
@@ -1942,39 +1957,58 @@ ba913b54d026<span class="w">   </span>ghcr.io/open-webui/open-webui:main<span cl
 </code></pre></div></p>
 <p>启动完成后，可在浏览器上通过 IP:3000来访问，如下图所示：
 <img alt="openwebui" src="../../img/model_integration/openwebui.png" /></p>
+</div>
 <h2 id="one-api">安装配置 One API<a class="headerlink" href="#one-api" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
 <p>若部署的是 DeepSeek 模型，在对接 SQLBot 时需要 One API 将其转换成兼容 OpenAI 接口，否则在使用时则会出现类似下面的错误：
 <img alt="deepseek_error" src="../../img/model_integration/deepseek_error.png" /></p>
+</div>
 <h3 id="one-api_1">部署 One API<a class="headerlink" href="#one-api_1" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>下面以 docker 来运行 One API，此处运行端口设置成了 3001：
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/oneapi/data
 
 docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>one-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>-p<span class="w"> </span><span class="m">3001</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>-v<span class="w"> </span>/oneapi/data:/data<span class="w"> </span>justsong/one-api
 </code></pre></div></p>
+</div>
 <h3 id="one-api_2">配置 One API<a class="headerlink" href="#one-api_2" title="Permanent link">&para;</a></h3>
 <h4 id="_2">添加渠道<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
 <p>在浏览器输入 IP:3001 访问 One API。
 先添加一个 DeepSeek 的渠道，注意「模型」输入 Ollama 中 DeepSeek 的模型名称，代理输入 Ollama 的访问地址。
 <img alt="oneapi_channel" src="../../img/model_integration/oneapi_channel.png" /></p>
+</div>
 <h4 id="_3">验证渠道<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
 <p>添加渠道后，可以点击「测试」验证是否正常工作
 <img alt="oneapi_validate" src="../../img/model_integration/oneapi_validate.png" /></p>
+</div>
 <h4 id="_4">创建令牌<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
 <p>此处可以根据自己的实际情况进行相关设置。
 <img alt="oneapi_create_token" src="../../img/model_integration/oneapi_create_token.png" /></p>
+</div>
 <h4 id="_5">复制令牌<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
 <p><img alt="oneapi_copy_token" src="../../img/model_integration/oneapi_copy_token.png" /></p>
+</div>
 <h2 id="sqlbot">接入SQLBot<a class="headerlink" href="#sqlbot" title="Permanent link">&para;</a></h2>
 <h3 id="qwen3-openai_1">接入 Qwen3 模型（兼容 OpenAI）<a class="headerlink" href="#qwen3-openai_1" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>基础模型此处输入之前安装运行的 qwen3:14b。
 Ollama 默认运行在 11434 端口上，API 域名输入 <a href="http://47.237.135.165:11434/v1">http://47.237.135.165:11434/v1</a>，注意47.237.135.165换成自己实际的 IP 地址。
 API Key 可以随意填写，保存即可。
 <img alt="ollama" src="../../img/model_integration/ollama_sqlbot.png" /></p>
+</div>
 <h3 id="deepseek-r1-openai_1">接入DeepSeek R1模型（不兼容 OpenAI）<a class="headerlink" href="#deepseek-r1-openai_1" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
 <p>基础模型此处输入之前安装运行的 deepseek-r1:8b。
 由于通过 One API 进行了转换，在 API 域名输入 One API 的服务地址，如 <a href="http://47.236.6.226:3001/v1">http://47.236.6.226:3001/v1</a>，注意47.236.6.226:3001 换成自己实际的 IP 地址和运行端口。
 API Key 填写 One API 的令牌。
 <img alt="oneapi" src="../../img/model_integration/oneapi_sqlbot.png" /></p>
+<p>在 One API 的日志中可以查看大模型的调用情况。
+<img alt="oneapi_log" src="../../img/model_integration/oneapi_log.png" /></p>
+</div>
 
 
 
