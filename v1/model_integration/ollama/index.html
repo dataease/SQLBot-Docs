@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://sqlbot.cn/docs/v1/model_integration/ollama/">
       
       
+        <link rel="prev" href="../../system/system/">
+      
+      
+        <link rel="next" href="../../mcp_server/">
       
       
       <link rel="icon" href="../../img/facio.ico">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Ollama - SQLBot 文档</title>
+        <title>Ollama 部署模型接入 SQLBot - SQLBot 文档</title>
       
     
     
@@ -203,7 +207,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ollama
+              Ollama 部署模型接入 SQLBot
             
           </span>
         </div>
@@ -1210,6 +1214,328 @@
       
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    模型接入
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            模型接入
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ollama 部署模型接入 SQLBot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ollama 部署模型接入 SQLBot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Ollama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ollama_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改Ollama配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ollama_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      重启Ollama服务
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装运行大模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装运行大模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen3-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Qwen3模型（兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-r1-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装DeepSeek R1 模型（不兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ollama_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      确认Ollama服务状态
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openwebui" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 OpenWebUI（可选）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装 OpenWebUI（可选）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openwebui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装OpenWebUI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装配置 One API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装配置 One API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署 One API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 One API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 One API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加渠道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证渠道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建令牌
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      复制令牌
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      接入SQLBot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="接入SQLBot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen3-openai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      接入 Qwen3 模型（兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-r1-openai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      接入DeepSeek R1模型（不兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     <li class="md-nav__item">
@@ -1277,7 +1603,7 @@
         <li class="md-nav__item">
   <a href="#ollama" class="md-nav__link">
     <span class="md-ellipsis">
-      安装ollama
+      安装Ollama
     </span>
   </a>
   
@@ -1286,7 +1612,7 @@
         <li class="md-nav__item">
   <a href="#ollama_1" class="md-nav__link">
     <span class="md-ellipsis">
-      修改ollama配置
+      修改Ollama配置
     </span>
   </a>
   
@@ -1295,7 +1621,7 @@
         <li class="md-nav__item">
   <a href="#ollama_2" class="md-nav__link">
     <span class="md-ellipsis">
-      重启ollama服务
+      重启Ollama服务
     </span>
   </a>
   
@@ -1305,6 +1631,39 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       安装运行大模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装运行大模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen3-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Qwen3模型（兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-r1-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装DeepSeek R1 模型（不兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ollama_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      确认Ollama服务状态
     </span>
   </a>
   
@@ -1344,11 +1703,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#one-api" class="md-nav__link">
     <span class="md-ellipsis">
-      确认服务状态
+      安装配置 One API
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="安装配置 One API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署 One API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 One API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 One API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加渠道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证渠道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建令牌
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      复制令牌
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1358,6 +1783,30 @@
       接入SQLBot
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="接入SQLBot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qwen3-openai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      接入 Qwen3 模型（兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-r1-openai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      接入DeepSeek R1模型（不兼容 OpenAI）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1380,13 +1829,13 @@
   
 
 
-  <h1>Ollama</h1>
+  <h1>Ollama 部署模型接入 SQLBot</h1>
 
 <div class="admonition abstract">
-<p>本文以阿里云新加坡区 ECS 实例为例，演示 ollama 安装及其与 SQLBot 对接。</p>
+<p>本文以阿里云新加坡区操作系统为 Ubuntu 22.04 的 ECS 实例为例，演示 Ollama 安装及其与 SQLBot 对接。</p>
 </div>
-<h2 id="ollama">安装ollama<a class="headerlink" href="#ollama" title="Permanent link">&para;</a></h2>
-<p>执行以下命令安装 ollama：
+<h2 id="ollama">安装Ollama<a class="headerlink" href="#ollama" title="Permanent link">&para;</a></h2>
+<p>执行以下命令安装 Ollama：
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div></p>
 <p>输出如下：
@@ -1401,12 +1850,10 @@
 &gt;&gt;&gt;<span class="w"> </span>Creating<span class="w"> </span>ollama<span class="w"> </span>systemd<span class="w"> </span>service...
 &gt;&gt;&gt;<span class="w"> </span>Enabling<span class="w"> </span>and<span class="w"> </span>starting<span class="w"> </span>ollama<span class="w"> </span>service...
 Created<span class="w"> </span>symlink<span class="w"> </span>/etc/systemd/system/default.target.wants/ollama.service<span class="w"> </span>→<span class="w"> </span>/etc/systemd/system/ollama.service.
-&gt;&gt;&gt;<span class="w"> </span>The<span class="w"> </span>Ollama<span class="w"> </span>API<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>available<span class="w"> </span>at<span class="w"> </span><span class="m">127</span>.0.0.1:11434.
-&gt;&gt;&gt;<span class="w"> </span>Install<span class="w"> </span>complete.<span class="w"> </span>Run<span class="w"> </span><span class="s2">&quot;ollama&quot;</span><span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>line.
-WARNING:<span class="w"> </span>No<span class="w"> </span>NVIDIA/AMD<span class="w"> </span>GPU<span class="w"> </span>detected.<span class="w"> </span>Ollama<span class="w"> </span>will<span class="w"> </span>run<span class="w"> </span><span class="k">in</span><span class="w"> </span>CPU-only<span class="w"> </span>mode.
+&gt;&gt;&gt;<span class="w"> </span>NVIDIA<span class="w"> </span>GPU<span class="w"> </span>installed.
 </code></pre></div></p>
-<h2 id="ollama_1">修改ollama配置<a class="headerlink" href="#ollama_1" title="Permanent link">&para;</a></h2>
-<p>修改文件ollama.service，让 ollama 访问可被外部访问
+<h2 id="ollama_1">修改Ollama配置<a class="headerlink" href="#ollama_1" title="Permanent link">&para;</a></h2>
+<p>修改文件ollama.service，让 Ollama 访问可被外部访问
 <div class="highlight"><pre><span></span><code>vim<span class="w"> </span>/etc/systemd/system/ollama.service
 </code></pre></div></p>
 <p>加入以下内容：
@@ -1431,11 +1878,12 @@ Environment=&quot;OLLAMA_ORIGINS=*
 [Install]
 WantedBy=default.target
 </code></pre></div></p>
-<h2 id="ollama_2">重启ollama服务<a class="headerlink" href="#ollama_2" title="Permanent link">&para;</a></h2>
-<p>执行命令重启 ollama:
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>ollama<span class="w"> </span>restart
+<h2 id="ollama_2">重启Ollama服务<a class="headerlink" href="#ollama_2" title="Permanent link">&para;</a></h2>
+<p>执行命令重启 Ollama:
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>daemon-reload<span class="p">;</span>service<span class="w"> </span>ollama<span class="w"> </span>restart
 </code></pre></div></p>
 <h2 id="_1">安装运行大模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="qwen3-openai">安装Qwen3模型（兼容 OpenAI）<a class="headerlink" href="#qwen3-openai" title="Permanent link">&para;</a></h3>
 <p>此处以 qwen3-14b 为例，执行以下命令安装大模型：
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>qwen3:14b
 </code></pre></div></p>
@@ -1452,6 +1900,26 @@ writing<span class="w"> </span>manifest
 success
 &gt;&gt;&gt;<span class="w"> </span>Send<span class="w"> </span>a<span class="w"> </span>message<span class="w"> </span><span class="o">(</span>/?<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">help</span><span class="o">)</span>
 </code></pre></div></p>
+<h3 id="deepseek-r1-openai">安装DeepSeek R1 模型（不兼容 OpenAI）<a class="headerlink" href="#deepseek-r1-openai" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>deepseek-r1:8b
+</code></pre></div>
+<p>输出如下：
+<div class="highlight"><pre><span></span><code>root@iZt4n4e3wmu6ddsc0hb3wbZ:~#<span class="w"> </span>ollama<span class="w"> </span>run<span class="w"> </span>deepseek-r1:8b
+pulling<span class="w"> </span>manifest
+pulling<span class="w"> </span>e6a7edc1a4d7:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏<span class="w"> </span><span class="m">5</span>.2<span class="w"> </span>GB
+pulling<span class="w"> </span>c5ad996bda6e:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏<span class="w">  </span><span class="m">556</span><span class="w"> </span>B
+pulling<span class="w"> </span>6e4c38e1172f:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏<span class="w"> </span><span class="m">1</span>.1<span class="w"> </span>KB
+pulling<span class="w"> </span>ed8474dc73db:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏<span class="w">  </span><span class="m">179</span><span class="w"> </span>B
+pulling<span class="w"> </span>f64cd5418e4b:<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏<span class="w">  </span><span class="m">487</span><span class="w"> </span>B
+verifying<span class="w"> </span>sha256<span class="w"> </span>digest
+writing<span class="w"> </span>manifest
+success
+</code></pre></div></p>
+<h2 id="ollama_3">确认Ollama服务状态<a class="headerlink" href="#ollama_3" title="Permanent link">&para;</a></h2>
+<p>在 SQLBot 服务器上访问 Ollama 服务，确认网络是通的：
+<div class="highlight"><pre><span></span><code>root@iZt4n4e3wmu6ddsc0hb3wbZ:~#nc<span class="w"> </span>-zv<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span><span class="m">11434</span>
+Connection<span class="w"> </span>to<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span>port<span class="w"> </span><span class="m">11434</span><span class="w"> </span><span class="o">[</span>tcp/*<span class="o">]</span><span class="w"> </span>succeeded!
+</code></pre></div></p>
 <h2 id="openwebui">安装 OpenWebUI（可选）<a class="headerlink" href="#openwebui" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>OpenWebUI 可在 web 界面上与大模型进行交互，非必需。</p>
@@ -1464,7 +1932,7 @@ success
 systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker<span class="p">;</span><span class="w"> </span>systemctl<span class="w"> </span>daemon-reload<span class="p">;</span><span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>start
 </code></pre></div></p>
 <h3 id="openwebui_1">安装OpenWebUI<a class="headerlink" href="#openwebui_1" title="Permanent link">&para;</a></h3>
-<p>按官方示例，以 docker 直接启动 OpenWebUI，它会自动关联本地 ollama。
+<p>按官方示例，以 docker 直接启动 OpenWebUI，它会自动关联本地 Ollama。
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span>--add-host<span class="o">=</span>host.docker.internal:host-gateway<span class="w"> </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span>--name<span class="w"> </span>open-webui<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>ghcr.io/open-webui/open-webui:main
 </code></pre></div></p>
 <p>OpenWebUI启动需要一些时间，需确认容器运行状态为「healthy」：
@@ -1472,18 +1940,41 @@ systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> 
 CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">                                </span>COMMAND<span class="w">           </span>CREATED<span class="w">          </span>STATUS<span class="w">                   </span>PORTS<span class="w">                                         </span>NAMES
 ba913b54d026<span class="w">   </span>ghcr.io/open-webui/open-webui:main<span class="w">   </span><span class="s2">&quot;bash start.sh&quot;</span><span class="w">   </span><span class="m">10</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">9</span><span class="w"> </span>minutes<span class="w"> </span><span class="o">(</span>healthy<span class="o">)</span><span class="w">   </span><span class="m">0</span>.0.0.0:3000-&gt;8080/tcp,<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:3000-&gt;8080/tcp<span class="w">   </span>open-webui
 </code></pre></div></p>
-<p>启动完成后，可在浏览器上通过 ip:3000来访问，如下图所示：
+<p>启动完成后，可在浏览器上通过 IP:3000来访问，如下图所示：
 <img alt="openwebui" src="../../img/model_integration/openwebui.png" /></p>
-<h2 id="_2">确认服务状态<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在 SQLBot 服务器上访问 ollama 服务，确认网络是通的：
-<div class="highlight"><pre><span></span><code>root@iZt4n4e3wmu6ddsc0hb3wbZ:~#nc<span class="w"> </span>-zv<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span><span class="m">11434</span>
-Connection<span class="w"> </span>to<span class="w"> </span><span class="m">47</span>.237.135.165<span class="w"> </span>port<span class="w"> </span><span class="m">11434</span><span class="w"> </span><span class="o">[</span>tcp/*<span class="o">]</span><span class="w"> </span>succeeded!
+<h2 id="one-api">安装配置 One API<a class="headerlink" href="#one-api" title="Permanent link">&para;</a></h2>
+<p>若部署的是 DeepSeek 模型，在对接 SQLBot 时需要 One API 将其转换成兼容 OpenAI 接口，否则在使用时则会出现类似下面的错误：
+<img alt="deepseek_error" src="../../img/model_integration/deepseek_error.png" /></p>
+<h3 id="one-api_1">部署 One API<a class="headerlink" href="#one-api_1" title="Permanent link">&para;</a></h3>
+<p>下面以 docker 来运行 One API，此处运行端口设置成了 3001：
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/oneapi/data
+
+docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>one-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>-p<span class="w"> </span><span class="m">3001</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>-v<span class="w"> </span>/oneapi/data:/data<span class="w"> </span>justsong/one-api
 </code></pre></div></p>
+<h3 id="one-api_2">配置 One API<a class="headerlink" href="#one-api_2" title="Permanent link">&para;</a></h3>
+<h4 id="_2">添加渠道<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>在浏览器输入 IP:3001 访问 One API。
+先添加一个 DeepSeek 的渠道，注意「模型」输入 Ollama 中 DeepSeek 的模型名称，代理输入 Ollama 的访问地址。
+<img alt="oneapi_channel" src="../../img/model_integration/oneapi_channel.png" /></p>
+<h4 id="_3">验证渠道<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>添加渠道后，可以点击「测试」验证是否正常工作
+<img alt="oneapi_validate" src="../../img/model_integration/oneapi_validate.png" /></p>
+<h4 id="_4">创建令牌<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>此处可以根据自己的实际情况进行相关设置。
+<img alt="oneapi_create_token" src="../../img/model_integration/oneapi_create_token.png" /></p>
+<h4 id="_5">复制令牌<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><img alt="oneapi_copy_token" src="../../img/model_integration/oneapi_copy_token.png" /></p>
 <h2 id="sqlbot">接入SQLBot<a class="headerlink" href="#sqlbot" title="Permanent link">&para;</a></h2>
+<h3 id="qwen3-openai_1">接入 Qwen3 模型（兼容 OpenAI）<a class="headerlink" href="#qwen3-openai_1" title="Permanent link">&para;</a></h3>
 <p>基础模型此处输入之前安装运行的 qwen3:14b。
-ollama 默认运行在 11434 端口上，API 域名输入 <a href="http://47.237.135.165:11434/v1">http://47.237.135.165:11434/v1</a>，注意47.237.135.165换成自己实际的 ip 地址。
+Ollama 默认运行在 11434 端口上，API 域名输入 <a href="http://47.237.135.165:11434/v1">http://47.237.135.165:11434/v1</a>，注意47.237.135.165换成自己实际的 IP 地址。
 API Key 可以随意填写，保存即可。
 <img alt="ollama" src="../../img/model_integration/ollama_sqlbot.png" /></p>
+<h3 id="deepseek-r1-openai_1">接入DeepSeek R1模型（不兼容 OpenAI）<a class="headerlink" href="#deepseek-r1-openai_1" title="Permanent link">&para;</a></h3>
+<p>基础模型此处输入之前安装运行的 deepseek-r1:8b。
+由于通过 One API 进行了转换，在 API 域名输入 One API 的服务地址，如 <a href="http://47.236.6.226:3001/v1">http://47.236.6.226:3001/v1</a>，注意47.236.6.226:3001 换成自己实际的 IP 地址和运行端口。
+API Key 填写 One API 的令牌。
+<img alt="oneapi" src="../../img/model_integration/oneapi_sqlbot.png" /></p>
 
 
 
