@@ -1,10 +1,10 @@
 !!! Abstract ""
 
-    本文以阿里云新加坡区 ECS 实例为例，演示 ollama 安装及其与 SQLBot 对接。
+    本文以阿里云新加坡区操作系统为 Ubuntu 22.04 的 ECS 实例为例，演示 Ollama 安装及其与 SQLBot 对接。
 
-## 安装ollama
+## 安装Ollama
 
-执行以下命令安装 ollama：
+执行以下命令安装 Ollama：
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ```
@@ -22,14 +22,12 @@ root@iZt4n4e3wmu6ddsc0hb3wbZ:~# curl -fsSL https://ollama.com/install.sh | sh
 >>> Creating ollama systemd service...
 >>> Enabling and starting ollama service...
 Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
->>> The Ollama API is now available at 127.0.0.1:11434.
->>> Install complete. Run "ollama" from the command line.
-WARNING: No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
+>>> NVIDIA GPU installed.
 ```
 
-## 修改ollama配置
+## 修改Ollama配置
 
-修改文件ollama.service，让 ollama 访问可被外部访问
+修改文件ollama.service，让 Ollama 访问可被外部访问
 ```shell
 vim /etc/systemd/system/ollama.service
 ```
@@ -60,14 +58,16 @@ Environment="OLLAMA_ORIGINS=*
 WantedBy=default.target
 ```
 
-## 重启ollama服务
+## 重启Ollama服务
 
-执行命令重启 ollama:
+执行命令重启 Ollama:
 ```shell
-service ollama restart
+systemctl daemon-reload;service ollama restart
 ```
 
 ## 安装运行大模型
+
+### 安装Qwen3模型（兼容 OpenAI）
 
 此处以 qwen3-14b 为例，执行以下命令安装大模型：
 ```shell
@@ -89,6 +89,34 @@ success
 >>> Send a message (/? for help)
 ```
 
+### 安装DeepSeek R1 模型（不兼容 OpenAI）
+
+```shell
+ollama run deepseek-r1:8b
+```
+
+输出如下：
+```shell
+root@iZt4n4e3wmu6ddsc0hb3wbZ:~# ollama run deepseek-r1:8b
+pulling manifest
+pulling e6a7edc1a4d7: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏ 5.2 GB
+pulling c5ad996bda6e: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏  556 B
+pulling 6e4c38e1172f: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏ 1.1 KB
+pulling ed8474dc73db: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏  179 B
+pulling f64cd5418e4b: 100% ▕████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏  487 B
+verifying sha256 digest
+writing manifest
+success
+```
+
+## 确认Ollama服务状态
+
+在 SQLBot 服务器上访问 Ollama 服务，确认网络是通的：
+```shell
+root@iZt4n4e3wmu6ddsc0hb3wbZ:~#nc -zv 47.237.135.165 11434
+Connection to 47.237.135.165 port 11434 [tcp/*] succeeded!
+```
+
 ## 安装 OpenWebUI（可选）
 
 !!! Abstract ""
@@ -107,7 +135,7 @@ systemctl enable docker; systemctl daemon-reload; service docker start
 
 ### 安装OpenWebUI
 
-按官方示例，以 docker 直接启动 OpenWebUI，它会自动关联本地 ollama。
+按官方示例，以 docker 直接启动 OpenWebUI，它会自动关联本地 Ollama。
 ```shell
 docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
@@ -119,20 +147,57 @@ CONTAINER ID   IMAGE                                COMMAND           CREATED   
 ba913b54d026   ghcr.io/open-webui/open-webui:main   "bash start.sh"   10 minutes ago   Up 9 minutes (healthy)   0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp   open-webui
 ```
 
-启动完成后，可在浏览器上通过 ip:3000来访问，如下图所示：
+启动完成后，可在浏览器上通过 IP:3000来访问，如下图所示：
 ![openwebui](../img/model_integration/openwebui.png)
 
-## 确认服务状态
+## 安装配置 One API
 
-在 SQLBot 服务器上访问 ollama 服务，确认网络是通的：
+若部署的是 DeepSeek 模型，在对接 SQLBot 时需要 One API 将其转换成兼容 OpenAI 接口，否则在使用时则会出现类似下面的错误：
+![deepseek_error](../img/model_integration/deepseek_error.png)
+
+### 部署 One API
+
+下面以 docker 来运行 One API，此处运行端口设置成了 3001：
 ```shell
-root@iZt4n4e3wmu6ddsc0hb3wbZ:~#nc -zv 47.237.135.165 11434
-Connection to 47.237.135.165 port 11434 [tcp/*] succeeded!
+mkdir -p /oneapi/data
+
+docker run --name one-api -d --restart always -p 3001:3000 -e TZ=Asia/Shanghai -v /oneapi/data:/data justsong/one-api
 ```
+
+### 配置 One API
+
+#### 添加渠道
+
+在浏览器输入 IP:3001 访问 One API。
+先添加一个 DeepSeek 的渠道，注意「模型」输入 Ollama 中 DeepSeek 的模型名称，代理输入 Ollama 的访问地址。
+![oneapi_channel](../img/model_integration/oneapi_channel.png)
+
+#### 验证渠道
+
+添加渠道后，可以点击「测试」验证是否正常工作
+![oneapi_validate](../img/model_integration/oneapi_validate.png)
+
+#### 创建令牌
+
+此处可以根据自己的实际情况进行相关设置。
+![oneapi_create_token](../img/model_integration/oneapi_create_token.png)
+
+#### 复制令牌
+
+![oneapi_copy_token](../img/model_integration/oneapi_copy_token.png)
 
 ## 接入SQLBot
 
+### 接入 Qwen3 模型（兼容 OpenAI）
+
 基础模型此处输入之前安装运行的 qwen3:14b。
-ollama 默认运行在 11434 端口上，API 域名输入 http://47.237.135.165:11434/v1，注意47.237.135.165换成自己实际的 ip 地址。
+Ollama 默认运行在 11434 端口上，API 域名输入 http://47.237.135.165:11434/v1，注意47.237.135.165换成自己实际的 IP 地址。
 API Key 可以随意填写，保存即可。
 ![ollama](../img/model_integration/ollama_sqlbot.png)
+
+### 接入DeepSeek R1模型（不兼容 OpenAI）
+
+基础模型此处输入之前安装运行的 deepseek-r1:8b。
+由于通过 One API 进行了转换，在 API 域名输入 One API 的服务地址，如 http://47.236.6.226:3001/v1，注意47.236.6.226:3001 换成自己实际的 IP 地址和运行端口。
+API Key 填写 One API 的令牌。
+![oneapi](../img/model_integration/oneapi_sqlbot.png)
