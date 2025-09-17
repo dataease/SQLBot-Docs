@@ -1357,6 +1357,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 镜像拉取超时
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1579,6 +1588,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 镜像拉取超时
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1606,6 +1624,27 @@
 <h2 id="2-signature-has-expired">2 出现了报错信息：Signature has expired<a class="headerlink" href="#2-signature-has-expired" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>升级版本至 v1.1.2 及以上。如果不升级版本，清理缓存后可正常运行。</p>
+</div>
+<h2 id="3">3 镜像拉取超时<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>如果是 1Panel 方式安装 SQLBot 遇到镜像拉取超时的问题，可以<a href="https://bbs.fit2cloud.com/t/topic/5886">参考文档</a>。</p>
+<p>如果以 docker 命令，或者 docker-compose 命令启动时遇到镜像拉取超时，可以给 docker 设置镜像加速，具体步骤：</p>
+<ul>
+<li>在 /etc/docker/daemon.json 文件中添加镜像地址，若没有此文件，则新建即可。在该文件中添加 registry-mirrors 部分内容，示例如下：
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;log-driver&quot;</span><span class="p">:</span><span class="s2">&quot;json-file&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;log-opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;max-size&quot;</span><span class="p">:</span><span class="s2">&quot;50m&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;max-file&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://docker.chenby.cn&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://docker.1panel.live&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://dockerproxy.com&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://docker.nju.edu.cn&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>修改完成后，重启 docker 服务即可</li>
+</ul>
 </div>
 
 
