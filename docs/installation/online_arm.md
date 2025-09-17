@@ -1,3 +1,8 @@
+!!! Abstract ""
+
+    注意：社区版不提供正式 ARM 镜像，仅提供开发版本的体验镜像！
+
+
 ## 1 环境要求
 
 
@@ -39,7 +44,7 @@
         -v ./data/sqlbot/images:/opt/sqlbot/images \
         -v ./data/sqlbot/logs:/opt/sqlbot/logs \
         -v ./data/postgresql:/var/lib/postgresql/data \
-        dataease/sqlbot
+        dataease/sqlbot:dev-arm
     ```
 
 # 4 登录访问

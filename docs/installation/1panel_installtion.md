@@ -20,7 +20,7 @@
     * 管理员：SQLBot 应用初始化创建的超级管理员用户名。
     * 管理员密码：SQLBot 应用初始化创建的超级管理员密码（后续登录系统可以更改）。
     * 端口：SQLBot 应用的服务端口设置为 8000,MCP 服务端口设置为 8100。
-    * 图片服务器地址：**http://xx.xx.xx.xxx:8000/images/**
+    * 图片服务器地址：**http://xx.xx.xx.xxx:8001/images/**
     * 端口外部访问：SQLBot 应用可以使用 IP:PORT 进行访问（SQLBot 应用必须打开外部端口访问）。
 
 ![SQLBot参数设置](../img/installation/sqlbot_info.png)
