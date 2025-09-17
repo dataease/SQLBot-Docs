@@ -15,20 +15,81 @@
     ```
 
 !!! Tip ""
-    修改 SQLBot 的 .env 配置文件：
+    SQLBot 运行方式不同，对应的 MCP 参数 SERVER_IMAGE_HOST 的配置方式不同，注意该参数中的 IP 是 SQLBot 服务器的 IP 地址，端口是 MCP 服务的端口，默认情况下，服务端口是 8001（切记不是 3000 端口）。另外，注意跨域 、https 、http协议安全等可能导致图片无法加载。
 
-    ```
-    # MCP 服务图片路径，默认路径
-    MCP_IMAGE_PATH=/opt/sqlbot/images
+    - 安装包安装方式
+        - 确认 SQLBot 的 .env 配置文件(默认位置 /opt/sqlbot/.env)中的 SQLBOT_SERVER_IMAGE_HOST：
+        ![示例](img/mcp/sqlbot_mcp_env.png)
+        - 确认 SQLBot 运行配置文件(默认位置 /opt/sqlbot/conf/sqlbot.conf)中的 SERVER_IMAGE_HOST：
+        ![示例](img/mcp/sqlbot_mcp_conf.png)
+            
+            若参数并非实际的 IP 和端口，请修改完上述两个配置参数后，重启一下 SQLBot 服务：
+            ```shell
+            sctl restart
+            ```
+    - 1Panel 运行方式
+        - 确认相关参数是否正确，若与实际情况部分，请修改后重启 SQLBot 服务：
+        ![示例](img/mcp/sqlbot_mcp_1panel.png)
+    - docker 一键运行方式
+        - 若之前运行方式没有加上 SERVER_IMAGE_HOST 参数，或者参数值不对，则停止 SQLBot 服务并删除容器
+        - 修改 MCP 运行参数 SERVER_IMAGE_HOST，注意将 IP 和端口替换成自己的实际 IP 和端口：
+            ```shell
+            docker run -d \
+                --name sqlbot \
+                --restart unless-stopped \
+                -p 8000:8000 \
+                -p 8001:8001 \
+                -e SERVER_IMAGE_HOST=http://47.92.75.231:8001/images/
+                -v data/sqlbot/excel:/opt/sqlbot/data/excel \
+                -v data/sqlbot/images:/opt/sqlbot/images \
+                -v data/sqlbot/logs:/opt/sqlbot/logs \
+                -v data/postgresql:/var/lib/postgresql/data \
+                --privileged=true \
+                dataease/sqlbot
+            ```
+    - docker-compose 一键运行方式
+        - 若之前运行方式没有加上 SERVER_IMAGE_HOST 参数，或者参数值不对，则停止 SQLBot 服务并删除容器
+        - 修改 docker-compose.yml 文件中的 MCP 参数 SERVER_IMAGE_HOST，注意将 IP 和端口替换成自己的实际 IP 和端口：
+            ```yml
+            services:
+              sqlbot:
+                image: dataease/sqlbot:v1.1.0
+                container_name: sqlbot
+                restart: always
+                networks:
+                  - sqlbot-network
+                ports:
+                  - 8000:8000
+                  - 8001:8001
+                environment:
+                # Database configuration
+                  POSTGRES_SERVER: localhost
+                  POSTGRES_PORT: 5432
+                  POSTGRES_DB: sqlbot
+                  POSTGRES_USER: root
+                  POSTGRES_PASSWORD: Password123@pg
+                  # Project basic settings
+                  PROJECT_NAME: "SQLBot"
+                  DEFAULT_PWD: "SQLBot@123456"
+                  # MCP settings
+                  SERVER_IMAGE_HOST: http://47.92.75.231:8001/images/
+                  # Auth & Security
+                  SECRET_KEY: y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
+                  # CORS settings
+                  BACKEND_CORS_ORIGINS: "http://localhost,http://localhost:5173,https://localhost,https://localhost:5173"
+                  # Logging
+                  LOG_LEVEL: "INFO"
+                  SQL_DEBUG: False
+                volumes:
+                  - data/sqlbot/excel:/opt/sqlbot/data/excel
+                  - data/sqlbot/images:/opt/sqlbot/images
+                  - data/sqlbot/logs:/opt/sqlbot/logs
+                  - data/postgresql:/var/lib/postgresql/data
 
-    # MCP 后端渲染服务地址，默认路径
-    MCP_IMAGE_HOST=http://localhost:3000
+            networks:
+              sqlbot-network:
+            ```
 
-    # 图片访问路径， {sqlbot mcp 服务ip/域名}[: {sqlbot mcp 服务端⼝}]/images/ 
-    # 注意跨域 、https 、http协议安全等可能导致图片无法加载的问题
-    SERVER_IMAGE_HOST=https://<your-server-ip>/images/
-
-    ```
 ## 2 MCP 工具说明
 !!! Tip ""
     SQLBot 的 MCP Server 提供两个内置工具：mcp_start 和 mcp_question，分别用于初始化对话和提交问题。
@@ -91,108 +152,111 @@
 ## 3 使用示例
 
 ###  3.1 MaxKB 集成示例
+
 !!! Tip ""
-    方式一:
+    [下载完整示例文件](https://resource-fit2cloud-com.oss-cn-hangzhou.aliyuncs.com/sqlbot/SQLBot.mk)
 
-    步骤⼀： 创建⼀个高级编排 ，添加用户输⼊用于在问数开始时输⼊ SQLBot 用户名和密码 。
-
-    步骤⼆： 添加⼀个 AI 对话 ，启用⼯具中的 MCP 功能 ，填⼊ MCP Sever 配置 。
-
-    步骤三： 选择 AI 模型和编辑提示词 ，提示词参考如下：
-    
-    ```
-    # 回答要求：
-    按需调用 mcp_start 和 mcp_question ⼯具获取信息回答问题 。
-    mcp_start 账号密码：
-    username:{{global.username}} password:{{global.password}}
-    ⼯具调用逻辑：
-    首先调用 mcp_start ⼯具， 获取 access_token 和 chat_id ， 帮我记住这两个参数， 之后不要重复调用 mcp_start ，直接使用 即可； 然后再调用 mcp_question ⼯具， 其中 token 和 chat_id 参数是调用 mcp_start ⼯具返回， question 是用户提问 。
-    # 用户提问：
-    {{开始.question}}
-    # 输出要求：
-    mcp_question 的返回 ，请直接输出展示 。
-
-    ```
-
-![集成示例](img/mcp/maxkb_ai_effect.png)
 !!! Tip ""
-    方式二：
 
     步骤⼀： 创建或进入一个高级编排类型的应用。
 
-    步骤二： 添加输入节点在，节点中定义输入变量： username（必填） 、password（必填）
+    步骤二： 在「基本信息」里添加两个用户输入，分别是 username 和 password，添加两个会话变量，分别是 sqlbot_token 和 sqlbot_chat_id
 
-    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    
+    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：会话变量>access_token 是否为空。为空：执行登录逻辑，添加 MCP 调用，调用 MCP 工具 mcp_start。    
 
-    配置 MCP 工具：
+    步骤四： 配置 MCP 登录配置：
 
-    - 输入全局变量：
-    ```
-    {
-    "username": "{{username}}",
-    "password": "{{password}}"
-    }
-    
-    ```
-     - MCP Server Config 服务配置：
-    ```
-    {
-    "sqlbot_mcp": {
-    "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
-    "transport": "sse"
-    }
-    }
-    ```
-    - MCP 工具返回包含 chat_id 和 access_token 的 JSON。解析返回值，添加工具节点（Python）来解析 JSON：
+    添加 MCP 调用节点
+
+    - MCP Server Config 服务配置：
+        ```
+        {
+            "sqlbot_mcp": {
+                "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+                "transport": "sse"
+            }
+        }
+        ```
+    - 工具配置：
+        点击「获取工具」，选择 mcp_start
+    - 工具参数配置：
+        username 从全局变量里选择 username；password 从全局变量里选择 password。
+
+    步骤五： 配置自定义工具：
+
+    - MCP 调用后添加「自定义工具」。
+    MCP 工具返回包含 chat_id 和 access_token 的 JSON。添加输入参数，将 MCP 调用结果赋值给参数“arg1”。此外，再添加工具节点（Python）来解析 JSON，工具内容：
     ```
     import json
-    def main1(data):
+    def main1(arg1):
     json_obj = json.loads(data[0])
     return {"token":json_obj["data"]["access_token"], "chat_id":json_obj["data"]["chat_id"]}
     ```
-     添加变量赋值节点，将 chat_id 和 access_token 存储为会话变量，供后续 MCP 调用使用。
+    
+    步骤六： 变量赋值
+    添加变量赋值节点，将 chat_id 和 access_token 存储为会话变量，供后续 MCP 调用使用。
+    
+    步骤七： 问数 MCP 调用配置
+    添加 MCP 调用节点，配置问数调用
 
-    - 执行后续 MCP 业务调用，MCP Server Config 配置：
+    - MCP Server Config 服务配置：
+    ```
+    {
+        "sqlbot_mcp": {
+            "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+            "transport": "sse"
+        }
+    }
+    ```
+    - 工具配置：
+    点击「获取工具」，选择 mcp_question
+    - 工具参数配置：
+    question 选择「开始>用户问题」，chat_id 选择「会话变量>sqlbot_chat_id」，token 选择「会话变量>sqlbot_token」。
 
-          ```
-          {
-          "sqlbot_mcp": {
-          "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
-          "transport": "sse"
-              }
-          }
-          ```
-     步骤四：在流程末尾添加指定回复节点，将 MCP 的输出结果作为回复内容。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
+    步骤八：在流程末尾添加指定回复节点，将 MCP 的输出结果作为回复内容。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
 
-![集成示例](img/mcp/maxkb_effect.png)
+![集成示例](img/mcp/sqlbot_mk_mcp.png)
 
 ###  3.2 Dify 集成示例
+
 !!! Tip ""
-    步骤⼀： 进入需要配置的工作空间，创建或进入一个 Chatflow 类型的应用。
+    [下载完整示例文件](https://resource-fit2cloud-com.oss-cn-hangzhou.aliyuncs.com/sqlbot/dify.yml)
 
-    步骤二： 添加输入节点，在节点中定义输入变量： username（必填） 、password（必填）；
+!!! Tip ""
+    步骤⼀： 进入需要配置的工作空间，创建一个 Chatflow 类型的应用；
 
-    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start。    
+    步骤二： 在开始节点中定义输入变量： username（必填） 、password（必填）；
+
+    步骤三： 添加会话变量 chat_id（Number）和 access_token（String）；
+
+    步骤四： 添加条件分支，在开始节点后添加条件分支（IF）。判断条件：access_token 是否为空。为空：执行登录逻辑，调用 MCP 工具 mcp_start；
+
+    步骤五： 在 marketplace 中搜索 “MCP”，添加工具 “MCP SSE / StreamableHTTP”，添加 MCP 调用。工具名称为 mcp_start
 
     配置 MCP 工具参数（以 mcp_start 为例）：
 
     - 输入参数：
     ```
     {
-    "username": "{{username}}",
-    "password": "{{password}}"
+    "username": "{{开始节点的username}}",
+    "password": "{{开始节点的password}}"
     }
     
     ```
-     - MCP 服务配置：
+    - MCP 服务配置：
     ```
     {
-    "sqlbot_mcp": {
-    "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
-    "transport": "sse"
-    }
+        "sqlbot_mcp": {
+            "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+            "transport": "sse"
+        }
     }
     ```
+
+    步骤六：解析 chat_id 和 access_token
+
+    - 添加输入变量 “arg1”，选择 “mcp_start 的 text”
+
     - MCP 工具返回包含 chat_id 和 access_token 的 JSON。解析返回值，添加 代码执行 节点（Python）来解析 JSON：
     ```
     import json
@@ -205,24 +269,40 @@
     }
 
     ```
-     添加变量赋值节点，将 chat_id 和 access_token 存储为全局变量，供后续 MCP 调用使用。
 
+    - 添加输出变量 access_token（String）和 chat_id（Number）
+
+    步骤七： 变量赋值
+    
+    添加变量赋值节点，将 chat_id 和 access_token 存储为全局变量，供后续 MCP 调用使用。
+
+    步骤八： 执行 MCP 调用
+
+    调用 MCP 工具 mcp_question，工具名称为 mcp_question
+
+    - 参数设置
+        ```
+        {
+            "chat_id":{{#conversation.chat_id#}}, 
+            "question":"{{#sys.query#}}",
+            "token":"{{#conversation.access_token#}}"
+        }
+        ```
     - 执行后续 MCP 业务调用
 
-          ```
-          {
-          "sqlbot_mcp": {
-          "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
-          "transport": "sse"
-              }
-          }
-          ```
-     步骤四：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
+        ```
+        {
+            "sqlbot_mcp": {
+                "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+                "transport": "sse"
+            }
+        }
+        ```
+
+    步骤九：在流程末尾添加回答节点，将 MCP 返回的内容回复给用户。输入有效的 username 与 password 测试登录及 MCP 功能调用是否正常。
 
 
-![集成示例](img/mcp/dify_mcp.png)
-
-![集成示例](img/mcp/dify_mcp_effect.png)
+![集成示例](img/mcp/sqlbot_dify_mcp.png)
 
 ###  3.3 Coze 集成示例
 !!! Tip ""
