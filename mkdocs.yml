@@ -72,7 +72,6 @@ nav:
     - 常见问题:
         - 安装部署: faq/installation.md
         - 智能问数: faq/smart_question_description.md
-        - 模型配置: faq/model.md
         - 小助手应用: faq/assistant.md
     - 模型接入:
         - Ollama 部署模型接入 SQLBot: model_integration/ollama.md
