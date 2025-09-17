@@ -44,6 +44,7 @@
         -v ./data/sqlbot/images:/opt/sqlbot/images \
         -v ./data/sqlbot/logs:/opt/sqlbot/logs \
         -v ./data/postgresql:/var/lib/postgresql/data \
+        --privileged=true \
         dataease/sqlbot:dev-arm
     ```
 
