@@ -76,6 +76,7 @@ nav:
     - 模型接入:
         - Ollama 部署模型接入 SQLBot: model_integration/ollama.md
     - MCP 服务: mcp_server.md
+    - DataEase 接入: dataease_integration.md
     - 联系我们: contact.md
     
 markdown_extensions:
