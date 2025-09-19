@@ -83,6 +83,7 @@
     下载 Demo 代码 https://github.com/dataease/sqlbot-embedded-demo
 
     配置数据库信息
+
     ![示例](../img/embedding/project_config.png)
 
     在 frontend 目录执行
@@ -106,6 +107,7 @@
 
 !!! Abstract ""
     参考 assistan/float.vue 文件
+
     ![示例](../img/embedding/project_float.png)
 
     把 sqlbot 提供的嵌入 js 加载到宿主系统。
@@ -124,6 +126,7 @@
 
 !!! Abstract ""
     参考 assistant/full.vue 文件
+    
     ![示例](../img/embedding/project_fullscreen.png)
     
     如果是高级应用，必须登录才可以，因为要从页面获取凭证信息
