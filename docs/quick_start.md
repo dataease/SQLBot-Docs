@@ -1,5 +1,5 @@
 
-## 1 快速部署
+## 1 安装 SQLBot
 
 !!! Tip ""
     可以通过 1Panel 应用商店快速安装 SQLBot：
@@ -13,6 +13,8 @@
     ```
     
     详细步骤参考 [**1Panel 快速安装 SQLBot**](../installation/1panel_installtion/) 。
+
+    如果是用于生产环境，推荐使用 [**离线包方式**](../installation/offline_installtion/)  进行部署。
 
 ## 2 界面介绍
 
