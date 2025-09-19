@@ -186,7 +186,7 @@
 #### 7.2.2 验证渠道
 
 !!! Tip ""
-    添加渠道后，可以点击「测试」验证是否正常工作
+    添加渠道后，可以点击「测试」验证是否正常工作t
     ![oneapi_validate](../img/model_integration/oneapi_validate.png)
 
 #### 7.2.3 创建令牌
