@@ -1,7 +1,7 @@
 site_name: 'SQLBot 文档'
 site_url: 'https://sqlbot.cn/docs'
 site_description: 'SQLBot 是基于大模型和 RAG 的智能问数系统'
-site_author: 'SQLBot 开源项目组'
+site_author: '飞致云'
 repo_name: 'SQLBot'
 repo_url: 'https://github.com/dataease/SQLBot'
 
@@ -132,7 +132,7 @@ extra:
       warning: false
     analytics:
       provider: google
-      property: G-NG51348CBW
+      property: G-9362Z0KNSP
     social:
       - icon: fontawesome/brands/github
         link: https://github.com/dataease/SQLBot
