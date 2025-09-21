@@ -4,6 +4,8 @@
 
     SQLBot 是一款基于大语言模型（Large Language Model，LLM）和 RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。借助 SQLBot，用户可以实现数据的即问即答，快速提炼获取所需的数据信息及可视化图表，并且支持进一步开展智能分析。
 
+    SQLBot 由飞致云的 [DataEase](https://dataease.cn/) 开源团队出品。
+
 ![整体架构](./img/index/system-arch.png)
 
 ## 1 界面展示
