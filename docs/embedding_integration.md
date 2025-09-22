@@ -97,6 +97,7 @@
     ```
 
     访问 http://localhost:3000，如下图即运行正常
+
     ![示例](../img/embedding/project_demo.png)
 
     根据 SQLBot 中填写的信息填写系统设置表单，保存。当前是游客模式，登录后是 online 模式。
@@ -132,20 +133,24 @@
     如果是高级应用，必须登录才可以，因为要从页面获取凭证信息
     
     接入成功页面如下
+
     ![示例](../img/embedding/project_fullscreen_demo.png)
 
 ### 页面嵌入
 
 !!! Abstract ""
     参考 embedded/index.vue 文件
+
     ![示例](../img/embedding/project_page.png)
 
     核心代码与全屏接入一样，只是调用 mounted 方法参数有区别。这里的 token 请在后端生成，避免泄漏 app secret。token 生成的逻辑是把 appId 和 account 作为 payload，appSecret 作为 secret。
 
     接入成功页面如下
+
     ![示例](../img/embedding/project_page_demo.png)
 
     问数需要先选择数据源，与 SQLBot 页面一致
+    
     ![示例](../img/embedding/project_page_demo2.png)
 
 ### 高级应用 API 接口

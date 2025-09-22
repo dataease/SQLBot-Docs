@@ -41,6 +41,7 @@
                 -p 8001:8001 \
                 -e SERVER_IMAGE_HOST=http://47.92.75.231:8001/images/
                 -v data/sqlbot/excel:/opt/sqlbot/data/excel \
+                -v ./data/sqlbot/file:/opt/sqlbot/data/file \
                 -v data/sqlbot/images:/opt/sqlbot/images \
                 -v data/sqlbot/logs:/opt/sqlbot/logs \
                 -v data/postgresql:/var/lib/postgresql/data \
@@ -82,6 +83,7 @@
                   SQL_DEBUG: False
                 volumes:
                   - data/sqlbot/excel:/opt/sqlbot/data/excel
+                  - data/sqlbot/file:/opt/sqlbot/data/file
                   - data/sqlbot/images:/opt/sqlbot/images
                   - data/sqlbot/logs:/opt/sqlbot/logs
                   - data/postgresql:/var/lib/postgresql/data
