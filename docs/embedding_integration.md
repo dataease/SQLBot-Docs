@@ -150,7 +150,7 @@
     ![示例](../img/embedding/project_page_demo.png)
 
     问数需要先选择数据源，与 SQLBot 页面一致
-    
+
     ![示例](../img/embedding/project_page_demo2.png)
 
 ### 高级应用 API 接口
@@ -192,7 +192,7 @@
     |table.fields |Array[field] |[{...},{...},...] |require|
     |field.name |String |category_name |require|
     |field.comment |String |品类名称 |require|
-    |field.type |String |TEXT |db 字段类型 requre|
+    |field.type |String |TEXT |跟随具体数据库的字段类型 require|
 
     响应示例：
     ```json
