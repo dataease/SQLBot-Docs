@@ -189,6 +189,68 @@
     |field.comment |String |品类名称 |require|
     |field.type |String |TEXT |db 字段类型 requre|
 
+    响应示例：
+    ```json
+    {
+        "code": 200,
+        "data": [
+            {
+                "name": "数据源 1",
+                "type": "MySQL",
+                "host": "192.168.1.1",
+                "port": 3306,
+                "user": "user",
+                "password": "password",
+                "dataBase": "sqlbot_demo",
+                "schema": "schema",
+                "comment": "数据源1备注信息",
+                "tables": [
+                    // 无权限规则的数据表
+                    {
+                        "name": "数据表 1",
+                        "comment": "数据表 1 备注信息",
+                        "fields": [
+                            {
+                                "name": "age",
+                                "type": "bigint",
+                                "comment": "字段 1备注信息"
+                            },
+                            {
+                                "name": "gender",
+                                "type": "text",
+                                "comment": "字段 2备注信息"
+                            }
+                        ]
+                    },
+                    // 有权限限制的数据表，通过 sql 字段来限制
+                    {
+                        "name": "数据表 2",
+                        "comment": "数据表 2 备注信息",
+                        "sql": "select name, gender, class, score from student where class = 1 and score > 80",
+                        "fields": [
+                            {
+                                "name": "name",
+                                "type": "TEXT",
+                                "comment": "姓名"
+                            },
+                            {
+                                "name": "class",
+                                "type": "int",
+                                "comment": "字段 3备注信息"
+                            },
+                            {
+                                "name": "score",
+                                "type": "int",
+                                "comment": "字段 4备注信息"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    ```
+
     api 接口可以考虑预留参数 dsId 以及 tableId，以限定数据源和表进行问数。在多数据源场景下，对提升执行速度以及准确率都有明显效果。
 
     问数之前，SQLBot 会在宿主页面获取凭证信息调用 API，可以利用 param 类型的凭证作为参数，但是要保证实时更新页面中的凭证。比如设置一个限定数据源 ID 的参数。
