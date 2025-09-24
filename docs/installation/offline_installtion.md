@@ -57,7 +57,7 @@
     ## 是否使用外部数据库（仅限支持向量扩展的 PG 数据库）
     SQLBOT_EXTERNAL_DB=false
     ## 数据库地址
-    SQLBOT_DB_HOST=sqlbot-db
+    SQLBOT_DB_HOST=localhost
     ## 数据库端口 (仅使用外部数据库时才生效)
     SQLBOT_DB_PORT=5432
     ## SQLBot 数据库库名
