@@ -3,7 +3,7 @@
 ## 1 部署的过程中，找不到依赖包：sqlbot-xpack 
 
 !!! Abstract ""
-    打开地址：https://test.pypi.org/simple/sqlbot-xpack/ ，找到对应操作系统的依赖，下载即可。
+    包依赖地址： https://test.pypi.org/simple/sqlbot-xpack/ ，找到对应操作系统的依赖，执行 uv 命令自动拉取即可。
 
 ## 2 出现了报错信息：Signature has expired  
 
