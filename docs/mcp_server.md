@@ -174,7 +174,7 @@
         ```
         {
             "sqlbot_mcp": {
-                "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+                "url": "http://<SQLBot_MCP_IP>:8001/mcp",
                 "transport": "sse"
             }
         }
@@ -205,7 +205,7 @@
     ```
     {
         "sqlbot_mcp": {
-            "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+            "url": "http://<SQLBot_MCP_IP>:8001/mcp",
             "transport": "sse"
         }
     }
@@ -249,7 +249,7 @@
     ```
     {
         "sqlbot_mcp": {
-            "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+            "url": "http://<SQLBot_MCP_IP>:8001/mcp",
             "transport": "sse"
         }
     }
@@ -295,7 +295,7 @@
         ```
         {
             "sqlbot_mcp": {
-                "uri": "http://<SQLBot_MCP_IP>:8001/mcp",
+                "url": "http://<SQLBot_MCP_IP>:8001/mcp",
                 "transport": "sse"
             }
         }
