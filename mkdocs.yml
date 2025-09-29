@@ -64,6 +64,7 @@ nav:
             - 成员管理:  user_manual/member.md
             - 权限配置:  user_manual/permission.md
             - 术语配置:  user_manual/professional.md
+            - SQL 示例库: user_manual/data_training.md
         - 系统设置:
             - 用户管理: system/user.md
             - 工作空间: system/workspace.md
