@@ -81,6 +81,7 @@ nav:
     - MCP 服务: mcp_server.md
     - DataEase 接入: dataease_integration.md
     - 嵌入式对接: embedding_integration.md
+    - 商业版本: buy.md
     - 联系我们: contact.md
     
 markdown_extensions:
