@@ -1,11 +1,9 @@
 !!! Abstract ""
-    嵌入式对接分为三类，分别是：
 
-    - 小助手-基础应用
-    - 小助手-高级应用
-    - 页面嵌入
-    
-    其中小助手分为两小类，分别是：浮窗嵌入、全屏嵌入。
+    SQLBot 支持通过【小助手嵌入】和【网页嵌入】的方式将智能问数能力嵌入到外部系统页面中。
+
+
+    其中【小助手嵌入】包含【基础应用】和【高级应用】两种模式，每种模式都支持「浮窗嵌入」和「全屏嵌入」两种呈现方式。
     
     嵌入式 Demo 地址：https://github.com/dataease/sqlbot-embedded-demo
 
@@ -17,9 +15,11 @@
     | 高级应用 | 宿主权限 | 宿主数据源(api 接口) | 有权限要求，有自己的权限体系 |
     | 页面嵌入 | SQLBot 权限 | SQLBot 数据源 | 有权限要求，无自己的权限体系 |
 
-## 新建应用
+## 1 新建应用
 
-### 小助手-基础应用
+### 1.1 小助手嵌入
+
+#### 1.1.1 基础应用
 
 !!! Abstract ""
     使用 admin 账号登录 SQLBot，切到系统设置菜单-嵌入式管理，新建对应的应用。
@@ -32,57 +32,86 @@
     ![示例](../img/embedding/sqlbot_basic_datasource.png)
     小助手-基础应用有“游客/员工”简单权限模式，游客只能访问“公共”数据源
 
-### 小助手-高级应用
+
+#### 1.1.1 高级应用
 
 !!! Abstract ""
     高级应用在新建环节和基础应用的区别就是数据源，通过 API 接口的方式获取。
     ![示例](../img/embedding/sqlbot_advanced_info.png)
     ![示例](../img/embedding/sqlbot_advanced_interface.png)
 
-    开启 AES 加密，那么宿主系统提供的 API 接口中需要对相应的字段进行 AES 加密。
-    一般场景下宿主 API 接口会有认证机制，例如 token、cookie 等。这些凭证信息一般情况下会存储在前端页面，填写接口凭证，SQLBot 会在宿主页面上根据填写的凭证信息去获取凭证但不存储，获取的时机是在每次“问数”。SQLBot 根据获取到的凭证去调用宿主系统的 API 接口。有些基于 httpOnly 的 cookie 凭证，SQLBot 无法获取，可以为数据源接口额外定义一个认证凭证。
-    ![示例](../img/embedding/sqlbot_advanced_interface2.png)
+!!! Abstract ""
 
-    注意：目标凭证字段（非必填）支持 js 表达式。
+    - AES 加密：当开启 AES 加密时，宿主系统提供的 API 接口需对相关字段进行 AES 加密处理。
 
-    以 Demo 系统为例：
+    - 接口认证
+        - 在常见场景下，宿主 API 接口通常具备认证机制（如 Token、Cookie 等）。
+
+        - 这些认证凭证一般由前端页面存储，用户在 SQLBot 中填写接口凭证后，SQLBot 会在宿主页面上按需读取凭证并调用 API 接口，但 不会存储任何凭证信息。
+
+        - 凭证的读取发生在每次“问数”时，SQLBot 根据获取到的凭证调用宿主系统的 API 接口。
+
+    - httpOnly Cookie 场景：对于基于 httpOnly Cookie 的认证方式，由于 SQLBot 无法直接读取此类 Cookie，可以在数据源接口中额外定义一个认证凭证以实现访问。  
+
+ ![示例](../img/embedding/sqlbot_advanced_interface2.png)
+
+!!! Abstract ""
+
+    **注意**：目标凭证字段（非必填）支持 JS 表达式，可灵活处理凭证值。
+
+    Demo 系统示例：
     ![示例](../img/embedding/sqlbot_advanced_demo.png)
 
-    分别解释接口凭证的字段
+    以下分别说明接口凭证各字段的含义：
 
-    源系统凭证类型 localStorage，凭证名称 sqlbot-embedded-token。
+    源系统凭证：
 
-    解释：从 localStirage 中获取 key 为 sqlbot-embedded-token 的信息。代码：
+      - 类型：localStorage
+
+      - 凭证名称：sqlbot-embedded-token
+
+      - 含义：从 localStorage 中读取 key 为 sqlbot-embedded-token 的值。
+
+      - 示例代码：
 
     ```
     var source_val = localStorage.getItem('sqlbot-embedded-token')
     ```
 
-    目标凭证`Bearer ${JSON.parse(JSON.parse(source_val).v)}`。
+    目标凭证
+    
+      - 值： `Bearer ${JSON.parse(JSON.parse(source_val).v)}`。
 
-    解释：根据上一步获取到的 source_val 进一步拼接凭证，代码：
+      - 含义：基于上一步获取的 source_val 进行解析并拼接成最终凭证。
+      - 示例代码：
+
     ```
     source_val = `Bearer ${JSON.parse(JSON.parse(source_val).v)}` 
     ```
     
-    目标凭证位置 header，名称 sqlbot-embedded-token。
+    目标凭证位置
 
-    解释：把上一部获取到的凭证放在请求头的 sqlbot-embedded-token 中去调 API。
+      - 位置：header
 
-### 页面嵌入
+      - 名称：sqlbot-embedded-token
+
+      - 含义：将拼接好的凭证放在请求头中，以 sqlbot-embedded-token 作为 Header 名称调用 API。
+
+
+### 1.2 页面嵌入
 
 !!! Abstract ""
-    填写名称、跨域设置
+    填写名称、跨域设置：
     ![示例](../img/embedding/sqlbot_page.png)
 
     记录 APP ID 以及 APP Secret，后面编码环节用得到。
 
-## 宿主系统实现
+## 2 宿主系统实现
 
 !!! Abstract ""
     下载 Demo 代码 https://github.com/dataease/sqlbot-embedded-demo
 
-    配置数据库信息
+    配置数据库信息：
 
     ![示例](../img/embedding/project_config.png)
 
@@ -104,7 +133,7 @@
 
     代码层面基础应用和高级应用嵌入方式基本没有区别。
 
-### 浮窗模式
+### 2.1 浮窗模式
 
 !!! Abstract ""
     参考 assistan/float.vue 文件
@@ -123,7 +152,7 @@
     如接入成功，访问小助手浮窗宿主页面，右下角会出现浮动图标，如下图：
     ![示例](../img/embedding/project_float_demo.png)
 
-### 全屏模式
+### 2.2 全屏模式
 
 !!! Abstract ""
     参考 assistant/full.vue 文件
@@ -136,7 +165,7 @@
 
     ![示例](../img/embedding/project_fullscreen_demo.png)
 
-### 页面嵌入
+### 2.3 页面嵌入
 
 !!! Abstract ""
     参考 embedded/index.vue 文件
@@ -153,7 +182,7 @@
 
     ![示例](../img/embedding/project_page_demo2.png)
 
-### 高级应用 API 接口
+### 2.4 高级应用 API 接口
 
 !!! Abstract ""
     接口基本信息
