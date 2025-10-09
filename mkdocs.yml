@@ -44,6 +44,7 @@ nav:
     - 系统架构: system_arch.md
     - 安装部署:
         - 1Panel 安装: installation/1panel_installtion.md
+        - 阿里云安装: installation/aliyun_installtion.md
         - 离线安装: installation/offline_installtion.md
         - 在线安装: installation/online_installtion.md
         - 离线升级: installation/offline_upgrade.md
@@ -82,6 +83,7 @@ nav:
     - MCP 服务: mcp_server.md
     - DataEase 接入: dataease_integration.md
     - 嵌入式对接: embedding_integration.md
+    - 商业版本: buy.md
     - 联系我们: contact.md
     
 markdown_extensions:

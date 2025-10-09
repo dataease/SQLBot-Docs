@@ -12,6 +12,7 @@
 !!! Tip ""
     进入【SQL 示例库】页面：在系统导航栏点击【设置】>【SQL 示例库】。
 ![data_trainning.png](../img/user_manual/setting/data_trainning.png)
+
 !!! Tip ""
     点击【添加示例 SQL】按钮，输入问题描述、【示例 SQL】，并选择数据源，进行新建【SQL 示例】，填写完成后点击【保存】，【SQL 示例】创建成功。
 ![add_data_training.png](../img/user_manual/setting/add_data_training.png)
