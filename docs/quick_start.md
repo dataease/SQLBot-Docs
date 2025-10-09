@@ -87,6 +87,8 @@
 
     模型生成图表后，可更换图表类型、可查看明细数据和 SQL 查询语句等。支持继续提问、进行数据分析或预测。
 
+     Excel 示例文件：[**历史销售数据**](https://resource-fit2cloud-com.oss-cn-hangzhou.aliyuncs.com/sqlbot/sales_history.xlsx)。
+
 ![开启智能问数](img/index/chat_info.png)
 
 
