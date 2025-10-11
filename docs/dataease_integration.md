@@ -1,5 +1,6 @@
 !!! Tip ""
     SQLBot v1.1.3 及以上版本支持配置接入到 DataEase 中，为 DataEase 提供智能问数功能。
+    DataEase 版本为 v2.10.13 及以上版本。
 
 ## 1 SQLBot 侧配置
 
@@ -23,7 +24,11 @@
     - 源系统凭证类型: localStorage
     - 目标凭证名称: x-de-token
     - 目标凭证位置: header
-    - 目标凭证: JSON.parse(`${source_val}`)['v'].replace(/^['\"]|['\"]$/g, '')
+    - 目标凭证: 
+    ```javascript
+    JSON.parse(`${source_val}`)['v'].replace(/^['\"]|['\"]$/g, '')
+
+    ```
 
     ![示例](img/dataease/dataease_sqlbot_interface_info.png)
 
@@ -39,3 +44,69 @@
 
     返回工作台后，即可在 DataEase 右上角的快捷工具栏看到 SQLBot。
     ![示例](img/dataease/dataease_sqlbot.png)
+
+!!! Tip ""
+    若包含 Excel 数据源或 API 数据源，还需要修改 DataEase 的配置文件。
+
+    进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 "ds-host" 配置，取值为 DataEase 服务器的 ip。配置文件修改后大致如下：
+    ```yml
+    server:
+        tomcat:
+            connection-timeout: 70000
+        servlet:
+            context-path:
+    spring:
+        servlet:
+            multipart:
+                max-file-size: 500MB
+                max-request-size: 500MB
+        datasource:
+            url: jdbc:mysql://mysql-de:3306/dataease?autoReconnect=false&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+            username: root
+            password: Password123@mysql
+    dataease:
+        ds-host: 47.92.24.215
+        apisix-api:
+            domain: http://apisix:9180
+            key: 7x1lZljpOvH5u9ednAg4wYRS9XPyGykpnHk3FKHKPzI=
+        export:
+            views:
+                limit: 100000
+            dataset:
+                limit: 100000
+        origin-list: http://localhost:8000
+        login_timeout: 960
+        selenium-server: http://de-selenium:4444/wd/hub
+        dataease-servers: dataease
+    task:
+        executor:
+            address: http://sync-task-actuator:9001
+            log:
+                path: /opt/dataease2.0/logs/sync-task/task-handler-log
+    ```
+    若使用的是 DataEase 内置的 MySQL，还需要将内置 MySQL 的运行端口暴露出来。修改 /opt/dataease2.0/docker-compose-mysql.yml，内容大致如下：
+    ```yml
+    version: '3'
+    services:
+
+    mysql-de:
+        image: registry.cn-qingdao.aliyuncs.com/dataease/mysql:8.4.5
+        container_name: ${DE_MYSQL_HOST}
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u${DE_MYSQL_USER}", "-p${DE_MYSQL_PASSWORD}", "--protocol","tcp"]
+            interval: 5s
+            timeout: 3s
+            retries: 10
+        env_file:
+            - ${DE_BASE}/dataease2.0/conf/mysql.env
+        ports:
+            - 3306:3306
+        volumes:
+            - ${DE_BASE}/dataease2.0/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+            - ${DE_BASE}/dataease2.0/bin/mysql:/docker-entrypoint-initdb.d/
+            - ${DE_BASE}/dataease2.0/data/mysql:/var/lib/mysql
+        networks:
+            - dataease-network
+    ```
+
+    修改完成后，执行 service dataease restart，重启 DataEase 服务即可。
