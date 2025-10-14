@@ -164,7 +164,7 @@
 
     步骤二： 在「基本信息」里添加两个用户输入，分别是 username 和 password，添加两个会话变量，分别是 sqlbot_token 和 sqlbot_chat_id
 
-    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：会话变量>access_token 是否为空。为空：执行登录逻辑，添加 MCP 调用，调用 MCP 工具 mcp_start。    
+    步骤三： 添加条件判断，在开始节点后添加条件分支（IF）。判断条件：会话变量>sqlbot_token 是否为空。为空：执行登录逻辑，添加 MCP 调用，调用 MCP 工具 mcp_start。    
 
     步骤四： 配置 MCP 登录配置：
 
@@ -187,16 +187,16 @@
     步骤五： 配置自定义工具：
 
     - MCP 调用后添加「自定义工具」。
-    MCP 工具返回包含 chat_id 和 access_token 的 JSON。添加输入参数，将 MCP 调用结果赋值给参数“arg1”。此外，再添加工具节点（Python）来解析 JSON，工具内容：
+    MCP 工具返回包含 sqlbot_chat_id 和 sqlbot_token 的 JSON。添加输入参数，将 MCP 调用结果赋值给参数“arg1”。此外，再添加工具节点（Python）来解析 JSON，工具内容：
     ```
     import json
     def main1(arg1):
     json_obj = json.loads(data[0])
-    return {"token":json_obj["data"]["access_token"], "chat_id":json_obj["data"]["chat_id"]}
+    return {"token":json_obj["data"]["sqlbot_token"], "sqlbot_chat_id":json_obj["data"]["chat_id"]}
     ```
     
     步骤六： 变量赋值
-    添加变量赋值节点，将 chat_id 和 access_token 存储为会话变量，供后续 MCP 调用使用。
+    添加变量赋值节点，将 sqlbot_chat_id 和 sqlbot_token 存储为会话变量，供后续 MCP 调用使用。
     
     步骤七： 问数 MCP 调用配置
     添加 MCP 调用节点，配置问数调用
