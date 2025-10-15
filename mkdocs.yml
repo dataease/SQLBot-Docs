@@ -59,6 +59,7 @@ nav:
             - 配置 Oracle 数据源: user_manual/datasource_oracle.md
             - 配置 PostgreSQL 数据源: user_manual/datasource_postgresql.md
             - 配置 SQL Server 数据源: user_manual/datasource_sqlserver.md
+            - 配置 达梦 数据源: user_manual/datasource_clickhouse.md
             - 配置 达梦 数据源: user_manual/datasource_DM.md
         - 智能问数:  user_manual/smart_question_description.md
         - 仪表板: user_manual/dashboard_description.md
