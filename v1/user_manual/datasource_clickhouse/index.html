@@ -12,13 +12,13 @@
         <meta name="author" content="飞致云">
       
       
-        <link rel="canonical" href="https://sqlbot.cn/docs/v1/installation/1panel_installtion/">
+        <link rel="canonical" href="https://sqlbot.cn/docs/v1/user_manual/datasource_clickhouse/">
       
       
-        <link rel="prev" href="../../system_arch/">
+        <link rel="prev" href="../datasource_sqlserver/">
       
       
-        <link rel="next" href="../aliyun_installtion/">
+        <link rel="next" href="../datasource_DM/">
       
       
       <link rel="icon" href="../../img/facio.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>1Panel 安装 - SQLBot 文档</title>
+        <title>配置 ClickHouse 数据源 - SQLBot 文档</title>
       
     
     
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-1panel" class="md-skip">
+        <a href="#clickhouse" class="md-skip">
           跳转至
         </a>
       
@@ -208,7 +208,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1Panel 安装
+              配置 ClickHouse 数据源
             
           </span>
         </div>
@@ -446,6 +446,305 @@
       
   
   
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    安装部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            安装部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/1panel_installtion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1Panel 安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/aliyun_installtion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    阿里云安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/offline_installtion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    离线安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/online_installtion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    在线安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/offline_upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    离线升级
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/online_arm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ARM在线安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    命令行工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/source_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    源码运行
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    功能手册
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            功能手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -477,369 +776,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    安装部署
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            安装部署
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    1Panel 安装
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    1Panel 安装
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-1panel" class="md-nav__link">
-    <span class="md-ellipsis">
-      1 安装 1Panel
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-sqlbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 安装 SQLBot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-sqlbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 访问 SQLBot
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aliyun_installtion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    阿里云安装
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../offline_installtion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    离线安装
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../online_installtion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    在线安装
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../offline_upgrade/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    离线升级
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../online_arm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ARM在线安装
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    命令行工具
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../source_run/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    源码运行
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    功能手册
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            功能手册
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -855,7 +792,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             数据源
@@ -869,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_description/" class="md-nav__link">
+      <a href="../datasource_description/" class="md-nav__link">
         
   
   
@@ -892,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_excel/" class="md-nav__link">
+      <a href="../datasource_excel/" class="md-nav__link">
         
   
   
@@ -915,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_mysql/" class="md-nav__link">
+      <a href="../datasource_mysql/" class="md-nav__link">
         
   
   
@@ -938,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_oracle/" class="md-nav__link">
+      <a href="../datasource_oracle/" class="md-nav__link">
         
   
   
@@ -961,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_postgresql/" class="md-nav__link">
+      <a href="../datasource_postgresql/" class="md-nav__link">
         
   
   
@@ -984,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_sqlserver/" class="md-nav__link">
+      <a href="../datasource_sqlserver/" class="md-nav__link">
         
   
   
@@ -1004,10 +941,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../user_manual/datasource_clickhouse/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    配置 ClickHouse 数据源
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1018,6 +977,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 前提条件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 配置数据源链接步骤
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1030,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/datasource_DM/" class="md-nav__link">
+      <a href="../datasource_DM/" class="md-nav__link">
         
   
   
@@ -1061,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/smart_question_description/" class="md-nav__link">
+      <a href="../smart_question_description/" class="md-nav__link">
         
   
   
@@ -1084,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/dashboard_description/" class="md-nav__link">
+      <a href="../dashboard_description/" class="md-nav__link">
         
   
   
@@ -1157,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/member/" class="md-nav__link">
+      <a href="../member/" class="md-nav__link">
         
   
   
@@ -1180,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/permission/" class="md-nav__link">
+      <a href="../permission/" class="md-nav__link">
         
   
   
@@ -1203,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/professional/" class="md-nav__link">
+      <a href="../professional/" class="md-nav__link">
         
   
   
@@ -1226,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/data_training/" class="md-nav__link">
+      <a href="../data_training/" class="md-nav__link">
         
   
   
@@ -1249,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_manual/prompt/" class="md-nav__link">
+      <a href="../prompt/" class="md-nav__link">
         
   
   
@@ -1799,6 +1796,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1807,27 +1806,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-1panel" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1 安装 1Panel
+      1 前提条件
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-sqlbot" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2 安装 SQLBot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-sqlbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      3 访问 SQLBot
+      2 配置数据源链接步骤
     </span>
   </a>
   
@@ -1852,43 +1842,41 @@
   
 
 
-  <h1>1Panel 安装</h1>
-
-<h2 id="1-1panel">1 安装 1Panel<a class="headerlink" href="#1-1panel" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>关于 1Panel 的安装部署与基础功能介绍，请参考 <a href="https://1panel.cn/docs/"><strong>1Panel 官方文档</strong></a> 。完成 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    </p>
-</div>
-<p><img alt="1panel" src="../../img/installation/1panel_index.png" /></p>
-<h2 id="2-sqlbot">2 安装 SQLBot<a class="headerlink" href="#2-sqlbot" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>安装好 PostgreSQL 后，进入应用商店应用列表，找到 SQLBot 应用进行安装。</p>
-</div>
-<p><img alt="安装SQLBot" src="../../img/installation/1p_install_sqlbot.png" /></p>
-<div class="admonition abstract">
-<p>在应用详情页选择最新的 SQLBot 版本进行安装，进行相关参数设置。</p>
+<h1 id="clickhouse">配置 ClickHouse 数据源<a class="headerlink" href="#clickhouse" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 前提条件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p>在配置 ClickHouse 数据源 之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：</p>
 <ul>
-<li>名称：要创建的 SQLBot 应用的名称。</li>
-<li>管理员：SQLBot 应用初始化创建的超级管理员用户名。</li>
-<li>管理员密码：SQLBot 应用初始化创建的超级管理员密码（后续登录系统可以更改）。</li>
-<li>端口：SQLBot 应用的服务端口设置为 8000,MCP 服务端口设置为 8001。</li>
-<li>图片服务器地址：<strong><a href="http://xx.xx.xx.xxx:8001/images/">http://xx.xx.xx.xxx:8001/images/</a></strong></li>
-<li>端口外部访问：SQLBot 应用可以使用 IP:PORT 进行访问（SQLBot 应用必须打开外部端口访问）。</li>
+<li>ClickHouse 数据库版本：没有限制；</li>
+<li>网络连通：SQLBot 所在环境可直连 ClickHouse 数据库主机，确保网络通畅、端口开放；</li>
+<li>账号权限：提供的用户名需具备查询权限；</li>
 </ul>
 </div>
-<p><img alt="SQLBot参数设置" src="../../img/installation/sqlbot_info.png" /></p>
-<div class="admonition abstract">
-<p>点击开始安装后，页面自动跳转到已安装应用列表，等待安装的 SQLBot 应用状态变为已启动。</p>
+<h2 id="2">2 配置数据源链接步骤<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p>以下是将 ClickHouse 数据库作为数据源接入的详细流程：</p>
 </div>
-<p><img alt="SQLBot安装状态" src="../../img/installation/sqlbot_success.png" /></p>
-<h2 id="3-sqlbot">3 访问 SQLBot<a class="headerlink" href="#3-sqlbot" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>安装成功后即可通过浏览器访问地址 <code>http://目标服务器 IP 地址:8000</code>，并使用默认的管理员用户和密码登录 SQLBot。</p>
-<div class="highlight"><pre><span></span><code>用户名: admin
-
-密码: SQLBot@123456
-</code></pre></div>
+<div class="admonition tip">
+<p>步骤一：选择数据源类型。在【新建数据源】页面选择 “ClickHouse” 作为数据源类型。</p>
 </div>
-<p><img alt="访问SQLBot" src="../../img/installation/login_sqlbot.png" /></p>
+<p><img alt="支持的数据源类型" src="../../img/user_manual/datasource/datasource_list.png" /></p>
+<div class="admonition tip">
+<p>步骤二：填写连接与认证信息。进入【配置信息】页后，填入收集的 IP 、端口、数据库等相关的信息。数据源检验，校验成功后即可进行下一步。</p>
+</div>
+<p><img alt="配置 ClickHouse 连接信息" src="../../img/user_manual/datasource/add_clickhouse.png" /></p>
+<div class="admonition tip">
+<p>步骤三：选择数据表，系统会拉取该库下所有表/视图并以列表形式展示：</p>
+<ul>
+<li>搜索：可在顶部搜索框输入关键词快速过滤；</li>
+<li>全选/反选：点击表名左侧复选框，支持批量选择；</li>
+</ul>
+<p>数据量过大可能会导致操作超时或者无响应，在勾选的数据表数量超过 30 张时，系统会在【保存】前弹出二次确认。</p>
+</div>
+<p><img alt="选择数据表" src="../../img/user_manual/datasource/save_sqlserver.png" /></p>
+<div class="admonition tip">
+<p>对创建完成的 ClickHouse 数据源,可直接开启智能问数。</p>
+</div>
+<p><img alt="问数 ClickHouse" src="../../img/user_manual/datasource/question_clickhouse.png" /></p>
 
 
 
