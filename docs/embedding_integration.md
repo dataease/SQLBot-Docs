@@ -230,7 +230,7 @@
         "data": [
             {
                 "name": "数据源 1",
-                "type": "MySQL",
+                "type": "mysql",
                 "host": "192.168.1.1",
                 "port": 3306,
                 "user": "user",
