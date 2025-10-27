@@ -470,6 +470,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.2.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v120" class="md-nav__link">
     <span class="md-ellipsis">
       v1.2.0
@@ -1848,6 +1857,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.2.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v120" class="md-nav__link">
     <span class="md-ellipsis">
       v1.2.0
@@ -1910,6 +1928,54 @@
 </ul>
 </div>
 <h2 id="2">2 更新内容<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="v121">v1.2.1<a class="headerlink" href="#v121" title="Permanent link">&para;</a></h3>
+<p>2025 年 10 月 24 日</p>
+<div class="admonition tip">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>外观配置(X-Pack)：Logo 和网站名称优化支持更灵活的外观配置。</li>
+<li>系统增强：新增 PM2 支持,使用PM2管理服务端渲染服务，确保 g2-ssr 高可用性</li>
+<li>API ：新增 API 接口，支持灵活控制助手聊天记录的显示与隐藏，助手聊天历史可见性控制。</li>
+<li>向量检索：支持向量检索直接匹配数据源，提升检索准确性。</li>
+<li>向量检索：支持向量检索匹配具体数据表，实现更精准的数据定位。</li>
+<li>数据处理：优化数据处理能力，支持大数值数据的图表展示和 Excel 导出。</li>
+<li>SQL 功能：优化 SQL 模板生成逻辑，提高 SQL 语句的准确性和效率</li>
+<li>数据源：新增 StarRocks 数据库连接支持。</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>Docker 构建优化：优化 Docker 构建流程，支持 ARM 架构构建。</li>
+<li>高级助手：解决查看历史记录时遇到的认证问题。</li>
+<li>小助手：浮窗模式小助手层级优化，将浮窗助手的 DOM 层级设置为最高，避免被其他元素遮挡。</li>
+<li>向量化任务：初始化重构，优化服务启动时的向量化任务处理流程。</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>自定义提示词(X-Pack)：修复详情页中有效数据源从"部分数据源"改为"全部数据源"后显示不一致的问题。</li>
+<li>自定义提示词(X-Pack)：修正自定义提示词详情页标题显示的错误。</li>
+<li>仪表板：修复 BigInt 类型数据添加到仪表板后出现的数据失真的问题。</li>
+<li>仪表板：修复添加图表时显示图表图像的直角的问题。</li>
+<li>仪表板：修复在仪表板上选择图表类型后再次添加时显示错误类型的问题。</li>
+<li>智能问数：修复全屏模式下圆角丢失的问题。</li>
+<li>智能问数：优化错误信息查看体验，添加滚动条，自适应宽度和高度。</li>
+<li>登录：提高登录页面背景图片的清晰度。</li>
+<li>数据源：修复'Session'对象缺少'exec'属性的问题。</li>
+<li>数据源：修复高级助手动态数据源，实现不区分大小写的类型处理。</li>
+<li>数据源：修复 Elasticsearch SSL 连接相关问题</li>
+<li>数据源：修复 Oracle 数据库选择表时的错误。</li>
+<li>数据源：修复获取数据源表或模式时的线程阻塞的问题</li>
+<li>数据源：优化线程中的 SQLAlchemy Session，改进多线程环境下的数据库会话管理。</li>
+<li>小助手：修复助手用户标识的错误。</li>
+<li>系统操作：修复删除工作区后无法切换到其他工作区的问题。</li>
+<li>系统配置：修复配置文件中的默认密码更改在前端未生效的问题。</li>
+<li>API：修改聊天 API，优化聊天接口逻辑。</li>
+<li>其他：修复代码中的拼写错误。</li>
+</ul>
+</div>
 <h3 id="v120">v1.2.0<a class="headerlink" href="#v120" title="Permanent link">&para;</a></h3>
 <p>2025 年 9 月 30 日</p>
 <div class="admonition tip">
@@ -1940,7 +2006,7 @@
 <p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
 <ul>
 <li>助手名称：修复助手名称更改后，嵌入页面左上角未同步更新的问题。</li>
-<li>仪表板图标：修复仪表板中图标未垂直居中的显示问题。</li>
+<li>仪表板：修复仪表板中图标未垂直居中的显示问题。</li>
 <li>系统管理导航：修复点击 logo 默认跳转到用户管理的问题。</li>
 <li>左侧菜单：修复左侧菜单栏 logo 信息显示错误的问题。</li>
 <li>MCP：修复 SQL 执行结果为空时 MCP 聊天运行错误的问题。</li>
