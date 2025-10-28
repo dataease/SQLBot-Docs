@@ -2179,12 +2179,12 @@ uv 0.8.13
 <div class="admonition abstract">
 <p>执行命令安装 nodejs。
 <div class="highlight"><pre><span></span><code># 下载并安装 nodejs，node 版本可能会变化，如版本升级，请更新连接
-wget https://nodejs.org/dist/latest-v22.x/node-v22.19.0-linux-x64.tar.gz
-tar xvf node-v22.19.0-linux-x64.tar.gz
-mv node-v22.19.0-linux-x64 /opt/node-v22.19.0
+wget https://nodejs.org/dist/latest-v22.x/node-v22.21.0-linux-x64.tar.gz
+tar xvf node-v22.21.0-linux-x64.tar.gz
+mv node-v22.21.0-linux-x64 /opt/node-v22.21.0
 
 # 添加环境变量
-echo &quot;export PATH=\$PATH:/opt/node-v22.19.0/bin&quot; &gt;&gt; ~/.bashrc
+echo &quot;export PATH=\$PATH:/opt/node-v22.21.0/bin&quot; &gt;&gt; ~/.bashrc
 
 # 使环境变量生效
 source ~/.bashrc
@@ -2193,38 +2193,38 @@ source ~/.bashrc
 <div class="admonition abstract">
 <p>验证 nodejs。
 <div class="highlight"><pre><span></span><code>root@iZt4ndy6544y6f1i99ahw0Z:~# node --version
-v22.18.0
+v22.21.0
 
 root@iZt4ndy6544y6f1i99ahw0Z:~# npm version
 {
-    npm: &#39;10.9.3&#39;,
-    node: &#39;22.18.0&#39;,
-    acorn: &#39;8.15.0&#39;,
-    ada: &#39;2.9.2&#39;,
-    amaro: &#39;1.1.0&#39;,
-    ares: &#39;1.34.5&#39;,
-    brotli: &#39;1.1.0&#39;,
-    cjs_module_lexer: &#39;2.1.0&#39;,
-    cldr: &#39;47.0&#39;,
-    icu: &#39;77.1&#39;,
-    llhttp: &#39;9.3.0&#39;,
-    modules: &#39;127&#39;,
-    napi: &#39;10&#39;,
-    nbytes: &#39;0.1.1&#39;,
-    ncrypto: &#39;0.0.1&#39;,
-    nghttp2: &#39;1.64.0&#39;,
-    openssl: &#39;3.0.16&#39;,
-    simdjson: &#39;3.13.0&#39;,
-    simdutf: &#39;6.4.2&#39;,
-    sqlite: &#39;3.50.2&#39;,
-    tz: &#39;2025b&#39;,
-    undici: &#39;6.21.2&#39;,
-    unicode: &#39;16.0&#39;,
-    uv: &#39;1.51.0&#39;,
-    uvwasi: &#39;0.0.21&#39;,
-    v8: &#39;12.4.254.21-node.27&#39;,
-    zlib: &#39;1.3.1-470d3a2&#39;,
-    zstd: &#39;1.5.7&#39;
+  npm: &#39;10.9.4&#39;,
+  node: &#39;22.21.0&#39;,
+  acorn: &#39;8.15.0&#39;,
+  ada: &#39;2.9.2&#39;,
+  amaro: &#39;1.1.4&#39;,
+  ares: &#39;1.34.5&#39;,
+  brotli: &#39;1.1.0&#39;,
+  cjs_module_lexer: &#39;2.1.0&#39;,
+  cldr: &#39;47.0&#39;,
+  icu: &#39;77.1&#39;,
+  llhttp: &#39;9.3.0&#39;,
+  modules: &#39;127&#39;,
+  napi: &#39;10&#39;,
+  nbytes: &#39;0.1.1&#39;,
+  ncrypto: &#39;0.0.1&#39;,
+  nghttp2: &#39;1.64.0&#39;,
+  openssl: &#39;3.5.4&#39;,
+  simdjson: &#39;3.13.0&#39;,
+  simdutf: &#39;6.4.2&#39;,
+  sqlite: &#39;3.50.4&#39;,
+  tz: &#39;2025b&#39;,
+  undici: &#39;6.22.0&#39;,
+  unicode: &#39;16.0&#39;,
+  uv: &#39;1.51.0&#39;,
+  uvwasi: &#39;0.0.23&#39;,
+  v8: &#39;12.4.254.21-node.33&#39;,
+  zlib: &#39;1.3.1-470d3a2&#39;,
+  zstd: &#39;1.5.7&#39;
 }
 </code></pre></div></p>
 </div>
@@ -2297,7 +2297,7 @@ npm install &amp;&amp; npm run build
 
 # 编译后端
 cd ../backend
-uv sync
+uv sync --extra cpu
 </code></pre></div>
 </div>
 <h3 id="34">3.4 运行<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
