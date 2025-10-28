@@ -77,12 +77,12 @@
     执行命令安装 nodejs。
     ```
     # 下载并安装 nodejs，node 版本可能会变化，如版本升级，请更新连接
-    wget https://nodejs.org/dist/latest-v22.x/node-v22.19.0-linux-x64.tar.gz
-    tar xvf node-v22.19.0-linux-x64.tar.gz
-    mv node-v22.19.0-linux-x64 /opt/node-v22.19.0
+    wget https://nodejs.org/dist/latest-v22.x/node-v22.21.0-linux-x64.tar.gz
+    tar xvf node-v22.21.0-linux-x64.tar.gz
+    mv node-v22.21.0-linux-x64 /opt/node-v22.21.0
     
     # 添加环境变量
-    echo "export PATH=\$PATH:/opt/node-v22.19.0/bin" >> ~/.bashrc
+    echo "export PATH=\$PATH:/opt/node-v22.21.0/bin" >> ~/.bashrc
     
     # 使环境变量生效
     source ~/.bashrc
@@ -91,38 +91,38 @@
     验证 nodejs。
     ```
     root@iZt4ndy6544y6f1i99ahw0Z:~# node --version
-    v22.18.0
+    v22.21.0
     
     root@iZt4ndy6544y6f1i99ahw0Z:~# npm version
     {
-        npm: '10.9.3',
-        node: '22.18.0',
-        acorn: '8.15.0',
-        ada: '2.9.2',
-        amaro: '1.1.0',
-        ares: '1.34.5',
-        brotli: '1.1.0',
-        cjs_module_lexer: '2.1.0',
-        cldr: '47.0',
-        icu: '77.1',
-        llhttp: '9.3.0',
-        modules: '127',
-        napi: '10',
-        nbytes: '0.1.1',
-        ncrypto: '0.0.1',
-        nghttp2: '1.64.0',
-        openssl: '3.0.16',
-        simdjson: '3.13.0',
-        simdutf: '6.4.2',
-        sqlite: '3.50.2',
-        tz: '2025b',
-        undici: '6.21.2',
-        unicode: '16.0',
-        uv: '1.51.0',
-        uvwasi: '0.0.21',
-        v8: '12.4.254.21-node.27',
-        zlib: '1.3.1-470d3a2',
-        zstd: '1.5.7'
+      npm: '10.9.4',
+      node: '22.21.0',
+      acorn: '8.15.0',
+      ada: '2.9.2',
+      amaro: '1.1.4',
+      ares: '1.34.5',
+      brotli: '1.1.0',
+      cjs_module_lexer: '2.1.0',
+      cldr: '47.0',
+      icu: '77.1',
+      llhttp: '9.3.0',
+      modules: '127',
+      napi: '10',
+      nbytes: '0.1.1',
+      ncrypto: '0.0.1',
+      nghttp2: '1.64.0',
+      openssl: '3.5.4',
+      simdjson: '3.13.0',
+      simdutf: '6.4.2',
+      sqlite: '3.50.4',
+      tz: '2025b',
+      undici: '6.22.0',
+      unicode: '16.0',
+      uv: '1.51.0',
+      uvwasi: '0.0.23',
+      v8: '12.4.254.21-node.33',
+      zlib: '1.3.1-470d3a2',
+      zstd: '1.5.7'
     }
     ```
 
@@ -207,7 +207,7 @@
     
     # 编译后端
     cd ../backend
-    uv sync
+    uv sync --extra cpu
     ```
 
 ### 3.4 运行
