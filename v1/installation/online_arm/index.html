@@ -1870,9 +1870,6 @@
   
 
 
-<div class="admonition abstract">
-<p>注意：社区版不提供正式 ARM 镜像，仅提供开发版本的体验镜像！</p>
-</div>
 <h2 id="1">1 环境要求<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p><strong>部署服务器要求：</strong></p>
@@ -1926,7 +1923,7 @@
     -v ./data/sqlbot/logs:/opt/sqlbot/logs \
     -v ./data/postgresql:/var/lib/postgresql/data \
     --privileged=true \
-    dataease/sqlbot:dev-arm
+    dataease/sqlbot
 </code></pre></div>
 </div>
 <h1 id="4">4 登录访问<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
