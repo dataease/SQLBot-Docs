@@ -33,4 +33,60 @@
     ```
     - 修改完成后，重启 docker 服务即可
 
+## 4 如何访问 SQLBot 内置的 PG 数据库
 
+!!! Abstract ""
+    docker 命令启动的 SQLBot，可以先停止服务，加上 PG 的运行端口： -p 5432:5432
+    ```
+    docker run -d \
+        --name sqlbot \
+        --restart unless-stopped \
+        -p 8000:8000 \
+        -p 8001:8001 \
+        -p 5432:5432 \
+        -v ./data/sqlbot/excel:/opt/sqlbot/data/excel \
+        -v ./data/sqlbot/file:/opt/sqlbot/data/file \
+        -v ./data/sqlbot/images:/opt/sqlbot/images \
+        -v ./data/sqlbot/logs:/opt/sqlbot/logs \
+        -v ./data/postgresql:/var/lib/postgresql/data \
+        --privileged=true \
+        dataease/sqlbot
+    ```
+    
+    以 docker compose 方式运行（离线包或 docker-compose 命令）的 SQLBot，可以修改 docker-compose.yml 文件，将 PG 的运行端口暴露出来，如下面示例代码中的 「5432:5432」。
+    
+    若服务器 5432 端口已被占用，可以将冒号前的端口修改为其他可用端口，保持冒号后 PG 的内部端口 5432 不变即可。修改完 docker-compose.yml 文件后，请重新启动 SQLBot 服务。
+
+    ```yml
+    services:
+      sqlbot:
+        image: registry.cn-qingdao.aliyuncs.com/dataease/sqlbot
+        container_name: sqlbot
+        restart: always
+        privileged: true
+        networks:
+          - sqlbot-network
+        ports:
+          - ${SQLBOT_WEB_PORT}:8000
+          - ${SQLBOT_MCP_PORT}:8001
+          - 5432:5432
+        env_file:
+          - conf/sqlbot.conf
+        volumes:
+          - ./data/sqlbot/excel:/opt/sqlbot/data/excel
+          - ./data/sqlbot/file:/opt/sqlbot/data/file
+          - ./data/sqlbot/images:/opt/sqlbot/images
+          - ./data/sqlbot/logs:/opt/sqlbot/app/logs
+          - ./data/postgresql:/var/lib/postgresql/data
+
+    networks:
+      sqlbot-network:
+    ```
+
+    默认 PG 的访问信息如下：
+    ```
+    POSTGRES_PORT=5432
+    POSTGRES_DB=sqlbot
+    POSTGRES_USER=root
+    POSTGRES_PASSWORD=Password123@pg
+    ```
