@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/facio.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -807,6 +807,39 @@
       3.2 配置运行环境
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3.2 配置运行环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 .env 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 配置内置向量模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-oracle-instant-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Oracle Instant Client 安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2027,6 +2060,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3.2 配置运行环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 .env 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 配置内置向量模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-oracle-instant-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Oracle Instant Client 安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2262,8 +2328,8 @@ Resolving deltas: 100% (9092/9092), done.
 </code></pre></div></p>
 </div>
 <h3 id="32">3.2 配置运行环境<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<h4 id="321-env">3.2.1 .env 配置<a class="headerlink" href="#321-env" title="Permanent link">&para;</a></h4>
 <div class="admonition abstract">
-<p><strong>.env 配置</strong></p>
 <p>在工程目录下创建配置文件 .env，内容如下（根据自己实际情况修改相应配置）：
 <div class="highlight"><pre><span></span><code>root@iZt4ndy6544y6f1i99ahw0Z:~/SQLBot# cat .env
 PROJECT_NAME=&quot;SQLBot&quot;
@@ -2288,6 +2354,48 @@ POSTGRES_PASSWORD=Password123@pg # Change this to your pwd
 
 SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
 </code></pre></div></p>
+</div>
+<h4 id="322">3.2.2 配置内置向量模型<a class="headerlink" href="#322" title="Permanent link">&para;</a></h4>
+<div class="admonition abstract">
+<p>SQLBot 需要使用到内置向量模型，以 Ubuntu 环境为例，比较简单的办法是从现成的 SQLBot 镜像中拷贝到本地开发环境。注意路径放置在 /opt/sqlbot/models。如果是 windows 环境，则放置在项目所在盘的 /opt/sqlbot/models 下，如 D:\opt\sqlbot\models。</p>
+<p>假设本地已经启动了一个 SQLBot 容器，则可以通过以下命令 copy 内置向量模型：
+<div class="highlight"><pre><span></span><code>root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>sqlbot:/opt/sqlbot/models<span class="w"> </span>/opt/sqlbot/models
+Successfully<span class="w"> </span>copied<span class="w"> </span>831MB<span class="w"> </span>to<span class="w"> </span>/opt/sqlbot/models
+</code></pre></div></p>
+<p>也可以参考一些其他的安装方式，如 <a href="https://cloud.tencent.com/developer/article/2509399">https://cloud.tencent.com/developer/article/2509399</a></p>
+</div>
+<h4 id="323-oracle-instant-client">3.2.3 Oracle Instant Client 安装<a class="headerlink" href="#323-oracle-instant-client" title="Permanent link">&para;</a></h4>
+<div class="admonition abstract">
+<p>为了支持 Oracle 11 以及 thick 模型，我们需要安装 Oracle Instant Client。可以到 Oracle 官网下载对应的版本，地址是 <a href="https://www.oracle.com/database/technologies/instant-client/downloads.html">https://www.oracle.com/database/technologies/instant-client/downloads.html</a></p>
+<p>以 Ubuntu 为例，安装示例如下：
+<div class="highlight"><pre><span></span><code>root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>wget<span class="w"> </span>https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip
+--2025-11-05<span class="w"> </span><span class="m">17</span>:12:57--<span class="w">  </span>https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip
+Resolving<span class="w"> </span>download.oracle.com<span class="w"> </span><span class="o">(</span>download.oracle.com<span class="o">)</span>...<span class="w"> </span><span class="m">23</span>.206.180.77
+Connecting<span class="w"> </span>to<span class="w"> </span>download.oracle.com<span class="w"> </span><span class="o">(</span>download.oracle.com<span class="o">)</span><span class="p">|</span><span class="m">23</span>.206.180.77<span class="p">|</span>:443...<span class="w"> </span>connected.
+HTTP<span class="w"> </span>request<span class="w"> </span>sent,<span class="w"> </span>awaiting<span class="w"> </span>response...<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Length:<span class="w"> </span><span class="m">133613627</span><span class="w"> </span><span class="o">(</span>127M<span class="o">)</span><span class="w"> </span><span class="o">[</span>application/zip<span class="o">]</span>
+Saving<span class="w"> </span>to:<span class="w"> </span>‘instantclient-basic-linux.x64-23.26.0.0.0.zip’
+
+instantclient-basic-linux.x64-23.26.0.0.0.zip<span class="w">                       </span><span class="m">100</span>%<span class="o">[=================================================================================================================================================================</span>&gt;<span class="o">]</span><span class="w"> </span><span class="m">127</span>.42M<span class="w">  </span><span class="m">11</span>.9MB/s<span class="w">    </span><span class="k">in</span><span class="w"> </span><span class="m">9</span>.7s
+
+<span class="m">2025</span>-11-05<span class="w"> </span><span class="m">17</span>:13:07<span class="w"> </span><span class="o">(</span><span class="m">13</span>.2<span class="w"> </span>MB/s<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>‘instantclient-basic-linux.x64-23.26.0.0.0.zip’<span class="w"> </span>saved<span class="w"> </span><span class="o">[</span><span class="m">133613627</span>/133613627<span class="o">]</span>
+
+root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>unzip<span class="w"> </span>instantclient-basic-linux.x64-23.26.0.0.0.zip
+
+root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>mv<span class="w"> </span>instantclient_23_26<span class="w"> </span>oracle_instant_client
+
+root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/sqlbot/db_client
+
+root@iZt4n9ii50pwh74bs5bhuzZ:~#<span class="w"> </span>mv<span class="w"> </span>oracle_instant_client<span class="w"> </span>/opt/sqlbot/db_client
+</code></pre></div></p>
+<p>修改 .bashrc，加入以下环境变量：
+<div class="highlight"><pre><span></span><code>export ORACLE_HOME=/opt/sqlbot/db_client/oracle_instant_client
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+</code></pre></div></p>
+<p>重新加载 .bashrc
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div></p>
+<p>windows 环境类似，将压缩包下载解压后，改名为 oracle_instant_client，放置到项目所在盘的 /opt/sqlbot/db_client 目录下，完整路径示例 D:\opt\sqlbot\db_client\oracle_instant_client</p>
 </div>
 <h3 id="33">3.3 源码编译<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
