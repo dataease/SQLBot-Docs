@@ -168,9 +168,9 @@
 
 ### 3.2 配置运行环境
 
-!!! Abstract ""
-    **.env 配置**
+#### 3.2.1 .env 配置
 
+!!! Abstract ""
     在工程目录下创建配置文件 .env，内容如下（根据自己实际情况修改相应配置）：
     ```
     root@iZt4ndy6544y6f1i99ahw0Z:~/SQLBot# cat .env
@@ -196,6 +196,58 @@
 
     SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
     ```
+
+#### 3.2.2 配置内置向量模型
+!!! Abstract ""
+    SQLBot 需要使用到内置向量模型，以 Ubuntu 环境为例，比较简单的办法是从现成的 SQLBot 镜像中拷贝到本地开发环境。注意路径放置在 /opt/sqlbot/models。如果是 windows 环境，则放置在项目所在盘的 /opt/sqlbot/models 下，如 D:\opt\sqlbot\models。
+
+    假设本地已经启动了一个 SQLBot 容器，则可以通过以下命令 copy 内置向量模型：
+    ```bash
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# docker cp sqlbot:/opt/sqlbot/models /opt/sqlbot/models
+    Successfully copied 831MB to /opt/sqlbot/models
+    ```
+
+    也可以参考一些其他的安装方式，如 https://cloud.tencent.com/developer/article/2509399
+
+#### 3.2.3 Oracle Instant Client 安装
+!!! Abstract ""
+    为了支持 Oracle 11 以及 thick 模型，我们需要安装 Oracle Instant Client。可以到 Oracle 官网下载对应的版本，地址是 https://www.oracle.com/database/technologies/instant-client/downloads.html
+
+    以 Ubuntu 为例，安装示例如下：
+    ```bash
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# wget https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip
+    --2025-11-05 17:12:57--  https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip
+    Resolving download.oracle.com (download.oracle.com)... 23.206.180.77
+    Connecting to download.oracle.com (download.oracle.com)|23.206.180.77|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 133613627 (127M) [application/zip]
+    Saving to: ‘instantclient-basic-linux.x64-23.26.0.0.0.zip’
+
+    instantclient-basic-linux.x64-23.26.0.0.0.zip                       100%[=================================================================================================================================================================>] 127.42M  11.9MB/s    in 9.7s
+
+    2025-11-05 17:13:07 (13.2 MB/s) - ‘instantclient-basic-linux.x64-23.26.0.0.0.zip’ saved [133613627/133613627]
+
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# unzip instantclient-basic-linux.x64-23.26.0.0.0.zip
+
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# mv instantclient_23_26 oracle_instant_client
+
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# mkdir -p /opt/sqlbot/db_client
+
+    root@iZt4n9ii50pwh74bs5bhuzZ:~# mv oracle_instant_client /opt/sqlbot/db_client
+    ```
+
+    修改 .bashrc，加入以下环境变量：
+    ```
+    export ORACLE_HOME=/opt/sqlbot/db_client/oracle_instant_client
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+    ```
+
+    重新加载 .bashrc
+    ```bash
+    source ~/.bashrc
+    ```
+
+    windows 环境类似，将压缩包下载解压后，改名为 oracle_instant_client，放置到项目所在盘的 /opt/sqlbot/db_client 目录下，完整路径示例 D:\opt\sqlbot\db_client\oracle_instant_client
 
 ### 3.3 源码编译
 !!! Abstract ""
