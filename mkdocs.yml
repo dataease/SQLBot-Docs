@@ -9,7 +9,7 @@ edit_uri: https://github.com/dataease/SQLBot-Docs
 theme:
     name: 'material'
     logo: 'img/logo-white.png'
-    favicon: 'img/facio.png'
+    favicon: 'img/favicon.png'
     language: 'zh'
     highlightjs: true
     hljs_languages:
