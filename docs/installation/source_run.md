@@ -77,12 +77,12 @@
     执行命令安装 nodejs。
     ```
     # 下载并安装 nodejs，node 版本可能会变化，如版本升级，请更新连接
-    wget https://nodejs.org/dist/latest-v22.x/node-v22.21.0-linux-x64.tar.gz
-    tar xvf node-v22.21.0-linux-x64.tar.gz
-    mv node-v22.21.0-linux-x64 /opt/node-v22.21.0
+    wget https://nodejs.org/dist/latest-v22.x/node-v22.21.1-linux-x64.tar.gz
+    tar xvf node-v22.21.1-linux-x64.tar.gz
+    mv node-v22.21.1-linux-x64 /opt/node-v22.21.1
     
     # 添加环境变量
-    echo "export PATH=\$PATH:/opt/node-v22.21.0/bin" >> ~/.bashrc
+    echo "export PATH=\$PATH:/opt/node-v22.21.1/bin" >> ~/.bashrc
     
     # 使环境变量生效
     source ~/.bashrc
@@ -91,38 +91,38 @@
     验证 nodejs。
     ```
     root@iZt4ndy6544y6f1i99ahw0Z:~# node --version
-    v22.21.0
+    v22.21.1
     
     root@iZt4ndy6544y6f1i99ahw0Z:~# npm version
     {
-      npm: '10.9.4',
-      node: '22.21.0',
-      acorn: '8.15.0',
-      ada: '2.9.2',
-      amaro: '1.1.4',
-      ares: '1.34.5',
-      brotli: '1.1.0',
-      cjs_module_lexer: '2.1.0',
-      cldr: '47.0',
-      icu: '77.1',
-      llhttp: '9.3.0',
-      modules: '127',
-      napi: '10',
-      nbytes: '0.1.1',
-      ncrypto: '0.0.1',
-      nghttp2: '1.64.0',
-      openssl: '3.5.4',
-      simdjson: '3.13.0',
-      simdutf: '6.4.2',
-      sqlite: '3.50.4',
-      tz: '2025b',
-      undici: '6.22.0',
-      unicode: '16.0',
-      uv: '1.51.0',
-      uvwasi: '0.0.23',
-      v8: '12.4.254.21-node.33',
-      zlib: '1.3.1-470d3a2',
-      zstd: '1.5.7'
+        npm: '10.9.4',
+        node: '22.21.1',
+        acorn: '8.15.0',
+        ada: '2.9.2',
+        amaro: '1.1.4',
+        ares: '1.34.5',
+        brotli: '1.1.0',
+        cjs_module_lexer: '2.1.0',
+        cldr: '47.0',
+        icu: '77.1',
+        llhttp: '9.3.0',
+        modules: '127',
+        napi: '10',
+        nbytes: '0.1.1',
+        ncrypto: '0.0.1',
+        nghttp2: '1.64.0',
+        openssl: '3.5.4',
+        simdjson: '3.13.0',
+        simdutf: '6.4.2',
+        sqlite: '3.50.4',
+        tz: '2025b',
+        undici: '6.22.0',
+        unicode: '16.0',
+        uv: '1.51.0',
+        uvwasi: '0.0.23',
+        v8: '12.4.254.21-node.33',
+        zlib: '1.3.1-470d3a2',
+        zstd: '1.5.7'
     }
     ```
 
@@ -213,6 +213,8 @@
 !!! Abstract ""
     为了支持 Oracle 11 以及 thick 模型，我们需要安装 Oracle Instant Client。可以到 Oracle 官网下载对应的版本，地址是 https://www.oracle.com/database/technologies/instant-client/downloads.html
 
+    若不需要使用 Oracle thick 模式的话，可以略过此步骤。
+
     以 Ubuntu 为例，安装示例如下：
     ```bash
     root@iZt4n9ii50pwh74bs5bhuzZ:~# wget https://download.oracle.com/otn_software/linux/instantclient/2326000/instantclient-basic-linux.x64-23.26.0.0.0.zip
@@ -264,6 +266,7 @@
 
 ### 3.4 运行
 !!! Abstract ""
+    进入到 backend 文件夹下，执行下面的命令：
     
     ```
     source .venv/bin/activate

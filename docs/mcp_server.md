@@ -39,7 +39,7 @@
                 --restart unless-stopped \
                 -p 8000:8000 \
                 -p 8001:8001 \
-                -e SERVER_IMAGE_HOST=http://47.92.75.231:8001/images/
+                -e SERVER_IMAGE_HOST=http://47.92.75.231:8001/images/ \
                 -v data/sqlbot/excel:/opt/sqlbot/data/excel \
                 -v ./data/sqlbot/file:/opt/sqlbot/data/file \
                 -v data/sqlbot/images:/opt/sqlbot/images \
