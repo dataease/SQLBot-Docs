@@ -44,6 +44,23 @@
         dataease/sqlbot
     ```
 
+    如果需要使用 MCP 功能的话，在启动命令中加上 SERVER_IMAGE_HOST 参数，注意将 IP 和端口替换成自己的实际 IP 和端口：
+    ```
+    docker run -d \
+        --name sqlbot \
+        --restart unless-stopped \
+        -p 8000:8000 \
+        -p 8001:8001 \
+        -e SERVER_IMAGE_HOST=http://47.92.75.231:8001/images/ \
+        -v data/sqlbot/excel:/opt/sqlbot/data/excel \
+        -v ./data/sqlbot/file:/opt/sqlbot/data/file \
+        -v data/sqlbot/images:/opt/sqlbot/images \
+        -v data/sqlbot/logs:/opt/sqlbot/logs \
+        -v data/postgresql:/var/lib/postgresql/data \
+        --privileged=true \
+        dataease/sqlbot
+    ```
+
 # 4 登录访问
 
 !!! Abstract ""
