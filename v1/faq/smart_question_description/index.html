@@ -1842,6 +1842,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-sql-limit-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2227,6 +2238,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-sql-limit-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2294,6 +2316,35 @@
 <p>SQLBot 对大模型返回的问数结果的结构是有要求的，SQLBot 在提示词模板中对该格式有明确定义。在使用过程中，有些大模型由于理解能力问题，并未按要求返回相应格式的数据，会导致 SQLBot 无法解析返回结果，出现类似下图的错误： 
 <img alt="faq_parse_answer.png" src="../../img/faq/faq_parse_answer.png" /></p>
 <p>此时建议更换其他模型试试。</p>
+</div>
+<h2 id="7-sql-limit-1000">7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？<a class="headerlink" href="#7-sql-limit-1000" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>SQLBot 默认在查询 SQL 中添加了 1000 条数据的限制，是为了减少大数据量导致的响应缓慢，以及减少前端页面渲染的压力。尤其在进行数据分析和数据预测时，数据量过大会导致 token 超限。如果确实需要调整这个限制，可以在 SQLBot 的配置文件 (默认是 conf/sqlbot.conf) 中，添加或修改 GENERATE_SQL_QUERY_LIMIT_ENABLED 参数，将值改成 false，重启 SQLBot 服务即可。</p>
+<p>例如：
+<div class="highlight"><pre><span></span><code>PROJECT_NAME=&quot;SQLBot&quot;
+
+# Backend
+BACKEND_CORS_ORIGINS=&quot;http://localhost,http://localhost:5173,https://localhost,https://localhost:5173&quot;
+SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
+
+DEFAULT_PWD=&quot;SQLBot@123456&quot;
+
+LOG_LEVEL=&quot;DEBUG&quot;  # DEBUG, INFO, WARNING, ERROR
+SQL_DEBUG=False
+
+CACHE_TYPE=&quot;memory&quot;
+
+# Postgres
+POSTGRES_SERVER=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=sqlbot
+POSTGRES_USER=root
+POSTGRES_PASSWORD=Password123@pg # Change this to your pwd
+
+SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
+
+GENERATE_SQL_QUERY_LIMIT_ENABLED=false
+</code></pre></div></p>
 </div>
 
 
