@@ -56,3 +56,35 @@
     ![faq_parse_answer.png](../img/faq/faq_parse_answer.png)
 
     此时建议更换其他模型试试。
+
+## 7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？
+
+!!! Abstract ""
+    SQLBot 默认在查询 SQL 中添加了 1000 条数据的限制，是为了减少大数据量导致的响应缓慢，以及减少前端页面渲染的压力。尤其在进行数据分析和数据预测时，数据量过大会导致 token 超限。如果确实需要调整这个限制，可以在 SQLBot 的配置文件 (默认是 conf/sqlbot.conf) 中，添加或修改 GENERATE_SQL_QUERY_LIMIT_ENABLED 参数，将值改成 false，重启 SQLBot 服务即可。
+
+    例如：
+    ```
+    PROJECT_NAME="SQLBot"
+
+    # Backend
+    BACKEND_CORS_ORIGINS="http://localhost,http://localhost:5173,https://localhost,https://localhost:5173"
+    SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
+
+    DEFAULT_PWD="SQLBot@123456"
+
+    LOG_LEVEL="DEBUG"  # DEBUG, INFO, WARNING, ERROR
+    SQL_DEBUG=False
+
+    CACHE_TYPE="memory"
+
+    # Postgres
+    POSTGRES_SERVER=localhost
+    POSTGRES_PORT=5432
+    POSTGRES_DB=sqlbot
+    POSTGRES_USER=root
+    POSTGRES_PASSWORD=Password123@pg # Change this to your pwd
+
+    SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
+
+    GENERATE_SQL_QUERY_LIMIT_ENABLED=false
+    ```
