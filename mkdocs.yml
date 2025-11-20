@@ -80,6 +80,7 @@ nav:
         - 数据源: faq/datasource.md
         - 智能问数: faq/smart_question_description.md
         - 小助手应用: faq/assistant.md
+        - MCP: faq/mcp.md
     - 模型接入:
         - Ollama 部署模型接入 SQLBot: model_integration/ollama.md
     - MCP 服务: mcp_server.md
