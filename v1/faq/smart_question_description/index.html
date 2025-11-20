@@ -1807,6 +1807,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-sqlbot-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 SQLBot 在哪些方面会影响到对 token 的消耗？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 如何提升 SQLBot 问数的准确率？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 问数过程中大模型有响应，但 SQLBot 显示解析响应结果出错
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2131,6 +2164,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-sqlbot-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 SQLBot 在哪些方面会影响到对 token 的消耗？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 如何提升 SQLBot 问数的准确率？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 问数过程中大模型有响应，但 SQLBot 显示解析响应结果出错
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2160,14 +2226,45 @@
 <div class="admonition abstract">
 <p>当用户发起问数请求时，会根据发送的问题匹配术语，被匹配到的术语，会将「术语描述」和「用户问题」一起发送给大语言模型，辅助生成正确的 SQL 查询语句。</p>
 <p>术语示例如下图所示：</p>
-</div>
 <p><img alt="professional..png" src="../../img/faq/professional..png" /></p>
+</div>
 <h2 id="3-sql">3 SQL 示例怎么使用？<a class="headerlink" href="#3-sql" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>当用户发起问数请求时，将发送的问题与 SQL 示例库中的问题进行匹配，被匹配到的 SQL 示例，会将问题的「 示例 SQL」和「用户问题」一起发送给大语言模型，辅助生成正确的 SQL 查询语句。</p>
 <p>SQL 示例如下图所示：</p>
-</div>
 <p><img alt="data_training.png" src="../../img/faq/data_training.png" /></p>
+</div>
+<h2 id="4-sqlbot-token">4 SQLBot 在哪些方面会影响到对 token 的消耗？<a class="headerlink" href="#4-sqlbot-token" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>问数的时候对 token 的消耗主要有几个地方：</p>
+<ul>
+<li>SQLBot 自身的提示词模板</li>
+<li>匹配到和问数相关的数据表结构，包括描述</li>
+<li>匹配到和问数相关的术语</li>
+<li>匹配到和问数相关的 SQL示例</li>
+<li>匹配到和问数相关的自定义提示词</li>
+</ul>
+<p>如果上面这几个地方内容多的话，对 token 的消耗会比较大，另外，在问数过程中的上下文也会有一定的 token 消耗。</p>
+</div>
+<h2 id="5-sqlbot">5  如何提升 SQLBot 问数的准确率？<a class="headerlink" href="#5-sqlbot" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>可以通过以下几个方面的设置来提升 SQLBot 的问数准确率：</p>
+<ul>
+<li>调整问题的问法，表达意图更清晰一些</li>
+<li>在 SQLBot 中为数据源、数据表、数据字段添加和常见问题相关的描述信息</li>
+<li>在术语配置里将一些数据源中的业务概念添加为术语，让大模型更好的理解问题</li>
+<li>在 SQL 示例库中添加一些数据源常见的查询示例，让大模型可以学习如何正确生成 SQL</li>
+<li>在自定义提示词（商业版）中针对数据源添加一些和常见问题场景相关的约束</li>
+<li>若存在多表关联查询的场景，可以在数据源的表关系管理中，给关联表设置字段的关联关系</li>
+<li>试试其他的大模型，换个强一些的大模型，虽然简单粗暴，但效果明显</li>
+</ul>
+</div>
+<h2 id="6-sqlbot">6 问数过程中大模型有响应，但 SQLBot 显示解析响应结果出错<a class="headerlink" href="#6-sqlbot" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>SQLBot 对大模型返回的问数结果的结构是有要求的，SQLBot 在提示词模板中对该格式有明确定义。在使用过程中，有些大模型由于理解能力问题，并未按要求返回相应格式的数据，会导致 SQLBot 无法解析返回结果，出现类似下图的错误： 
+<img alt="faq_parse_answer.png" src="../../img/faq/faq_parse_answer.png" /></p>
+<p>此时建议更换其他模型试试。</p>
+</div>
 
 
 
