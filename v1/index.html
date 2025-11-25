@@ -424,7 +424,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 界面展示
+        1 工作原理
       
     </span>
   </a>
@@ -446,7 +446,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3 主要功能
+        3 界面展示
       
     </span>
   </a>
@@ -457,7 +457,18 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4 了解更多
+        4 主要功能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 了解更多
       
     </span>
   </a>
@@ -2139,7 +2150,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 界面展示
+        1 工作原理
       
     </span>
   </a>
@@ -2161,7 +2172,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3 主要功能
+        3 界面展示
       
     </span>
   </a>
@@ -2172,7 +2183,18 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4 了解更多
+        4 主要功能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 了解更多
       
     </span>
   </a>
@@ -2204,27 +2226,32 @@
 <p>SQLBot 是一款基于大语言模型（Large Language Model，LLM）和 RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。借助 SQLBot，用户可以实现数据的即问即答，快速提炼获取所需的数据信息及可视化图表，并且支持进一步开展智能分析。</p>
 <p>SQLBot 由飞致云的 <a href="https://dataease.cn/">DataEase</a> 开源团队出品。</p>
 </div>
-<p><img alt="整体架构" src="img/index/system-arch.png" /></p>
-<h2 id="1">1 界面展示<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p><img alt="界面展示图" src="img/index/index.gif" /></p>
+<h2 id="1">1 工作原理<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p><img alt="工作原理" src="img/index/arch.png" /></p>
 <h2 id="2">2 产品优势<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <ul>
 <li>
 <p><strong>开箱即用</strong>    <br />
-  只需简单配置大模型和数据源即可开启问数之旅。SQLBot 充分发挥大语言模型强大的自然语言理解和 SQL 生成能力，结合 RAG 技术提升生成精度，实现高质量的 text-to-SQL 转换体验。</p>
-</li>
-<li>
-<p><strong>易于集成</strong>  <br />
-  支持多种集成方式，能够快速嵌入到 n8n、MaxKB、Dify、Coze 等 AI 应用开发平台，让各类应用快速拥有智能问数能力。</p>
+  仅需简单配置大模型与数据源，无需复杂开发，即可快速开启智能问数；依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换。</p>
 </li>
 <li>
 <p><strong>安全可控</strong>    <br />
-  提供基于工作空间的资源隔离机制，支持细粒度的数据权限配置，确保用户在使用过程中拥有清晰的数据边界与权限控制能力，保障数据访问的安全与合规。  </p>
+  提供工作空间级资源隔离机制，构建清晰数据边界，保障数据访问安全；支持细粒度数据权限配置，强化权限管控能力，确保使用过程合规可控。</p>
+</li>
+<li>
+<p><strong>易于集成</strong>  <br />
+  支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用，让各类应用快速拥有智能问数能力。</p>
+</li>
+<li>
+<p><strong>越问越准</strong><br />
+  支持自定义提示词、术语库配置，可维护 SQL 示例校准逻辑，精准匹配业务场景；高效运营，基于用户交互数据持续迭代优化，问数效果随使用逐步提升，越问越准。</p>
 </li>
 </ul>
 </div>
-<h2 id="3">3 主要功能<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3">3 界面展示<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><img alt="界面展示图" src="img/index/index.gif" /></p>
+<h2 id="4">4 主要功能<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <ul>
 <li>提问分析：用户聊天对话方式提问，大模型解析问题意图，结合所选数据源生成图表与分析。</li>
@@ -2233,7 +2260,7 @@
 <li>看板搭建：将多个问数对话生成的图表统一布局，构建成适用于汇报、监控或展示的仪表板。</li>
 </ul>
 </div>
-<h2 id="4">4  了解更多<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="5">5  了解更多<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <ul>
 <li><a href="https://www.fit2cloud.com/">了解飞致云</a> </li>
