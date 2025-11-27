@@ -12,34 +12,34 @@
         <meta name="author" content="飞致云">
       
       
-        <link rel="canonical" href="https://sqlbot.cn/docs/v1/user_manual/data_training/">
+        <link rel="canonical" href="https://sqlbot.cn/docs/v1/best_practice/">
       
       
-        <link rel="prev" href="../professional/">
+        <link rel="prev" href="../embedding_integration/">
       
       
-        <link rel="next" href="../prompt/">
+        <link rel="next" href="../buy/">
       
       
         
       
       
-      <link rel="icon" href="../../img/favicon.png">
+      <link rel="icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>SQL 示例库 - SQLBot 文档</title>
+        <title>最佳实践 - SQLBot 文档</title>
       
     
     
-    <link rel="stylesheet" href="../../css/lightgallery.min.css">
-    <link href="../../css/f2c-header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+    <link href="../css/f2c-header.css" rel="stylesheet" type="text/css" />
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,10 +50,10 @@
     
       
     
-    <script src="../../js/lightgallery.min.js"></script>
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/mega.js"></script>
+    <script src="../js/lightgallery.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/mega.js"></script>
         <!--<script async defer src="https://maxkb.fit2cloud.com/api/application/embed?protocol=https&host=maxkb.fit2cloud.com&token=05b106be72d62386"></script>-->
 
     
@@ -66,9 +66,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -103,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#sqlbot" class="md-skip">
           跳转至
         </a>
       
@@ -118,12 +118,12 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="../../..">
+  <a href="../..">
     <strong>Click here to go to latest.</strong>
   </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -145,7 +145,7 @@
             <div class="container">
                 <div class="mega-nav-banner-item">
                     <a class="mega-nav-banner-logo" href="https://www.fit2cloud.com/"><img
-                            src="../../img/logo/logo-light-FIT2CLOUD.svg" alt="FIT2CLOUD Logo" /></a>
+                            src="../img/logo/logo-light-FIT2CLOUD.svg" alt="FIT2CLOUD Logo" /></a>
                 </div>
                 <div class="mega-nav-banner-item">
                     <p class="mega-nav-tagline">
@@ -191,9 +191,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="SQLBot 文档" class="md-header__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
+    <a href=".." title="SQLBot 文档" class="md-header__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
       
-  <img src="../../img/logo-white.png" alt="logo">
+  <img src="../img/logo-white.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -210,7 +210,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SQL 示例库
+              最佳实践
             
           </span>
         </div>
@@ -334,9 +334,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="SQLBot 文档" class="md-nav__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
+    <a href=".." title="SQLBot 文档" class="md-nav__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
       
-  <img src="../../img/logo-white.png" alt="logo">
+  <img src="../img/logo-white.png" alt="logo">
 
     </a>
     SQLBot 文档
@@ -363,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quick_start/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -444,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system_arch/" class="md-nav__link">
+      <a href="../system_arch/" class="md-nav__link">
         
   
   
@@ -536,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/1panel_installtion/" class="md-nav__link">
+      <a href="../installation/1panel_installtion/" class="md-nav__link">
         
   
   
@@ -564,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/aliyun_installtion/" class="md-nav__link">
+      <a href="../installation/aliyun_installtion/" class="md-nav__link">
         
   
   
@@ -592,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/offline_installtion/" class="md-nav__link">
+      <a href="../installation/offline_installtion/" class="md-nav__link">
         
   
   
@@ -620,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/online_installtion/" class="md-nav__link">
+      <a href="../installation/online_installtion/" class="md-nav__link">
         
   
   
@@ -648,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/offline_upgrade/" class="md-nav__link">
+      <a href="../installation/offline_upgrade/" class="md-nav__link">
         
   
   
@@ -676,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/online_arm/" class="md-nav__link">
+      <a href="../installation/online_arm/" class="md-nav__link">
         
   
   
@@ -704,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/cli/" class="md-nav__link">
+      <a href="../installation/cli/" class="md-nav__link">
         
   
   
@@ -732,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/source_run/" class="md-nav__link">
+      <a href="../installation/source_run/" class="md-nav__link">
         
   
   
@@ -764,10 +764,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -785,11 +783,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -810,7 +808,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -893,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_description/" class="md-nav__link">
+      <a href="../user_manual/datasource_description/" class="md-nav__link">
         
   
   
@@ -921,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_excel/" class="md-nav__link">
+      <a href="../user_manual/datasource_excel/" class="md-nav__link">
         
   
   
@@ -949,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_mysql/" class="md-nav__link">
+      <a href="../user_manual/datasource_mysql/" class="md-nav__link">
         
   
   
@@ -977,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_oracle/" class="md-nav__link">
+      <a href="../user_manual/datasource_oracle/" class="md-nav__link">
         
   
   
@@ -1005,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_postgresql/" class="md-nav__link">
+      <a href="../user_manual/datasource_postgresql/" class="md-nav__link">
         
   
   
@@ -1033,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_sqlserver/" class="md-nav__link">
+      <a href="../user_manual/datasource_sqlserver/" class="md-nav__link">
         
   
   
@@ -1061,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_clickhouse/" class="md-nav__link">
+      <a href="../user_manual/datasource_clickhouse/" class="md-nav__link">
         
   
   
@@ -1089,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasource_DM/" class="md-nav__link">
+      <a href="../user_manual/datasource_DM/" class="md-nav__link">
         
   
   
@@ -1125,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart_question_description/" class="md-nav__link">
+      <a href="../user_manual/smart_question_description/" class="md-nav__link">
         
   
   
@@ -1153,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dashboard_description/" class="md-nav__link">
+      <a href="../user_manual/dashboard_description/" class="md-nav__link">
         
   
   
@@ -1178,10 +1176,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1199,11 +1195,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
         
           
           <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
@@ -1224,7 +1220,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1242,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../member/" class="md-nav__link">
+      <a href="../user_manual/member/" class="md-nav__link">
         
   
   
@@ -1270,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permission/" class="md-nav__link">
+      <a href="../user_manual/permission/" class="md-nav__link">
         
   
   
@@ -1298,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../professional/" class="md-nav__link">
+      <a href="../user_manual/professional/" class="md-nav__link">
         
   
   
@@ -1323,19 +1319,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../user_manual/data_training/" class="md-nav__link">
         
   
   
@@ -1351,7 +1338,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1364,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompt/" class="md-nav__link">
+      <a href="../user_manual/prompt/" class="md-nav__link">
         
   
   
@@ -1459,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/user/" class="md-nav__link">
+      <a href="../system/user/" class="md-nav__link">
         
   
   
@@ -1487,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/workspace/" class="md-nav__link">
+      <a href="../system/workspace/" class="md-nav__link">
         
   
   
@@ -1515,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/model/" class="md-nav__link">
+      <a href="../system/model/" class="md-nav__link">
         
   
   
@@ -1543,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/embedding/" class="md-nav__link">
+      <a href="../system/embedding/" class="md-nav__link">
         
   
   
@@ -1571,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/system/" class="md-nav__link">
+      <a href="../system/system/" class="md-nav__link">
         
   
   
@@ -1673,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/installation/" class="md-nav__link">
+      <a href="../faq/installation/" class="md-nav__link">
         
   
   
@@ -1701,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/datasource/" class="md-nav__link">
+      <a href="../faq/datasource/" class="md-nav__link">
         
   
   
@@ -1729,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/smart_question_description/" class="md-nav__link">
+      <a href="../faq/smart_question_description/" class="md-nav__link">
         
   
   
@@ -1757,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/assistant/" class="md-nav__link">
+      <a href="../faq/assistant/" class="md-nav__link">
         
   
   
@@ -1785,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/mcp/" class="md-nav__link">
+      <a href="../faq/mcp/" class="md-nav__link">
         
   
   
@@ -1871,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model_integration/ollama/" class="md-nav__link">
+      <a href="../model_integration/ollama/" class="md-nav__link">
         
   
   
@@ -1906,7 +1892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp_server/" class="md-nav__link">
+      <a href="../mcp_server/" class="md-nav__link">
         
   
   
@@ -1933,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dataease_integration/" class="md-nav__link">
+      <a href="../dataease_integration/" class="md-nav__link">
         
   
   
@@ -1960,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embedding_integration/" class="md-nav__link">
+      <a href="../embedding_integration/" class="md-nav__link">
         
   
   
@@ -1984,10 +1970,35 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../best_practice/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    最佳实践
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2003,6 +2014,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLBot的业务上下文配置能力
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlbotnl-to-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLBot四步调优：实现高效准确的NL-to-SQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLBot四步调优：实现高效准确的NL-to-SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：精简数据源（表管理）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：明确表关联逻辑（表关联关系管理）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：提供标准示例（示例SQL）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：消除指标歧义（自定义术语）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2014,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../buy/" class="md-nav__link">
+      <a href="../buy/" class="md-nav__link">
         
   
   
@@ -2041,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   
@@ -2078,8 +2190,97 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sqlbot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLBot的业务上下文配置能力
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlbotnl-to-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLBot四步调优：实现高效准确的NL-to-SQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLBot四步调优：实现高效准确的NL-to-SQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一步：精简数据源（表管理）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二步：明确表关联逻辑（表关联关系管理）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三步：提供标准示例（示例SQL）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四步：消除指标歧义（自定义术语）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2099,29 +2300,173 @@
   
 
 
-<h1 id="_1">术语配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="admonition tip">
-<p>通过添加问题，以及该问题的 sql 和说明。当用户发起问数请求时，如果问题匹配到该【SQL 示例】，将问题和 【SQL 示例】一起发送给大语言模型，辅助大语言模型生成符合预期的 SQL 语句，从而提升问数的准确度。管理员可在系统中添加、编辑和维护【SQL 示例】，包含以下要素：</p>
+  <h1>最佳实践</h1>
+
+<div class="admonition abstract">
+<p>“智能问数”利用大语言模型（LLM）和自然语言转SQL（Text2SQL）技术，让非技术用户通过自然对话方式获取数据，从而大幅降低数据分析的门槛。然而在实际的应用中，由于模型对特定业务和数据结构的理解存在局限性，大家在使用智能问数系统的过程中经常会遇到问数不准确、答非所问等情况。总结来说，用户在智能问数的过程中经常会遇到的挑战包括：</p>
+<ul>
+<li>答非所问：查询结果的统计范围或者筛选条件与用户意图不符，例如询问区域销量却返回了总量；</li>
+<li>结果不准：生成的SQL语句存在逻辑错误，例如生成SQL的时候表关联有误，导致查询结果不准确；</li>
+<li>无法生成：模型无法识别或者关联用户问题中涉及的数据表，导致SQL语句生成失败或者查询无法执行；</li>
+<li>术语混淆：模型不能理解特定的业务术语或简称（例如将JumpServer简称为JS），导致生成错误的SQL查询语句。</li>
+</ul>
+<p>导致这些问题的根本原因在于，大语言模型虽然掌握了SQL语法，但是缺乏针对特定业务和数据库结构的业务上下文。为了解决这一问题，SQLBot开源智能问数系统（<a href="https://github.com/dataease/SQLBot">https://github.com/dataease/SQLBot</a>）提供了完善的业务上下文配置机制，允许用户将业务逻辑和数据定义注入到让大语言模型能够理解的上下文中，从而生成更加符合用户意图的SQL语句。本教程将为您介绍SQLBot业务上下文的具体配置方法，通过精准问数调优的四个步骤，您可以系统性地提升SQLBot在业务数据查询中的准确性。</p>
+</div>
+<h2 id="sqlbot">SQLBot的业务上下文配置能力<a class="headerlink" href="#sqlbot" title="Permanent link">&para;</a></h2>
+<p>SQLBot是一款基于大语言模型和RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。它利用大语言模型的强大能力，将用户的自然语言问题实时转换为精确的SQL查询语句和可视化图表。其核心目标是让业务人员、运营人员乃至管理层都能在没有SQL基础的情况下，也能够轻松与数据库进行对话，即时获取数据分析的结果。
+<img alt="工作原理图" src="../img/best_practice/arch.png" /></p>
+<center>▲图1 SQLBot的工作原理</center>
+
+<p>为了解决大语言模型“缺乏业务理解能力”的问题，SQLBot提供了一套强大的业务上下文配置能力，主要包括四大核心功能：</p>
+<ul>
+<li>表管理：支持筛选、过滤、重命名数据库中的表和字段，并且支持添加业务相关描述，为大语言模型划定清晰的知识边界；</li>
+<li>表关联关系管理：通过可视化界面定义表与表之间的连接（JOIN）关系，确保大语言模型在处理跨表查询时遵循正确的逻辑，生成准确的SQL查询语句；</li>
+<li>示例SQL：针对业务中高频、复杂的查询，可以预先录入“标准问题”和“标准答案SQL”，供大语言模型来参考学习；</li>
+<li>自定义术语：建立业务术语、指标与数据库字段之间的翻译词典，消除大语言模型的歧义理解。</li>
+</ul>
+<h2 id="sqlbotnl-to-sql">SQLBot四步调优：实现高效准确的NL-to-SQL<a class="headerlink" href="#sqlbotnl-to-sql" title="Permanent link">&para;</a></h2>
+<p>我们选择以Cordys CRM系统为问数对象，需要提前在SQLBot中接入Cordys CRM系统的数据库“cordys-crm”作为数据源，并将这个数据源命名为“CordysCRM”。
+<img alt="添加数据源" src="../img/best_practice/add_ds.png" /></p>
+<center>▲图2 在SQLBot中添加名为“CordysCRM”数据源</center>
+
+<div class="admonition abstract">
+<h3 id="_1">第一步：精简数据源（表管理）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>提高大语言模型生成SQL语句准确性的第一步，是划分其可用的数据表范围。例如，CordysCRM数据库中有93张表，其中一部分是系统日志表、配置表、任务表等与问数无关的表，如果将这些表也纳入“问数”的范围，不仅无用，还会干扰RAG通道中大模型生成SQL语句的准确率。</p>
+<p>表管理功能用于划定大语言模型访问数据的清晰边界，避免模型被冗余信息干扰。表管理的操作方法如下：</p>
+<ol>
+<li>
+<p>确定问数范围（隐藏无关表）：</p>
+<p>① 进入SQLBot中CordysCRM数据源的表管理界面，先加载所有数据库表；</p>
+<p>② 剔除业务分析中不涉及的表，例如：“agent”表、“dashboard”表、“worker_node”表。</p>
+<p>表管理的操作原则，仅保留业务分析所需的核心表（例如：线索表、客户表、商机表、用户表）。
+<img alt="添加表" src="../img/best_practice/add_tables.png" />
+<center>▲图3 SQLBot数据源中的表管理操作界面</center></p>
+</li>
+<li>
+<p>设置字段别名和描述：数据库中的表名和字段名通常过于技术化，无法适配自然语言的提问内容。这种情况下就需要设置字段别名和描述，让大模型可以更好地理解用户的自然语言提问。接下来将以CordysCRM数据源中的线索表“clue”为例进行说明；</p>
+<p>① 设置字段别名：将“name”字段的原始备注改为“客户名称”，将“collection_time”字段的原始备注改为“领取时间”；</p>
+<p>② 添加描述：这是提供业务逻辑的直接方式，也是提升SQLBot智能问数业务能力的最关键一步。</p>
 <ul>
 <li>
-<p>问题描述：问题的详细描述，当用户发送问题进行问数时，用于和用户问题进行匹配。</p>
+<p>为表添加描述</p>
+<p>例如，为线索表“clue”添加描述：“线索表，包含所有已创建的线索信息，包括新建、跟进中、个人线索、部门线索等。”</p>
 </li>
 <li>
-<p>示例 SQL ：可添加 SQL 语句和说明，发送给大语言模型作为重要参考，提升问数结果的准确度。</p>
-</li>
-<li>
-<p>数据源： 当用户发起问数请求时，只能匹配当前数据源下的 【SQL 示例】。</p>
+<p>为字段添加描述</p>
+<p>例如，为“线索状态”字段添加描述：“枚举值：FOLLOWING=跟进中，NEW=新建。”</p>
 </li>
 </ul>
+<p><img alt="添加描述" src="../img/best_practice/set_desc.png" />
+<center>▲图4 字段别名和描述设置</center></p>
+</li>
+</ol>
 </div>
-<div class="admonition tip">
-<p>进入【SQL 示例库】页面：在系统导航栏点击【设置】&gt;【SQL 示例库】。</p>
+<div class="admonition abstract">
+<h3 id="_2">第二步：明确表关联逻辑（表关联关系管理）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>复杂的业务查询往往涉及多张表的联合查询（JOIN）。如果大语言模型不知道正确的表关联关系，就会导致生成的SQL语句关联错误和不准确。SQLBot的表关联关系管理功能可以用于为大语言模型提供跨表查询的明确关联关系。</p>
+<p>表关联关系管理的操作方法如下：</p>
+<ol>
+<li>
+<p>进入CordysCRM数据源的“表关系管理”界面；</p>
+</li>
+<li>
+<p>定义连接：通过外键连接的方式，手动定义表与表之间的关联关系。例如，定义一条连接规则，让线索表“clue”的organization_id字段关联组织表“sys_organization”的ID字段；</p>
+</li>
+<li>
+<p>覆盖所有核心业务关系：确保业务分析可能涉及的所有表都建立了正确的关联关系。
+<img alt="表关联" src="../img/best_practice/add_relations.png" />
+<center>▲图5 表关联关系设置</center></p>
+</li>
+</ol>
 </div>
-<p><img alt="data_trainning.png" src="../../img/user_manual/setting/data_trainning.png" /></p>
-<div class="admonition tip">
-<p>点击【添加示例 SQL】按钮，输入问题描述、【示例 SQL】，并选择数据源，进行新建【SQL 示例】，填写完成后点击【保存】，【SQL 示例】创建成功。</p>
+<div class="admonition abstract">
+<h3 id="sql">第三步：提供标准示例（示例SQL）<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h3>
+<p>对于具有固定统计口径或者复杂逻辑的业务查询（例如转化率、复杂的同比/环比分析、特定指标的计算），仅依赖大语言模型的泛化能力，难以保证100%的问数准确性。SQLBot提供了示例SQL功能，就是针对复杂或高频问题提供一个标准答案库，供大语言模型进行学习和复用。</p>
+<p>示例SQL的设置方法如下：</p>
+<ol>
+<li>
+<p>识别复杂查询：提前收集业务人员经常询问，且需要使用复杂SQL实现的问题。比如在CordysCRM数据源中询问频率较高的“今年第三季度东区制造业赢单总数”问题，此问题涉及行业筛选和部门递归查询，需要将东区下级各部门中所有销售人员的赢单总数汇总为该下级部门的赢单总数，再进一步将东区所有下级部门的赢单总数汇总为“东区”这个上级部门的赢单总数；</p>
+</li>
+<li>
+<p>准备标准SQL：针对提前收集好的提问，编写一个逻辑正确、高性能的SQL答案。例如“今年第三季度东区制造业赢单总数”问题，涉及的SQL如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">DepartmentHierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="c1">-- 锚点成员: 找出 &#39;东区&#39; 部门本身</span>
+<span class="w">    </span><span class="k">SELECT</span>
+<span class="w">        </span><span class="n">id</span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">        </span><span class="n">sys_department</span>
+<span class="w">    </span><span class="k">WHERE</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;东区&#39;</span>
+
+<span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
+
+<span class="w">    </span><span class="c1">-- 递归成员: 找出所有下级部门</span>
+<span class="w">    </span><span class="k">SELECT</span>
+<span class="w">        </span><span class="n">id</span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">        </span><span class="n">sys_department</span><span class="w"> </span><span class="n">d</span>
+<span class="w">    </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span>
+<span class="w">        </span><span class="n">DepartmentHierarchy</span><span class="w"> </span><span class="n">dh</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">parent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dh</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="c1">-- 递归查找所有子部门</span>
+
+<span class="p">)</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_success_orders_q3</span><span class="w"> </span><span class="c1">-- 统计符合条件的赢单总数</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">opportunity</span><span class="w"> </span><span class="n">t1</span>
+<span class="k">JOIN</span>
+<span class="w">    </span><span class="n">sys_organization_user</span><span class="w"> </span><span class="n">t4</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="k">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t4</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="c1">-- 关联商机负责人到组织成员 (获取部门ID)</span>
+<span class="k">JOIN</span>
+<span class="w">    </span><span class="n">customer</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="c1">-- 关联客户表</span>
+<span class="k">JOIN</span>
+<span class="w">    </span><span class="n">customer_field</span><span class="w"> </span><span class="n">t3</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">resource_id</span><span class="w"> </span><span class="c1">-- 联接客户自定义属性表</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="n">stage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SUCCESS&#39;</span><span class="w"> </span><span class="c1">-- 筛选赢单阶段</span>
+
+<span class="w">    </span><span class="c1">-- **部门范围过滤：**</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t4</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DepartmentHierarchy</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">-- **行业过滤 (自定义属性，使用模糊匹配)：**</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1751888184000005&#39;</span><span class="w"> </span><span class="c1">-- 行业字段 ID</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_value</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%制造%&#39;</span><span class="w">    </span><span class="c1">-- 筛选行业值中包含 &#39;制造&#39; 关键词的客户</span>
+
+<span class="w">    </span><span class="c1">-- **时间范围过滤：当前年份的第三季度 (7月1日到9月30日)**</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">&#39;-07-01 00:00:00&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;%Y-%m-%d %H:%i:%s&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">&#39;-09-30 23:59:59&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;%Y-%m-%d %H:%i:%s&#39;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>录入示例SQL：</p>
+<p>① 问题概述：输入用户可能使用的自然语言问题，例如“今年第三季度东区制造业赢单总数”或“东区今年第三季度赢单中，属于制造业的订单总数是多少”；</p>
+<p>② 示例SQL：粘贴准备好的对应的标准SQL语句。</p>
+<p><img alt="SQL示例" src="../img/best_practice/sql_example.png" />
+<center>▲图6 示例SQL编辑界面</center></p>
+</li>
+</ol>
 </div>
-<p><img alt="add_data_training.png" src="../../img/user_manual/setting/add_data_training.png" /></p>
+<div class="admonition abstract">
+<h3 id="_3">第四步：消除指标歧义（自定义术语）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>业务人员在日常沟通中习惯使用大量缩写或专有术语，这些口语化或业务化的叫法往往与数据库中专业的、甚至由计算表达式定义的字段名称不一致。自定义术语功能，用于建立业务人员的口语叫法与数据库中标准字段或计算表达式之间的映射词典。自定义数据的设置方法如下：</p>
+<ol>
+<li>
+<p>进入“自定义术语”管理界面；</p>
+</li>
+<li>
+<p>添加术语（以飞致云产品线为例，不同的产品有不同的简称）：</p>
+</li>
+<li>
+<p>术语名称：输入“MK/JS/CE/JMS/DE/MS”；</p>
+</li>
+<li>术语描述：用于详细解释术语在数据库的查询逻辑。例如：“如果用户问题中采用了产品简称（MK=MaxKB，CloudExplorer=CE=云管，JS=JMS=JumpServer，DE=DataEase，MS=MeterSphere），在编写SQL时需要将简称转化为产品全称。”
+<img alt="术语" src="../img/best_practice/terminology.png" />
+<center>▲图7 自定义术语编辑界面</center></li>
+</ol>
+</div>
+<h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>提升SQLBot智能问数的准确性，是一个系统性配置业务上下文的过程。我们在使用SQL开源智能问数系统时，通过表管理、表关联关系管理、示例SQL、自定义术语这四个步骤，可以很好地配置业务上下文，大幅提高大语言模型生成业务查询的SQL语句的准确率。
+<img alt="问数结果" src="../img/best_practice/result.png" />
+<center>▲图8 SQLBot智能问数结果示例</center></p>
+</div>
 
 
 
@@ -2211,11 +2556,11 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
     
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
     <script>
