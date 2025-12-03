@@ -14,6 +14,9 @@
 !!! Abstract ""
     打开[**飞致云开源社区 SQLBot 社区版下载**](https://community.fit2cloud.com/#/products/sqlbot/downloads) 页面下载最新版本安装包，并上传至部署服务器（以 v1.0.0 为例说明安装部署过程）。
 
+    社区版不提供 arm 架构安装包，需要在 arm 架构下安装，以可通过[**在线安装**](../online_installtion)方式安装。
+
+
 
 ## 3 端口要求
 

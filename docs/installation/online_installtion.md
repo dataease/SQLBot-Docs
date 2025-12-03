@@ -7,7 +7,8 @@
 
     * 操作系统：Ubuntu 22.04 / CentOS 7（内核版本要求 ≥ 3.10）
     * CPU/内存: 4 核 8 G
-    - 磁盘空间: 100G
+    * 磁盘空间: 100G
+    * 服务器架构: amd64 或 arm64
 
 ## 2 端口要求
 
@@ -42,6 +43,22 @@
         -v ./data/postgresql:/var/lib/postgresql/data \
         --privileged=true \
         dataease/sqlbot
+    ```
+
+    如果执行过程中遇到镜像无法拉取的情况，可以替换一下镜像地址：
+    ```
+    docker run -d \
+        --name sqlbot \
+        --restart unless-stopped \
+        -p 8000:8000 \
+        -p 8001:8001 \
+        -v ./data/sqlbot/excel:/opt/sqlbot/data/excel \
+        -v ./data/sqlbot/file:/opt/sqlbot/data/file \
+        -v ./data/sqlbot/images:/opt/sqlbot/images \
+        -v ./data/sqlbot/logs:/opt/sqlbot/logs \
+        -v ./data/postgresql:/var/lib/postgresql/data \
+        --privileged=true \
+        registry.cn-qingdao.aliyuncs.com/dataease/sqlbot
     ```
 
     如果需要使用 MCP 功能的话，在启动命令中加上 SERVER_IMAGE_HOST 参数，注意将 IP 和端口替换成自己的实际 IP 和端口：
