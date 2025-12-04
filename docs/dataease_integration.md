@@ -32,6 +32,13 @@
 
     ![示例](img/dataease/dataease_sqlbot_interface_info.png)
 
+    SQLBot 调用 DataEase 获取数据源的接口返回的信息开启 AES-Key 加密（32 位随机生成即可）。
+
+    **注意**：后续 DataEase 配置中需要使用到 AES-Key 进行数据源加密配置。
+
+     ![示例](img/dataease/ase-key.png)
+
+
     保存好应用，记录好应用的 ID 号。
     ![示例](img/dataease/dataease_sqlbot_copy_id.png)
 
@@ -46,9 +53,16 @@
     ![示例](img/dataease/dataease_sqlbot.png)
 
 !!! Tip ""
-    若包含 Excel 数据源或 API 数据源，还需要修改 DataEase 的配置文件。
+    进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 " aes-key" 配置，取值为 SQLBot 添加高级应用的值。配置文件修改后大致如下：
 
-    进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 "ds-host" 配置，取值为 DataEase 服务器的 ip。配置文件修改后大致如下：
+    ```yml
+    dataease:
+        sqlbot:
+            encrypt:ture
+            aes-key: X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2
+    ```
+    
+    若包含 Excel 数据源或 API 数据源，还需要修改 DataEase 的配置文件。在配置文件中添加 "ds-host" 配置，取值为 DataEase 服务器的 ip。配置文件修改后大致如下：
     ```yml
     server:
         tomcat:
@@ -65,7 +79,7 @@
             username: root
             password: Password123@mysql
     dataease:
-        ds-host: 47.92.24.215
+        ds-host: 40.92.20.215
         apisix-api:
             domain: http://apisix:9180
             key: 7x1lZljpOvH5u9ednAg4wYRS9XPyGykpnHk3FKHKPzI=

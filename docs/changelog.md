@@ -9,6 +9,49 @@
 
 
 ## 2 更新内容
+### v1.4.0
+
+2025 年 12 月 4 日
+
+
+!!! Tip  "新增功能 :star2:"
+
+    - feat: 新增术语、SQL 示例、自定义提示词的导入导出功能
+    - feat: 自定义提示词支持基于数据源过滤提示词
+    - feat: 聊天表格支持右键点击复制值
+    - feat: 嵌入式系统多域名验证功能 #388
+    - feat: 推荐问题支持用户配置
+    - feat: 支持快速提问功能，无需输入问题即可快速提问常见问题
+    - feat: 术语表支持数据源过滤
+    - feat: 对话标题由 LLM 智能生成
+    - feat(X-Pack): 新增 LDAP 认证机制
+    - feat(X-Pack): 新增 OAuth2 认证机制
+    - feat(X-Pack): 新增 OIDC 认证机制
+
+!!! Tip  "功能优化 :sunflower:"
+
+    - refactor: 优化国际化文件
+    - refactor: 改进生成 Oracle SQL
+    - refactor: 改进生成带行权限的 SQL
+    - refactor: 优化提示词模板
+    - refactor: 添加达梦数据库依赖文件
+    - refactor: 优化大整数字段的前端请求处理
+    - refactor: 高级应用支持所有 SQLBot 数据源 #467
+    - refactor: 优化表关系画布
+
+
+!!! Tip  "问题修复 :palm_tree:"
+
+    - fix(外观设置): 修复默认欢迎信息与聊天页面不一致的问题
+    - fix(数据源): 修复表关系管理字段与表结构字段不一致的问题
+    - fix(嵌入式管理): 小助手移除历史记录浮动窗口
+    - fix(嵌入式管理): 修复小助手搜索历史功能导致点击搜索按钮时抽屉隐藏的问题
+    - fix(登录认证): 优化输入框超长字符提示信息
+    - fix(mcp): 防止大整数/浮点数数据以科学计数法显示
+    - fix: 修复 mcp 聊天中"Object of type datetime is not JSON serializable"错误
+    - fix: 修复示例 SQL 详情显示标题
+    - fix: 处理聊天中术语描述为空的情况
+    - fix: 改进上传列数不正确 Excel 文件的错误提示
 
 ### v1.3.0
 
