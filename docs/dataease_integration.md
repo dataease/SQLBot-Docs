@@ -53,13 +53,14 @@
     ![示例](img/dataease/dataease_sqlbot.png)
 
 !!! Tip ""
-    进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 " aes-key" 配置，取值为 SQLBot 添加高级应用的值。配置文件修改后大致如下：
+    进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 sqlbot 相关配置， 配置文件修改后大致如下：
 
     ```yml
     dataease:
         sqlbot:
-            encrypt:ture
-            aes-key: X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2
+            encrypt:ture                                 # 是否对敏感字段（host、user、password、database、schema）启用 AES-CBC-PKCS5Padding 加密
+            aes-key: X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2    # 32 位 AES 密钥，encrypt=true 时生效，可自定义
+            log: true                                    # 是否打印 SQLBot 接口（/de2api/sqlbot/datasource）调用日志 info 级别
     ```
     
     若包含 Excel 数据源或 API 数据源，还需要修改 DataEase 的配置文件。在配置文件中添加 "ds-host" 配置，取值为 DataEase 服务器的 ip。配置文件修改后大致如下：
