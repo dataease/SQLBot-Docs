@@ -75,8 +75,8 @@ nav:
             - AI 模型配置: system/model.md
             - 嵌入式管理: system/embedding.md
             - 系统设置:
-                - 外观设置: system/appearance_configuration
-                - 登录认证: system/identification_setting
+                - 外观设置: system/appearance_configuration.md
+                - 登录认证: system/identification_setting.md
     - 常见问题:
         - 安装部署: faq/installation.md
         - 数据源: faq/datasource.md
