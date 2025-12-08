@@ -68,12 +68,14 @@ nav:
             - 术语配置:  user_manual/professional.md
             - SQL 示例库: user_manual/data_training.md
             - 自定义提示词: user_manual/prompt.md
-        - 系统设置:
+        - 系统管理:
             - 用户管理: system/user.md
             - 工作空间: system/workspace.md
             - AI 模型配置: system/model.md
             - 嵌入式管理: system/embedding.md
-            - 系统设置: system/system.md
+            - 系统设置:
+                - 外观设置: system/appearance_configuration
+                - 登录认证: system/identification_setting
     - 常见问题:
         - 安装部署: faq/installation.md
         - 数据源: faq/datasource.md
