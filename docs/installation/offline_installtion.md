@@ -73,7 +73,7 @@
     # 其他配置
     ## 普通用户默认密码
     SQLBOT_DEFAULT_PWD=SQLBot@123456
-    ## SQLBot Secret Key
+    ## SQLBot Secret Key，随机 32 位字符，不包含特殊字符，用于 jwt 签名
     SQLBOT_SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
     ## Cross-Origin Resource Sharing (CORS) 设置
     SQLBOT_CORS_ORIGINS=http://localhost,http://localhost:5173,https://localhost,https://localhost:5173
