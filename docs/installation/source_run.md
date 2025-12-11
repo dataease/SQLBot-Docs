@@ -50,7 +50,7 @@
 !!! Abstract ""
     执行命令安装 uv。
     ```
-    # 安装 uv
+    # 安装 uv，国内安装慢的，也可以选用 （curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.9.16/uv-installer-custom.sh | sh）
     root@iZt4ndy6544y6f1i99ahw0Z:~# curl -LsSf https://astral.sh/uv/install.sh | sh
     downloading uv 0.8.13 x86_64-unknown-linux-gnu
     no checksums to verify
