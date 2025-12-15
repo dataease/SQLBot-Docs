@@ -1862,6 +1862,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 数据库最多支持30张表吗？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2286,6 +2297,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 数据库最多支持30张表吗？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2325,6 +2347,17 @@
 <li>docker network 配置有问题，导致容器内无法访问到容器外的地址，可以试着将 docker network mode 调整为 host，然后重启服务</li>
 <li>数据源服务器的防火墙是否开放了对应的端口，公有云的服务器还需要检查服务器对应的安全组规则是否开放了对应端口</li>
 </ul>
+</div>
+<h2 id="3-30">3 数据库最多支持30张表吗？<a class="headerlink" href="#3-30" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>社区版和企业版都没有 30 张表的限制。
+数据表数量会影响到两个方面：</p>
+<ul>
+<li>传递给大模型的 token 长度，影响大模型的思考时间</li>
+<li>SQLBot 后台同步数据表信息</li>
+</ul>
+<p>v1.3.0 版本之前的 SQLBot 在问数的时候，会将指定数据源下的所有数据表的表结构信息都传给大模型，对于 token 的消耗非常大，会有性能问题。在 v1.3.0 版本中做了数据源、数据表的匹配，减少了问数时表结构的数据量，SQLBot 会根据问题，与数据源的数据表描述信息进行匹配，默认匹配 10 个匹配度最高的数据表，然后这 10 个数据表如果有做表关联，那与这 10 个表关联的数据表也会一同传给大模型。</p>
+<p>在后期版本，SQLBot 会开放对默认匹配数据表数量的控制，用户可以通过控制参数来适配自己的实际需求。</p>
 </div>
 
 
