@@ -16,10 +16,14 @@
     数据迁移需要将源服务器上 SQLBot 的运行目录复制到目标服务器上。
 
     在复制之前，可以将目标服务器上的 SQLBot 运行目录移除。
+
     此处为了保险起见，我们将目标服务器上的 SQLBot 运行目录进行改名操作，在目标服务器上执行命令（SQLBot 默认运行目录为 /opt/sqlbot，如有修改，请相应的调整下面的命令）
     ```bash
     mv /opt/sqlbot /opt/sqlbot-bak
     ```
+
+    !!! Abstract ""
+        如果之前是在线安装模式运行的 SQLBot（即 docker 命令直接运行），则源服务器运行目录为 docker 命令当前的执行目录，将该目录下的 data 目录复制到 SQLBot 目标服务器的运行目录下。
 
     然后，将源服务器上的 SQLBot 运行目录复制过来。此处假设源服务器 ip 为 192.168.0.1，目标服务器 ip 为 192.168.0.2，在目标服务器上执行命令：
     ```bash
@@ -33,7 +37,7 @@
     ```
     root@iZf8zg3g62vtajwudlbwgiZ:~# cat /opt/sqlbot/.env | grep SERVER_IMAGE_HOST
     SQLBOT_SERVER_IMAGE_HOST=http://192.168.0.2:8001/images/
-    
+
     root@iZf8zg3g62vtajwudlbwgiZ:~# cat /opt/sqlbot/conf/sqlbot.conf | grep SERVER_IMAGE_HOST
     SERVER_IMAGE_HOST=http://192.168.0.2:8001/images/
     ```
@@ -48,3 +52,8 @@
     ```
 
     整个迁移工作完成。
+
+## 其他情况
+
+!!! Abstract ""
+    如果之前是在线安装模式运行的 SQLBot（即 docker 命令直接运行），则源服务器运行目录为 docker 命令当前的执行目录，将该目录下的 data 目录复制到 SQLBot 目标服务器的运行目录下，
