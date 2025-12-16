@@ -51,6 +51,7 @@ nav:
         - Windows 下安装: installation/windows_installation.md
         - 命令行工具: installation/cli.md
         - 源码运行: installation/source_run.md
+        - 数据迁移: installation/migration.md
     - 功能手册:
         - 数据源:
             - 数据源概览: user_manual/datasource_description.md
