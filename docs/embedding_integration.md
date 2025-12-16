@@ -25,10 +25,10 @@
     使用 admin 账号登录 SQLBot，切到系统设置菜单-嵌入式管理，新建对应的应用。
     ![示例](../img/embedding/sqlbot_basic_assistant.png)
 
-    填写名称、描述、以及跨域设置
+    填写名称、描述、以及跨域设置。
     ![示例](../img/embedding/sqlbot_basic_info.png)
 
-    选择对应的工作空间并设置数据源权限
+    选择对应的工作空间并设置数据源权限。
     ![示例](../img/embedding/sqlbot_basic_datasource.png)
     小助手-基础应用有“游客/员工”简单权限模式，游客只能访问“公共”数据源
 
@@ -36,7 +36,7 @@
 #### 1.1.1 高级应用
 
 !!! Abstract ""
-    高级应用在新建环节和基础应用的区别就是数据源，通过 API 接口的方式获取。
+    高级应用与基础应用在“新建”阶段的核心区别在于：高级应用的数据源是通过 API 接口方式获取的。
     ![示例](../img/embedding/sqlbot_advanced_info.png)
     ![示例](../img/embedding/sqlbot_advanced_interface.png)
 
@@ -101,37 +101,41 @@
 ### 1.2 页面嵌入
 
 !!! Abstract ""
-    填写名称、跨域设置：
+    填写名称、跨域设置。记录 APP ID 以及 APP Secret，后面编码环节用得到。
+
     ![示例](../img/embedding/sqlbot_page.png)
 
-    记录 APP ID 以及 APP Secret，后面编码环节用得到。
-
+    
 ## 2 宿主系统实现
 
 !!! Abstract ""
-    下载 Demo 代码 https://github.com/dataease/sqlbot-embedded-demo
+    下载 Demo 代码 https://github.com/dataease/sqlbot-embedded-demo 。
 
     配置数据库信息：
 
     ![示例](../img/embedding/project_config.png)
 
-    在 frontend 目录执行
+    在 frontend 目录执行：
     ```
     npm install;npm run build
     ```
 
-    在 backend 目录执行 
+    在 backend 目录执行：
     ```
     npm install;npm run dev
     ```
 
-    访问 http://localhost:3000，如下图即运行正常
+    访问 http://localhost:3000，如下图即运行正常。
 
     ![示例](../img/embedding/project_demo.png)
 
     根据 SQLBot 中填写的信息填写系统设置表单，保存。当前是游客模式，登录后是 online 模式。
 
     代码层面基础应用和高级应用嵌入方式基本没有区别。
+
+    ![示例](../img/embedding/sqlbothandler.png)
+
+    sqlbot_assistant_handler 用于浮动窗口模式（页面悬浮小助手），而 sqlbot_embedded_handler 用于全屏或区域模式（嵌入整个对话区域），两者分别适用于不同的嵌入方式，可根据业务需求选择使用。
 
 ### 2.1 浮窗模式
 
@@ -185,7 +189,7 @@
 ### 2.4 高级应用 API 接口
 
 !!! Abstract ""
-    接口基本信息
+    接口基本信息：
 
     |项目 |描述|
     |---|---|
@@ -195,11 +199,12 @@
     |Content-Type |application/json|
     |权限要求 |根据宿主系统|
 
-    响应
+    响应说明：  
+    成功响应HTTP 
 
-    成功响应 http 200
+    - 状态码：200
 
-    响应体
+    响应体结构：
 
     |名称 |类型 |示例值 |描述|
     |---|---|---|---|
@@ -229,53 +234,55 @@
         "code": 200,
         "data": [
             {
-                "name": "数据源 1",
-                "type": "mysql",
-                "host": "192.168.1.1",
-                "port": 3306,
-                "user": "user",
-                "password": "password",
-                "dataBase": "sqlbot_demo",
-                "schema": "schema",
-                "comment": "数据源1备注信息",
-                "tables": [
-                    // 无权限规则的数据表
+                "name": "数据源" ,                   //（数据库IP  | 类型：string）
+                "type": "mysql " ,                 //（数据库种类 | 类型：string）
+                "host": "192.168.1.1 ",             //（数据库IP  | 类型：string）
+                "port": 3306,                      //（数据库开放的端口 | 类型：integer(int32)）
+                "user": "user",                     //（数据库用户名 | 类型：string）
+                "password": "password",            //（数据库密码 | 类型：string）
+                "dataBase": "sqlbot_demo",          //（数据库内的库名 | 类型：string）
+                "schema": "schema",                //（数据库模式，部分数据库会有 | 类型：string）
+                "comment": "数据源备注信息",         //（针对数据源的描述，可在数据源处查看编辑，详细的描述可以帮助 SQLBot 生成答案 | 类型：string）
+                "tables": [ 
+                                                      // 无权限规则的数据表
                     {
-                        "name": "数据表 1",
-                        "comment": "数据表 1 备注信息",
+                        "name": "数据表",             //（构建数据集的数据表名称 | 类型：string）
+                        "comment": "数据表备注信息",  //（数据集的名字，详细的以及和问题相关的描述也能够帮助 SQLBot 生成答案 | 类型：string）
+                        "rule": "",                //（DataEase 无具体赋值 在 SQLBot 中该该字段会传值给 AiModelQuestion类，帮助 AI 以字段内容规定回答格式 | 类型：string）
                         "fields": [
                             {
-                                "name": "age",
-                                "type": "bigint",
-                                "comment": "字段 1备注信息"
+                                "name": "age",               //（字段名 | 类型：string）
+                                "type": "bigint" ,          //（字段描述 | 类型：string）
+                                "comment": "字段 1备注信息"  //（字段的数据类型 | 类型：string）
                             },
                             {
-                                "name": "gender",
-                                "type": "text",
-                                "comment": "字段 2备注信息"
+                                "name": "gender",            //（字段名 | 类型：string）
+                                "type": "text" ,            //（字段描述 | 类型：string）
+                                "comment": "字段 2备注信息"  //（字段的数据类型 | 类型：string）
                             }
                         ]
                     },
-                    // 有权限限制的数据表，通过 sql 字段来限制
+                                                   // 有权限限制的数据表，通过 SQL 字段来限制
                     {
-                        "name": "数据表 2",
-                        "comment": "数据表 2 备注信息",
-                        "sql": "select name, gender, class, score from student where class = 1 and score > 80",
+                        "name": "数据表2",            //（构建数据集的数据表名称 | 类型：string）
+                        "comment": "数据表 2",       //（数据集的名字，详细的以及和问题相关的描述也能够帮助 SQLBot 生成答案 | 类型：string）
+                        "rule": "" ,               //（DataEase 无具体赋值 在 SQLBot 中该字段会传值给 AiModelQuestion 类，帮助 AI 以字段内容规定回答格式 | 类型：string）
+                        "sql": "select name, gender, class, score from student where class = 1 and score > 80 //（展示了数据表到数据集的 SQL 语句，当有行列权限限制时，将会进行一次查询的嵌套，实现行列权限的规定 | 类型：string）",
                         "fields": [
                             {
-                                "name": "name",
-                                "type": "TEXT",
-                                "comment": "姓名"
+                                "name": "name",       //（字段名 | 类型：string）
+                                "type": "TEXT" ,     //（字段的数据类型 | 类型：string）
+                                "comment": "姓名"    //（字段描述 | 类型：string）
                             },
                             {
-                                "name": "class",
-                                "type": "int",
-                                "comment": "字段 3备注信息"
+                                "name": "class" ,      //（字段名 | 类型：string）
+                                "type": "int" ,       //（字段的数据类型 | 类型：string）
+                                "comment": "字段2"    //（字段描述 | 类型：string）
                             },
                             {
-                                "name": "score",
-                                "type": "int",
-                                "comment": "字段 4备注信息"
+                                "name": "score" ,      //（字段名 | 类型：string）
+                                "type": "int" ,       //（字段的数据类型 | 类型：string）
+                                "comment": "字段3"    //（字段描述 | 类型：string）
                             }
                         ]
                     }
@@ -285,7 +292,8 @@
     }
     ```
 
-    api 接口可以考虑预留参数 dsId 以及 tableId，以限定数据源和表进行问数。在多数据源场景下，对提升执行速度以及准确率都有明显效果。
+
+    API 接口可 预留 dsId、tableId 等参数，用于限定问数范围到指定数据源或数据表。在多数据源场景下，该方式可显著提升 问数执行效率与结果准确性。
 
     问数之前，SQLBot 会在宿主页面获取凭证信息调用 API，可以利用 param 类型的凭证作为参数，但是要保证实时更新页面中的凭证。比如设置一个限定数据源 ID 的参数。
     ![示例](../img/embedding/advanced_interface.png)
@@ -294,7 +302,7 @@
 
     使用问数功能时，SQLBot 会获取存储在 localStorage 中的 dsId 拼接到 API 接口地址中 http://localhost:3000/api/datasource?dsId=xxx
 
-    如此 ， 我想精确到某个表进行问数时，只需要在宿主页面前端执行
+    若需要将问数范围精确限定到某一张数据表，只需要在宿主页面前端执行：
     
     ```
     localStorage.setItem(‘dsId’, xxx);localStorage.setItem(‘tableId’, xxx)
