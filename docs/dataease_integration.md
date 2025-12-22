@@ -58,7 +58,7 @@
     ```yml
     dataease:
         sqlbot:
-            encrypt:ture                                 # 是否对敏感字段（host、user、password、database、schema）启用 AES-CBC-PKCS5Padding 加密
+            encrypt:true                                 # 是否对敏感字段（host、user、password、database、schema）启用 AES-CBC-PKCS5Padding 加密
             aes-key: X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2    # 32 位 AES 密钥，encrypt=true 时生效，可自定义
             log: true                                    # 是否打印 SQLBot 接口（/de2api/sqlbot/datasource）调用日志 info 级别
     ```
