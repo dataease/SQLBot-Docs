@@ -17,3 +17,22 @@
     如需了解 SQLBot 自身的 API 调用方式，可通过浏览器开发者工具查看其网络请求。目前系统尚未提供基于 API Key 的认证方式，但支持通过 Token 进行接口调用。用户可在登录过程中获取 Token，相应的获取接口可在登录时观察请求获得。
 
     完整的 API 接口列表可在 SQLBot 访问地址后追加 /docs进行查看，例如：https://your-sqlbot-domain/docs。
+
+## 3 如何使用 SQLBot 的 API？
+
+!!! Abstract ""
+    SQLBot v1.5.0 版本开始正式支持了 API 的调用。可以在 API Key 页面获取对应的 Access Key 和 Secret Key。如下图所示：
+    ![api_key](../img/faq/api_key.png)
+
+    生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（https://www.bejson.com/jwt/）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：
+    ![api_jwt](../img/faq/api_jwt.png)
+
+    生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（https://getman.cn/）举例。将生成的 token 复制下来，在请求的 header 里输入：
+    ```
+    # 下面的 xxx 为 token
+    x-sqlbot-ask-token: sk xxx
+    ```
+    在 URL 里输入需要调用的 API 接口地址，如下图所示：
+    ![api_call](../img/faq/api_call.png)
+
+    
