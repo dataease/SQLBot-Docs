@@ -2004,6 +2004,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-sqlbot-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 如何使用 SQLBot 的 API？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2316,6 +2327,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-sqlbot-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 如何使用 SQLBot 的 API？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2351,6 +2373,19 @@
 <p>SQLBot 支持通过 API 进行调用，认证过程采用 RSA 加密机制。调用时，用户名和密码需使用 RSA 公钥进行加密，而对应的密钥存储在 PostgreSQL 数据库的 rsa 表中。</p>
 <p>如需了解 SQLBot 自身的 API 调用方式，可通过浏览器开发者工具查看其网络请求。目前系统尚未提供基于 API Key 的认证方式，但支持通过 Token 进行接口调用。用户可在登录过程中获取 Token，相应的获取接口可在登录时观察请求获得。</p>
 <p>完整的 API 接口列表可在 SQLBot 访问地址后追加 /docs进行查看，例如：<a href="https://your-sqlbot-domain/docs">https://your-sqlbot-domain/docs</a>。</p>
+</div>
+<h2 id="3-sqlbot-api">3 如何使用 SQLBot 的 API？<a class="headerlink" href="#3-sqlbot-api" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>SQLBot v1.5.0 版本开始正式支持了 API 的调用。可以在 API Key 页面获取对应的 Access Key 和 Secret Key。如下图所示：
+<img alt="api_key" src="../../img/faq/api_key.png" /></p>
+<p>生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（<a href="https://www.bejson.com/jwt/">https://www.bejson.com/jwt/</a>）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：
+<img alt="api_jwt" src="../../img/faq/api_jwt.png" /></p>
+<p>生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（<a href="https://getman.cn/">https://getman.cn/</a>）举例。将生成的 token 复制下来，在请求的 header 里输入：
+<div class="highlight"><pre><span></span><code># 下面的 xxx 为 token
+x-sqlbot-ask-token: sk xxx
+</code></pre></div>
+在 URL 里输入需要调用的 API 接口地址，如下图所示：
+<img alt="api_call" src="../../img/faq/api_call.png" /></p>
 </div>
 
 
