@@ -188,11 +188,11 @@
 
     - MCP 调用后添加「自定义工具」。
     MCP 工具返回包含 sqlbot_chat_id 和 sqlbot_token 的 JSON。添加输入参数，将 MCP 调用结果赋值给参数“arg1”。此外，再添加工具节点（Python）来解析 JSON，工具内容：
-    ```
+    ```python
     import json
     def main1(arg1):
-    json_obj = json.loads(data[0])
-    return {"token":json_obj["data"]["sqlbot_token"], "sqlbot_chat_id":json_obj["data"]["chat_id"]}
+        json_obj = json.loads(data[0])
+        return {"token":json_obj["data"]["sqlbot_token"], "sqlbot_chat_id":json_obj["data"]["chat_id"]}
     ```
     
     步骤六： 变量赋值
