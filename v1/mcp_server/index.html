@@ -2747,10 +2747,10 @@ networks:
 <ul>
 <li>MCP 调用后添加「自定义工具」。
 MCP 工具返回包含 sqlbot_chat_id 和 sqlbot_token 的 JSON。添加输入参数，将 MCP 调用结果赋值给参数“arg1”。此外，再添加工具节点（Python）来解析 JSON，工具内容：
-<div class="highlight"><pre><span></span><code>import json
-def main1(arg1):
-json_obj = json.loads(data[0])
-return {&quot;token&quot;:json_obj[&quot;data&quot;][&quot;sqlbot_token&quot;], &quot;sqlbot_chat_id&quot;:json_obj[&quot;data&quot;][&quot;chat_id&quot;]}
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main1</span><span class="p">(</span><span class="n">arg1</span><span class="p">):</span>
+    <span class="n">json_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;sqlbot_token&quot;</span><span class="p">],</span> <span class="s2">&quot;sqlbot_chat_id&quot;</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chat_id&quot;</span><span class="p">]}</span>
 </code></pre></div></li>
 </ul>
 <p>步骤六： 变量赋值
