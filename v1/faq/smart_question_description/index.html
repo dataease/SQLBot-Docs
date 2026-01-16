@@ -2498,30 +2498,45 @@
 <div class="admonition abstract">
 <p>SQLBot 默认在查询 SQL 中添加了 1000 条数据的限制，是为了减少大数据量导致的响应缓慢，以及减少前端页面渲染的压力。尤其在进行数据分析和数据预测时，数据量过大会导致 token 超限。如果确实需要调整这个限制，可以在 SQLBot 的配置文件 (默认是 conf/sqlbot.conf) 中，添加或修改 GENERATE_SQL_QUERY_LIMIT_ENABLED 参数，将值改成 false，重启 SQLBot 服务即可。</p>
 <p>例如：
-<div class="highlight"><pre><span></span><code>PROJECT_NAME=&quot;SQLBot&quot;
-
-# Backend
-BACKEND_CORS_ORIGINS=&quot;http://localhost,http://localhost:5173,https://localhost,https://localhost:5173&quot;
-SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
-
-DEFAULT_PWD=&quot;SQLBot@123456&quot;
-
-LOG_LEVEL=&quot;DEBUG&quot;  # DEBUG, INFO, WARNING, ERROR
-SQL_DEBUG=False
-
-CACHE_TYPE=&quot;memory&quot;
-
-# Postgres
-POSTGRES_SERVER=localhost
+```
+PROJECT_NAME="SQLBot"</p>
+<h1 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h1>
+<p>BACKEND_CORS_ORIGINS="<a href="http://localhost,http://localhost:5173,https://localhost,https://localhost:5173">http://localhost,http://localhost:5173,https://localhost,https://localhost:5173</a>"
+SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s</p>
+<p>DEFAULT_PWD="SQLBot@123456"</p>
+<p>LOG_LEVEL="DEBUG"  # DEBUG, INFO, WARNING, ERROR
+SQL_DEBUG=False</p>
+<p>CACHE_TYPE="memory"</p>
+<h1 id="postgres">Postgres<a class="headerlink" href="#postgres" title="Permanent link">&para;</a></h1>
+<p>POSTGRES_SERVER=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=sqlbot
 POSTGRES_USER=root
-POSTGRES_PASSWORD=Password123@pg # Change this to your pwd
-
-SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
-
-GENERATE_SQL_QUERY_LIMIT_ENABLED=false
-</code></pre></div></p>
+POSTGRES_PASSWORD=Password123@pg # Change this to your pwd</p>
+<p>SERVER_IMAGE_HOST=<a href="http://192.168.1.112:8001/images/">http://192.168.1.112:8001/images/</a></p>
+<p>GENERATE_SQL_QUERY_LIMIT_ENABLED=false
+ ```</p>
+</div>
+<h2 id="6-oracle-12-limit-1000-sql">6 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#6-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>如下所示，在问数请求发起后，模型生成的限制1000行条件：ROWNUM &lt;= 1000，增加到了 SQL 语句的最外层，可能会影响结果的准确性。</p>
+<div class="highlight"><pre><span></span><code>SELECT &quot;d1&quot;.&quot;CITYNAME&quot; AS &quot;city_name&quot;,
+COUNT(*) AS &quot;case_count&quot;
+FROM &quot;WGHZHDZ&quot;.&quot;DANGECASE_INFO&quot; &quot;d1&quot;
+WHERE TO_CHAR(&quot;d1&quot;.&quot;OCCURTIME&quot;, &#39;YYYY&#39;) = &#39;2025&#39;
+AND &quot;d1&quot;.&quot;PROVINCENAME&quot; = &#39;江西省&#39;
+AND ROWNUM &lt;= 1000
+GROUP BY &quot;d1&quot;.&quot;CITYNAME&quot;
+ORDER BY &quot;city_name&quot;
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p>需要注意：对于oracle版本低于12的情况，建议使用支持深度思考的模型，且开启思考过程，有助于生成符合预期的 SQL 语句。</p>
+<div class="highlight"><pre><span></span><code>如果不开启模型的思考过程，出现了这样的情况，目前暂时没有解决办法，只能第二次提问的时候，问题中加上提示信息（如 limit 1000 加在 SQL 最外层），可能出现的情况：
+1、使用新版 Oracle 的语法（大概率）
+2、完全不加条数限制
+3、和这个bug的情况一致（很小概率）
+</code></pre></div>
 </div>
 
 
