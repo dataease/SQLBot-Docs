@@ -87,4 +87,29 @@
     SERVER_IMAGE_HOST=http://192.168.1.112:8001/images/
 
     GENERATE_SQL_QUERY_LIMIT_ENABLED=false
+     ```
+
+## 6 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？
+
+!!! Abstract ""
+    如下所示，在问数请求发起后，模型生成的限制1000行条件：ROWNUM <= 1000，增加到了 SQL 语句的最外层，可能会影响结果的准确性。
+    
+    ```
+    SELECT "d1"."CITYNAME" AS "city_name",
+    COUNT(*) AS "case_count"
+    FROM "WGHZHDZ"."DANGECASE_INFO" "d1"
+    WHERE TO_CHAR("d1"."OCCURTIME", 'YYYY') = '2025'
+    AND "d1"."PROVINCENAME" = '江西省'
+    AND ROWNUM <= 1000
+    GROUP BY "d1"."CITYNAME"
+    ORDER BY "city_name"
+    ```
+!!! Abstract ""
+    需要注意：对于oracle版本低于12的情况，建议使用支持深度思考的模型，且开启思考过程，有助于生成符合预期的 SQL 语句。
+
+    ```
+    如果不开启模型的思考过程，出现了这样的情况，目前暂时没有解决办法，只能第二次提问的时候，问题中加上提示信息（如 limit 1000 加在 SQL 最外层），可能出现的情况：
+    1、使用新版 Oracle 的语法（大概率）
+    2、完全不加条数限制
+    3、和这个bug的情况一致（很小概率）
     ```
