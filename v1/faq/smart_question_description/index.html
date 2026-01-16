@@ -2517,7 +2517,7 @@ POSTGRES_PASSWORD=Password123@pg # Change this to your pwd</p>
 <p>GENERATE_SQL_QUERY_LIMIT_ENABLED=false
  ```</p>
 </div>
-<h2 id="6-oracle-12-limit-1000-sql">6 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#6-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
+<h2 id="8-oracle-12-limit-1000-sql">8 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#8-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>如下所示，在问数请求发起后，模型生成的限制1000行条件：ROWNUM &lt;= 1000，增加到了 SQL 语句的最外层，可能会影响结果的准确性。</p>
 <div class="highlight"><pre><span></span><code>SELECT &quot;d1&quot;.&quot;CITYNAME&quot; AS &quot;city_name&quot;,
