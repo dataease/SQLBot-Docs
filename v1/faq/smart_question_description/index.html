@@ -1965,10 +1965,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-sql-limit-1000" class="md-nav__link">
+  <a href="#7-oracle-12-limit-1000-sql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？
+        7 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？
       
     </span>
   </a>
@@ -2416,10 +2416,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-sql-limit-1000" class="md-nav__link">
+  <a href="#7-oracle-12-limit-1000-sql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？
+        7 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？
       
     </span>
   </a>
@@ -2494,30 +2494,7 @@
 <img alt="faq_parse_answer.png" src="../../img/faq/faq_parse_answer.png" /></p>
 <p>此时建议更换其他模型试试。</p>
 </div>
-<h2 id="7-sql-limit-1000">7 问数的 SQL 为什么有 limit 1000 的限制，如何去掉这个限制？<a class="headerlink" href="#7-sql-limit-1000" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p>SQLBot 默认在查询 SQL 中添加了 1000 条数据的限制，是为了减少大数据量导致的响应缓慢，以及减少前端页面渲染的压力。尤其在进行数据分析和数据预测时，数据量过大会导致 token 超限。如果确实需要调整这个限制，可以在 SQLBot 的配置文件 (默认是 conf/sqlbot.conf) 中，添加或修改 GENERATE_SQL_QUERY_LIMIT_ENABLED 参数，将值改成 false，重启 SQLBot 服务即可。</p>
-<p>例如：
-```
-PROJECT_NAME="SQLBot"</p>
-<h1 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h1>
-<p>BACKEND_CORS_ORIGINS="<a href="http://localhost,http://localhost:5173,https://localhost,https://localhost:5173">http://localhost,http://localhost:5173,https://localhost,https://localhost:5173</a>"
-SECRET_KEY=y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s</p>
-<p>DEFAULT_PWD="SQLBot@123456"</p>
-<p>LOG_LEVEL="DEBUG"  # DEBUG, INFO, WARNING, ERROR
-SQL_DEBUG=False</p>
-<p>CACHE_TYPE="memory"</p>
-<h1 id="postgres">Postgres<a class="headerlink" href="#postgres" title="Permanent link">&para;</a></h1>
-<p>POSTGRES_SERVER=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=sqlbot
-POSTGRES_USER=root
-POSTGRES_PASSWORD=Password123@pg # Change this to your pwd</p>
-<p>SERVER_IMAGE_HOST=<a href="http://192.168.1.112:8001/images/">http://192.168.1.112:8001/images/</a></p>
-<p>GENERATE_SQL_QUERY_LIMIT_ENABLED=false
- ```</p>
-</div>
-<h2 id="8-oracle-12-limit-1000-sql">8 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#8-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
+<h2 id="7-oracle-12-limit-1000-sql">7 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#7-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>如下所示，在问数请求发起后，模型生成的限制1000行条件：ROWNUM &lt;= 1000，增加到了 SQL 语句的最外层，可能会影响结果的准确性。</p>
 <div class="highlight"><pre><span></span><code>SELECT &quot;d1&quot;.&quot;CITYNAME&quot; AS &quot;city_name&quot;,
