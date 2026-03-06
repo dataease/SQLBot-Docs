@@ -5,6 +5,8 @@ site_author: '飞致云'
 repo_name: 'SQLBot'
 repo_url: 'https://github.com/dataease/SQLBot'
 
+use_directory_urls: false
+
 edit_uri: https://github.com/dataease/SQLBot-Docs
 theme:
     name: 'material'
@@ -62,8 +64,14 @@ nav:
             - 配置 SQL Server 数据源: user_manual/datasource_sqlserver.md
             - 配置 ClickHouse 数据源: user_manual/datasource_clickhouse.md
             - 配置 达梦 数据源: user_manual/datasource_DM.md
+            - 配置 Doris 数据源: user_manual/datasource_Doris.md
+            - 配置 AWS Redshift 数据源: user_manual/datasource_redshift.md
+            - 配置 Elasticsearch 数据源: user_manual/datasource_elasticsearch.md
+            - 配置 Kingbase 数据源: user_manual/datasource_kingbase.md
+            - 配置 StarRocks 数据源: user_manual/datasource_starrocks.md
         - 智能问数:  user_manual/smart_question_description.md
         - 仪表板: user_manual/dashboard_description.md
+        - 小助手应用: user_manual/assistant.md
         - 设置:
             - 成员管理:  user_manual/member.md
             - 权限配置:  user_manual/permission.md
@@ -77,7 +85,19 @@ nav:
             - 嵌入式管理: system/embedding.md
             - 系统设置:
                 - 外观设置: system/appearance_configuration.md
+                - 参数设置: system/parameter_setting.md
                 - 登录认证: system/identification_setting.md
+                - 平台对接: system/platform_integration.md
+            - 操作日志: system/operation_log.md
+        - X-Pack:
+            - 自定义提示词: user_manual/prompt.md
+            - 登录认证: system/identification_setting.md
+            - 平台对接: system/platform_integration.md
+            - 外观设置: system/appearance_configuration.md
+            - 参数设置: system/parameter_setting.md
+            - 操作日志: system/operation_log.md
+
+
     - 常见问题:
         - 安装部署: faq/installation.md
         - 数据源: faq/datasource.md

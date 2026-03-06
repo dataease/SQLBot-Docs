@@ -5,6 +5,8 @@
 !!! Abstract ""
     该主题应用于系统顶部导航背景色，系统默认松绿色主题，用户可自定义色值为自定义主题。
 
+    **注意**：外观设置为 X-Pack 功能。
+
 ![更新1](../img/user_manual/system/appearance_setting.png)
 
 ## 2 平台登录设置

@@ -3,6 +3,8 @@
 !!! Abstract ""
     支持在系统设置中进行 LDAP、OIDC、CAS、OAuth2 配置，开启此功能跳转到登录页面即可使用相应方式登录。
 
+    **注意**：登录认证为 X-Pack 功能。
+
 ![更新1](../img/user_manual/system/authentication.png)
 
 ![更新1](../img/user_manual/system/authentication_login.png)
