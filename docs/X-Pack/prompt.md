@@ -9,14 +9,13 @@
 
     - 数据预测： 仅用于数据预测的提示词。
 
-    **注意**：自定义提示词为 X-Pack 功能。
 
 !!! Tip ""
     进入【自定义提示词】页面：在系统导航栏点击【设置】>【自定义提示词】。
-![prompt.png](../img/user_manual/setting/prompt.png)
+![prompt.png](../img/user_manual/X-Pack/prompt.png)
 !!! Tip ""
     点击【添加提示词】按钮，输入提示词名称、提示词内容，并选择生效数据源，然后点击【保存】，【提示词】创建成功。
-![add_prompt.png](../img/user_manual/setting/add_prompt.png)
+![add_prompt.png](../img/user_manual/X-Pack/add_prompt.png)
 
 
 

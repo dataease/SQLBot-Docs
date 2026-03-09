@@ -5,9 +5,8 @@
 !!! Abstract ""
     该主题应用于系统顶部导航背景色，系统默认松绿色主题，用户可自定义色值为自定义主题。
 
-    **注意**：外观设置为 X-Pack 功能。
 
-![更新1](../img/user_manual/system/appearance_setting.png)
+![更新1](../img/user_manual/X-Pack/appearance_setting.png)
 
 ## 2 平台登录设置
 
@@ -15,11 +14,11 @@
     可设置系统的网站 logo、登录 logo、登录背景图、网站名称、sloga 和自定义页脚。  
     为了显示效果，建议上传的图片大小符合系统中的提示，如：头部系统 logo，建议大小为 135px\*35px。
 
-![更新1](../img/user_manual/system/plat_appearance.png)
+![更新1](../img/user_manual/X-Pack/plat_appearance.png)
 
 
 ## 3 平台设置
 !!! Abstract ""
     置配帮助文档链接、关于显示。
 
-![更新1](../img/user_manual/system/plat_set.png)
+![更新1](../img/user_manual/X-Pack/plat_set.png)

@@ -77,25 +77,20 @@ nav:
             - 权限配置:  user_manual/permission.md
             - 术语配置:  user_manual/professional.md
             - SQL 示例库: user_manual/data_training.md
-            - 自定义提示词: user_manual/prompt.md
         - 系统管理:
             - 用户管理: system/user.md
             - 工作空间: system/workspace.md
             - AI 模型配置: system/model.md
             - 嵌入式管理: system/embedding.md
             - 系统设置:
-                - 外观设置: system/appearance_configuration.md
                 - 参数设置: system/parameter_setting.md
-                - 登录认证: system/identification_setting.md
-                - 平台对接: system/platform_integration.md
-            - 操作日志: system/operation_log.md
         - X-Pack:
-            - 自定义提示词: user_manual/prompt.md
-            - 登录认证: system/identification_setting.md
-            - 平台对接: system/platform_integration.md
-            - 外观设置: system/appearance_configuration.md
-            - 参数设置: system/parameter_setting.md
-            - 操作日志: system/operation_log.md
+            - 自定义提示词: X-Pack/prompt.md
+            - 登录认证: X-Pack/identification_setting.md
+            - 平台对接: X-Pack/platform_integration.md
+            - 外观设置: X-Pack/appearance_configuration.md
+            - 第三方平台设置: X-Pack/third-party-platform-settings.md
+            - 操作日志: X-Pack/operation_log.md
 
 
     - 常见问题:
