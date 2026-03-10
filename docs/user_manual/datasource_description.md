@@ -16,8 +16,8 @@
 ## 2 支持的数据源类型
 
 !!! Tip ""
-    - **OLTP 型数据库：** MySQL、SQL Server、Oracle、PostgreSQL、达梦
-    - **OLAP 型数据库：** ClickHouse、Apache Doris
+    - **OLTP 型数据库：** MySQL、SQL Server、Oracle、PostgreSQL、达梦、Kingbase
+    - **OLAP 型数据库：** ClickHouse、Apache Doris、Elasticsearch、StarRocks
     - **数据仓库/数据湖：** AWS RedShift
     - **数据文件：** Excel/CSV
 
@@ -44,7 +44,7 @@
 ## 4 数据源表关系管理
 
 !!! Tip ""
-   【表关系管理】用于管理数据源中各个数据表之间的关联关系。当用户发起的问数请求，涉及到多表查询时，便可以根据数据源中维护的表关联关系，辅助生成正确的 SQL 查询语句。
+    【表关系管理】用于管理数据源中各个数据表之间的关联关系。当用户发起的问数请求，涉及到多表查询时，便可以根据数据源中维护的表关联关系，辅助生成正确的 SQL 查询语句。
     点击某个数据源卡片可进入该数据源详情页面，点击【表关系管理】，进入数据源的表关系管理页面，可按照如下进行操作：
 
     - 序号1:点击进入【表关系管理】页面。

@@ -1,25 +1,25 @@
 # 配置 StarRocks 数据源
 ## 1 前提条件
 !!! Tip ""
-    在配置 starrocks 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：：
+    在配置 StarRocks 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：：
 
-    - starrocks 版本：无限制；
-    - 网络连通：SQLBot 所在环境可直连  starrocks 主机（若在内网或防火墙后，请先开放 9030 端口或映射安全端口）；
+    - StarRocks 版本：无限制；
+    - 网络连通：SQLBot 所在环境可直连  StarRocks 主机（若在内网或防火墙后，请先开放 9030 端口或映射安全端口）；
     - 账号权限：提供的用户名需具备 SELECT 权限；
 
 ## 2 配置数据源链接步骤
 !!! Tip ""
-    以下是将 starrocks 数据库 作为数据源接入的详细流程：
+    以下是将 StarRocks 数据库 作为数据源接入的详细流程：
 
 !!! Tip ""
-    步骤一：选择数据源类型。在【新建数据源】页面选择 “ starrocks” 作为数据源类型。
+    步骤一：选择数据源类型。在【新建数据源】页面选择 “ StarRocks” 作为数据源类型。
 
 ![支持的数据源类型](../img/user_manual/datasource/datasource_list.png)
 
 !!! Tip ""
     步骤二：填写连接与认证信息。进入【配置信息】页后，填入收集的 IP 、端口、数据库等相关的信息。数据源检验，校验成功后即可进行下一步。
 
-![配置starrocks](../img/user_manual/datasource/add_starrocks.png)
+![配置StarRocks](../img/user_manual/datasource/add_starrocks.png)
 
 
 !!! Tip ""
@@ -31,11 +31,11 @@
     数据量过大可能会导致操作超时或者无响应，在勾选的数据表数量超过 30 张时，系统会在【保存】前弹出二次确认。
 
 
-![配置starrocks](../img/user_manual/datasource/save_starrocks.png)
+![配置StarRocks](../img/user_manual/datasource/save_starrocks.png)
 
 !!! Tip ""
-    对创建完成的 starrocks 数据源对可直接开启智能问数。
+    对创建完成的 StarRocks 数据源对可直接开启智能问数。
 
-![配置starrocks](../img/user_manual/datasource/question_starrocks.png)
+![配置StarRocks](../img/user_manual/datasource/question_starrocks.png)
 
 

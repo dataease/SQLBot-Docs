@@ -1,18 +1,18 @@
 # 配置 Elasticsearch 数据源
 ## 1 前提条件
 !!! Tip ""
-    在配置 elasticsearch 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：：
+    在配置 Elasticsearch 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：：
 
-    - elasticsearch 版本：7+；
-    - 网络连通：SQLBot 所在环境可直连  elasticsearch 主机（若在内网或防火墙后，请先开放 9200 端口或映射安全端口）；
+    - Elasticsearch 版本：7+；
+    - 网络连通：SQLBot 所在环境可直连  Elasticsearch 主机（若在内网或防火墙后，请先开放 9200 端口或映射安全端口）；
     - 账号权限：提供的用户名需具备 SELECT 权限；
 
 ## 2 配置数据源链接步骤
 !!! Tip ""
-    以下是将 elasticsearch 数据库 作为数据源接入的详细流程：
+    以下是将 Elasticsearch 数据库 作为数据源接入的详细流程：
 
 !!! Tip ""
-    步骤一：选择数据源类型。在【新建数据源】页面选择 “ elasticsearch” 作为数据源类型。
+    步骤一：选择数据源类型。在【新建数据源】页面选择 “ Elasticsearch” 作为数据源类型。
 
 ![支持的数据源类型](../img/user_manual/datasource/datasource_list.png)
 
@@ -34,7 +34,7 @@
 ![配置elasticsearch](../img/user_manual/datasource/save_elasticsearch.png)
 
 !!! Tip ""
-    对创建完成的 elasticsearch 数据源对可直接开启智能问数。
+    对创建完成的 Elasticsearch 数据源对可直接开启智能问数。
 
 ![配置elasticsearch](../img/user_manual/datasource/question_elasticsearch.png)
 

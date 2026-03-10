@@ -136,3 +136,11 @@
 ![智能问数管理页面](../img/user_manual/chat/data_prediction.png)
 
 ![智能问数管理页面](../img/user_manual/chat/data_prediction_result.png)
+
+### 3.5 执行详情
+!!! Tip ""
+    点击图表的【执行详情】按钮，查看本次问数背后的完整执行过程，耗时与消耗 Tokens，便于排查问题和复现结果。
+
+![智能问数管理页面](../img/user_manual/chat/execution_details.png)
+
+![智能问数管理页面](../img/user_manual/chat/execution_details_page.png)

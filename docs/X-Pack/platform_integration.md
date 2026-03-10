@@ -126,7 +126,7 @@
     - AppKey - 应用 Key
     - AppSecret - 应用密钥
 
-![对接钉钉平台](../img/user_manual/X-Pack/钉钉应用信息.png){
+![对接钉钉平台](../img/user_manual/X-Pack/钉钉应用信息.png)
 
 ### 2.2 应用权限设置
 
