@@ -5,8 +5,6 @@ site_author: '飞致云'
 repo_name: 'SQLBot'
 repo_url: 'https://github.com/dataease/SQLBot'
 
-use_directory_urls: false
-
 edit_uri: https://github.com/dataease/SQLBot-Docs
 theme:
     name: 'material'
