@@ -13,7 +13,7 @@
 !!! Abstract ""
     SQLBot是一款基于大语言模型和RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。它利用大语言模型的强大能力，将用户的自然语言问题实时转换为精确的SQL查询语句和可视化图表。其核心目标是让业务人员、运营人员乃至管理层都能在没有SQL基础的情况下，也能够轻松与数据库进行对话，即时获取数据分析的结果。
 ![工作原理图](img/best_practice/arch.png)
-<center>▲图1 SQLBot的工作原理</center>
+    <center>▲图1 SQLBot的工作原理</center>
 
 !!! Abstract ""
     为了解决大语言模型“缺乏业务理解能力”的问题，SQLBot提供了一套强大的业务上下文配置能力，主要包括四大核心功能：
@@ -28,7 +28,7 @@
 !!! Abstract ""
     我们选择以Cordys CRM系统为问数对象，需要提前在SQLBot中接入Cordys CRM系统的数据库“cordys-crm”作为数据源，并将这个数据源命名为“CordysCRM”。
 ![添加数据源](img/best_practice/add_ds.png)
-<center>▲图2 在SQLBot中添加名为“CordysCRM”数据源</center>
+    <center>▲图2 在SQLBot中添加名为“CordysCRM”数据源</center>
 
 ### 第一步：精简数据源（表管理）
 
