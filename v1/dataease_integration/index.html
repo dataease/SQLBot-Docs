@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1744,6 +1744,8 @@
       
         
       
+        
+      
     
     
     
@@ -1799,6 +1801,34 @@
     
   
     参数设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统变量
   
 
     
@@ -2695,13 +2725,17 @@ DataEase 版本为 v2.10.13 及以上版本。</p>
 </div>
 <h2 id="1-sqlbot">1 SQLBot 侧配置<a class="headerlink" href="#1-sqlbot" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p>添加【新建高级应用】，SQLBot 需要以嵌入式应用方式接入到 DataEase 中，所以需要先在 SQLBot 平台中先创建一个高级应用，如下图所示:
-<img alt="示例" src="../img/dataease/dataease_sqlbot_app.png" /></p>
+<p>添加【新建高级应用】，SQLBot 需要以嵌入式应用方式接入到 DataEase 中，所以需要先在 SQLBot 平台中先创建一个高级应用，如下图所示:</p>
+</div>
+<p><img alt="示例" src="../img/dataease/dataease_sqlbot_app.png" /></p>
+<div class="admonition tip">
 <p>设置基础信息。</p>
 <p><strong>注意</strong>：跨域设置为 DataEase 服务的访问地址，例如 <a href="https://demo.dataease.cn">https://demo.dataease.cn</a> 。</p>
+</div>
 <p><img alt="示例" src="../img/dataease/dataease_sqlbot_basic_info.png" /></p>
+<div class="admonition tip">
 <p>进行接口配置。</p>
-<p>接口 URL 为 DataEase 服务的访问地址加上固定的 API 接口路径“de2api/sqlbot/datasource”，例如 <a href="https://demo.dataease.cn/de2api/sqlbot/datasource">https://demo.dataease.cn/de2api/sqlbot/datasource</a>。</p>
+<p>接口 URL 为 固定的 API 接口路径“/de2api/sqlbot/datasource”。</p>
 <p>添加调用所需的接口凭证，以下配置对于 DataEase 对接来说都是固定的：</p>
 <ul>
 <li>凭证名称: user.token</li>
@@ -2712,21 +2746,27 @@ DataEase 版本为 v2.10.13 及以上版本。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">source_val</span><span class="si">}</span><span class="sb">`</span><span class="p">)[</span><span class="s1">&#39;v&#39;</span><span class="p">].</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[&#39;\&quot;]|[&#39;\&quot;]$/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
+</div>
 <p><img alt="示例" src="../img/dataease/dataease_sqlbot_interface_info.png" /></p>
+<div class="admonition tip">
 <p>SQLBot 调用 DataEase 获取数据源的接口返回的信息开启 AES-Key 加密（32 位随机生成即可）。</p>
 <p><strong>注意</strong>：后续 DataEase 配置中需要使用到 AES-Key 进行数据源加密配置。</p>
-<p><img alt="示例" src="../img/dataease/ase-key.png" /></p>
-<p>保存好应用，记录好应用的 ID 号。
-<img alt="示例" src="../img/dataease/dataease_sqlbot_copy_id.png" /></p>
 </div>
+<p><img alt="示例" src="../img/dataease/ase-key.png" /></p>
+<div class="admonition tip">
+<p>保存好应用，记录好应用的 ID 号。</p>
+</div>
+<p><img alt="示例" src="../img/dataease/dataease_sqlbot_copy_id.png" /></p>
 <h2 id="2-dataease">2 DataEase 侧配置<a class="headerlink" href="#2-dataease" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p>以 admin 用户登录 DataEase，在「系统设置」&gt;「系统参数」&gt;「第三方嵌入」中，对 SQLBot 的接入项进行设置。</p>
-<p>输入 SQLBot 服务器 URL 和前面步骤获取到的 SQLBot 高级应用的 ID 号，校验通过后保存即可。
-<img alt="示例" src="../img/dataease/dataease_settings.png" /></p>
-<p>返回工作台后，即可在 DataEase 右上角的快捷工具栏看到 SQLBot。
-<img alt="示例" src="../img/dataease/dataease_sqlbot.png" /></p>
+<p>输入 SQLBot 服务器 URL 和前面步骤获取到的 SQLBot 高级应用的 ID 号，校验通过后保存即可。</p>
 </div>
+<p><img alt="示例" src="../img/dataease/dataease_settings.png" /></p>
+<div class="admonition tip">
+<p>返回工作台后，即可在 DataEase 右上角的快捷工具栏看到 SQLBot。</p>
+</div>
+<p><img alt="示例" src="../img/dataease/dataease_sqlbot.png" /></p>
 <div class="admonition tip">
 <p>进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 sqlbot 相关配置， 配置文件修改后大致如下：</p>
 <div class="highlight"><pre><span></span><code>dataease:
