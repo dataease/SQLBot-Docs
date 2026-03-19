@@ -5,8 +5,8 @@
 !!! Abstract ""
     达梦数据库在启用安全特性后，在添加 SQLBot 数据源时会遇到下面的错误：
     
-    ![示例](../img/faq/datasource_dameng.jpg)
-
+![示例](../img/faq/datasource_dameng.jpg)
+!!! Abstract ""
     由于不同数据库版本、不同平台架构、不同操作系统的达梦处理方式不同，无法在 SQLBot 镜像里统一处理，所以需要用户根据达梦官方的方案来解决。
 
     可以参考达梦官方的解决方案处理：
@@ -15,7 +15,7 @@
 
     docker-compose.yml文件修改示例：
 
-    ![示例](../img/faq/dameng_issue.jpg)
+![示例](../img/faq/dameng_issue.jpg)
 
 ## 2 数据源连接无效？
 

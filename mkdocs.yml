@@ -82,6 +82,7 @@ nav:
             - 嵌入式管理: system/embedding.md
             - 系统设置:
                 - 参数设置: system/parameter_setting.md
+                - 系统变量: system/variables.md
         - X-Pack:
             - 自定义提示词: X-Pack/prompt.md
             - 登录认证: X-Pack/identification_setting.md

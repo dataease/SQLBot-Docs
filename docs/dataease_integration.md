@@ -6,17 +6,20 @@
 
 !!! Tip ""
     添加【新建高级应用】，SQLBot 需要以嵌入式应用方式接入到 DataEase 中，所以需要先在 SQLBot 平台中先创建一个高级应用，如下图所示:
-    ![示例](img/dataease/dataease_sqlbot_app.png)
+![示例](img/dataease/dataease_sqlbot_app.png)
 
+!!! Tip ""
     设置基础信息。
     
     **注意**：跨域设置为 DataEase 服务的访问地址，例如 https://demo.dataease.cn 。
 
-    ![示例](img/dataease/dataease_sqlbot_basic_info.png)
+![示例](img/dataease/dataease_sqlbot_basic_info.png)
+
+!!! Tip ""
 
     进行接口配置。
-    
-    接口 URL 为 DataEase 服务的访问地址加上固定的 API 接口路径“de2api/sqlbot/datasource”，例如 https://demo.dataease.cn/de2api/sqlbot/datasource。
+
+    接口 URL 为 固定的 API 接口路径“/de2api/sqlbot/datasource”。
     
     添加调用所需的接口凭证，以下配置对于 DataEase 对接来说都是固定的：
 
@@ -30,27 +33,31 @@
 
     ```
 
-    ![示例](img/dataease/dataease_sqlbot_interface_info.png)
+![示例](img/dataease/dataease_sqlbot_interface_info.png)
 
+!!! Tip ""
     SQLBot 调用 DataEase 获取数据源的接口返回的信息开启 AES-Key 加密（32 位随机生成即可）。
 
     **注意**：后续 DataEase 配置中需要使用到 AES-Key 进行数据源加密配置。
 
-     ![示例](img/dataease/ase-key.png)
+![示例](img/dataease/ase-key.png)
 
-
+!!! Tip ""
     保存好应用，记录好应用的 ID 号。
-    ![示例](img/dataease/dataease_sqlbot_copy_id.png)
+
+![示例](img/dataease/dataease_sqlbot_copy_id.png)
 
 ## 2 DataEase 侧配置
 !!! Tip ""
     以 admin 用户登录 DataEase，在「系统设置」>「系统参数」>「第三方嵌入」中，对 SQLBot 的接入项进行设置。
 
     输入 SQLBot 服务器 URL 和前面步骤获取到的 SQLBot 高级应用的 ID 号，校验通过后保存即可。
-    ![示例](img/dataease/dataease_settings.png)
+![示例](img/dataease/dataease_settings.png)
 
+!!! Tip ""
     返回工作台后，即可在 DataEase 右上角的快捷工具栏看到 SQLBot。
-    ![示例](img/dataease/dataease_sqlbot.png)
+
+![示例](img/dataease/dataease_sqlbot.png)
 
 !!! Tip ""
     进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 sqlbot 相关配置， 配置文件修改后大致如下：

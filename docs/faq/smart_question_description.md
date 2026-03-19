@@ -12,7 +12,7 @@
 
     术语示例如下图所示：
 
-    ![professional..png](../img/faq/professional..png)
+![professional..png](../img/faq/professional..png)
 
 ## 3 SQL 示例怎么使用？
 
@@ -21,7 +21,7 @@
 
     SQL 示例如下图所示：
 
-    ![data_training.png](../img/faq/data_training.png)
+![data_training.png](../img/faq/data_training.png)
 
 ## 4 SQLBot 在哪些方面会影响到对 token 的消耗？
 
@@ -53,8 +53,9 @@
 
 !!! Abstract ""
     SQLBot 对大模型返回的问数结果的结构是有要求的，SQLBot 在提示词模板中对该格式有明确定义。在使用过程中，有些大模型由于理解能力问题，并未按要求返回相应格式的数据，会导致 SQLBot 无法解析返回结果，出现类似下图的错误： 
-    ![faq_parse_answer.png](../img/faq/faq_parse_answer.png)
+![faq_parse_answer.png](../img/faq/faq_parse_answer.png)
 
+!!! Abstract ""
     此时建议更换其他模型试试。
 
 ## 7 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？

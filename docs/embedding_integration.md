@@ -22,14 +22,21 @@
 #### 1.1.1 基础应用
 
 !!! Abstract ""
-    使用 admin 账号登录 SQLBot，切到系统设置菜单-嵌入式管理，新建对应的应用。
-    ![示例](img/embedding/sqlbot_basic_assistant.png)
+    使用 admin 账号登录 SQLBot，点击小助手应用，新建对应的应用。
 
+![示例](img/embedding/sqlbot_basic_assistant.png)
+
+!!! Abstract ""
     填写名称、描述、以及跨域设置。
-    ![示例](img/embedding/sqlbot_basic_info.png)
 
+![示例](img/embedding/sqlbot_basic_info.png)
+
+!!! Abstract ""
     选择对应的工作空间并设置数据源权限。
-    ![示例](img/embedding/sqlbot_basic_datasource.png)
+
+![示例](img/embedding/sqlbot_basic_datasource.png)
+
+!!! Abstract ""
     小助手-基础应用有“游客/员工”简单权限模式，游客只能访问“公共”数据源
 
 
@@ -37,11 +44,10 @@
 
 !!! Abstract ""
     高级应用与基础应用在“新建”阶段的核心区别在于：高级应用的数据源是通过 API 接口方式获取的。
-    ![示例](img/embedding/sqlbot_advanced_info.png)
-    ![示例](img/embedding/sqlbot_advanced_interface.png)
+![示例](img/embedding/sqlbot_advanced_info.png)
+![示例](img/embedding/sqlbot_advanced_interface.png)
 
 !!! Abstract ""
-
     - AES 加密：当开启 AES 加密时，宿主系统提供的 API 接口需对相关字段进行 AES 加密处理。
 
     - 接口认证
@@ -56,12 +62,13 @@
  ![示例](img/embedding/sqlbot_advanced_interface2.png)
 
 !!! Abstract ""
-
     **注意**：目标凭证字段（非必填）支持 JS 表达式，可灵活处理凭证值。
 
     Demo 系统示例：
-    ![示例](img/embedding/sqlbot_advanced_demo.png)
 
+![示例](img/embedding/sqlbot_advanced_demo.png)
+
+!!! Abstract ""
     以下分别说明接口凭证各字段的含义：
 
     源系统凭证：
@@ -103,7 +110,7 @@
 !!! Abstract ""
     填写名称、跨域设置。记录 APP ID 以及 APP Secret，后面编码环节用得到。
 
-    ![示例](img/embedding/sqlbot_page.png)
+![示例](img/embedding/sqlbot_page.png)
 
     
 ## 2 宿主系统实现
@@ -113,8 +120,9 @@
 
     配置数据库信息：
 
-    ![示例](img/embedding/project_config.png)
+![示例](img/embedding/project_config.png)
 
+!!! Abstract ""
     在 frontend 目录执行：
     ```
     npm install;npm run build
@@ -127,14 +135,17 @@
 
     访问 http://localhost:3000，如下图即运行正常。
 
-    ![示例](img/embedding/project_demo.png)
 
+![示例](img/embedding/project_demo.png)
+
+!!! Abstract ""
     根据 SQLBot 中填写的信息填写系统设置表单，保存。当前是游客模式，登录后是 online 模式。
 
     代码层面基础应用和高级应用嵌入方式基本没有区别。
 
-    ![示例](img/embedding/sqlbothandler.png)
+![示例](img/embedding/sqlbothandler.png)
 
+!!! Abstract ""
     sqlbot_assistant_handler 用于浮动窗口模式（页面悬浮小助手），而 sqlbot_embedded_handler 用于全屏或区域模式（嵌入整个对话区域），两者分别适用于不同的嵌入方式，可根据业务需求选择使用。
 
 ### 2.1 浮窗模式
@@ -142,8 +153,9 @@
 !!! Abstract ""
     参考 assistan/float.vue 文件
 
-    ![示例](img/embedding/project_float.png)
+![示例](img/embedding/project_float.png)
 
+!!! Abstract ""
     把 sqlbot 提供的嵌入 js 加载到宿主系统。
     
     如果是高级应用，必须登录才可以，因为要从页面获取凭证信息.
@@ -154,37 +166,41 @@
     - userFlag 参数用来区分问数记录归属，userFlag 是大于 1 的数字；加载 js 资源最好判断一下是否已经加载过。
 
     如接入成功，访问小助手浮窗宿主页面，右下角会出现浮动图标，如下图：
-    ![示例](img/embedding/project_float_demo.png)
+!!! Abstract ""
+![示例](img/embedding/project_float_demo.png)
 
 ### 2.2 全屏模式
 
 !!! Abstract ""
     参考 assistant/full.vue 文件
     
-    ![示例](img/embedding/project_fullscreen.png)
-    
+![示例](img/embedding/project_fullscreen.png)
+
+!!! Abstract ""
     如果是高级应用，必须登录才可以，因为要从页面获取凭证信息
     
     接入成功页面如下
 
-    ![示例](img/embedding/project_fullscreen_demo.png)
+![示例](img/embedding/project_fullscreen_demo.png)
 
 ### 2.3 页面嵌入
 
 !!! Abstract ""
     参考 embedded/index.vue 文件
 
-    ![示例](img/embedding/project_page.png)
+![示例](img/embedding/project_page.png)
 
+!!! Abstract ""
     核心代码与全屏接入一样，只是调用 mounted 方法参数有区别。这里的 token 请在后端生成，避免泄漏 app secret。token 生成的逻辑是把 appId 和 account 作为 payload，appSecret 作为 secret。
 
     接入成功页面如下
 
-    ![示例](img/embedding/project_page_demo.png)
+![示例](img/embedding/project_page_demo.png)
 
+!!! Abstract ""
     问数需要先选择数据源，与 SQLBot 页面一致
 
-    ![示例](img/embedding/project_page_demo2.png)
+![示例](img/embedding/project_page_demo2.png)
 
 ### 2.4 高级应用 API 接口
 
@@ -296,8 +312,10 @@
     API 接口可 预留 dsId、tableId 等参数，用于限定问数范围到指定数据源或数据表。在多数据源场景下，该方式可显著提升 问数执行效率与结果准确性。
 
     问数之前，SQLBot 会在宿主页面获取凭证信息调用 API，可以利用 param 类型的凭证作为参数，但是要保证实时更新页面中的凭证。比如设置一个限定数据源 ID 的参数。
-    ![示例](img/embedding/advanced_interface.png)
 
+![示例](img/embedding/advanced_interface.png)
+
+!!! Abstract ""
     前端代码执行 localStorage.setItem(‘dsId’, xxx)
 
     使用问数功能时，SQLBot 会获取存储在 localStorage 中的 dsId 拼接到 API 接口地址中 http://localhost:3000/api/datasource?dsId=xxx
