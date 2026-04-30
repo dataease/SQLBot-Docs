@@ -497,6 +497,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v180" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.8.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v170" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2804,6 +2815,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v180" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.8.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v170" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2939,6 +2961,55 @@
 </ul>
 </div>
 <h2 id="2">2 更新内容<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="v180">v1.8.0<a class="headerlink" href="#v180" title="Permanent link">&para;</a></h3>
+<p>2026 年 4 月 30 日</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>安全漏洞修复（SQLBot - 2026.04.30）</strong> </p>
+<ul>
+<li>fix(漏洞): 修复权限提升漏洞(CVE-2026-42463)</li>
+<li>fix(漏洞): 修复提示词注入漏洞(CVE-2026-33324)</li>
+<li>感谢社区用户 Ka7arotto、Yuremin 发现并向 DataEase 开源社区反馈上述漏洞。</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>feat: 新增 MiniMax 作为一级 LLM 提供商</li>
+<li>feat: 改进 SQL/图表生成质量</li>
+<li>feat: MCP 支持配置禁用图表渲染</li>
+<li>feat: MCP 支持选择工作空间 #926</li>
+<li>feat(Data Source): SQLBot 支持数据源中的自定义数据类型 #768</li>
+<li>feat(Mobile): 移动端聊天窗口适配</li>
+<li>feat(System): 语言切换，支持繁体中文</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>perf(X-Pack): 钉钉获取用户信息增加超时时间</li>
+<li>perf: 高级助手支持第三方前后端分离集成</li>
+<li>perf: 助手嵌入支持 zh_TW 语言</li>
+<li>perf: 优化前端 localStorage 键冲突</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>fix: 修复 Excel 字段名为纯数字时的错误提示</li>
+<li>fix: 修复使用 Redis 缓存时数据源保存失败的问题</li>
+<li>fix: 修复 ES 自签名证书的问题</li>
+<li>fix: 修复 MySQL 添加 SSL 配置的问题</li>
+<li>fix: 修复权限提升漏洞</li>
+<li>fix: 修复 DM 数据源字段备注无法同步的问题 #1079</li>
+<li>fix: 修复上传包含空值的 Excel 文件时系统报错的问题</li>
+<li>fix(assistant): 修复助手高分辨率图标的问题</li>
+<li>fix(Assistant): 修复嵌入式小助手在第三方环境中使用的临时方法，及缩放方法模拟高分辨率导致小助手图表几乎不可见的问题</li>
+<li>fix(dashboard): 修复预测数据无法在数据仪表板上显示的问题</li>
+<li>fix(Data Source): 修复数据源类型头部和下拉列表不对齐的问题</li>
+<li>fix(Data Source): 修复上传 Excel 数据源并在框内显示数据的问题</li>
+<li>fix(System Management): 修复外观设置下页面预览输入框中的文本显示问题</li>
+</ul>
+</div>
 <h3 id="v170">v1.7.0<a class="headerlink" href="#v170" title="Permanent link">&para;</a></h3>
 <p>2026 年 3 月 19 日</p>
 <div class="admonition warning">

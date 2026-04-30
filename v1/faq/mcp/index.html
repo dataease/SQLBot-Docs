@@ -2354,6 +2354,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 SQLBot 的 MCP 调用支持指定工作空间和禁用图表渲染吗？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2683,6 +2694,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 SQLBot 的 MCP 调用支持指定工作空间和禁用图表渲染吗？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2717,6 +2739,16 @@
 <p>1.6.0 版本及以后，新增 mcp_datasource_list 工具用于调取数据源列表，并返回数据源的 ID。 用户在调用 MCP 接口时，可在 question 的中 datasource_id 指定数据源 ID。</p>
 </div>
 <p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_datasource_id.png" /></p>
+<h2 id="2-sqlbot-mcp">2 SQLBot 的 MCP 调用支持指定工作空间和禁用图表渲染吗？<a class="headerlink" href="#2-sqlbot-mcp" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>1.8.0 版本及以后，MCP 支持选择工作空间与禁用图表渲染：</p>
+<ul>
+<li><strong>选择工作空间</strong>：新增 <code>mcp_ws_list</code> 工具用于获取当前用户可访问的工作空间列表。
+  在调用 <code>mcp_datasource_list</code> 或 <code>mcp_question</code> 时，可通过 <code>oid</code> 参数指定工作空间 ID。</li>
+<li><strong>禁用图表渲染</strong>：在调用 <code>mcp_question</code> 时，可通过 <code>return_img=false</code> 关闭图表图片渲染，仅返回 SQL、数据与图表配置结果，减少图片生成耗时。</li>
+</ul>
+</div>
+<p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_oid_id.png" /></p>
 
 
 
