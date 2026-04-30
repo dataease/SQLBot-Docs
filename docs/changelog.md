@@ -9,6 +9,52 @@
 
 
 ## 2 更新内容
+### v1.8.0
+
+2026 年 4 月 30 日
+
+
+!!! Warning "**安全漏洞修复（SQLBot - 2026.04.30）** "
+
+    - fix(漏洞): 修复权限提升漏洞(CVE-2026-42463)
+    - fix(漏洞): 修复提示词注入漏洞(CVE-2026-33324)
+    - 感谢社区用户 Ka7arotto、Yuremin 发现并向 DataEase 开源社区反馈上述漏洞。
+
+!!! Tip  "新增功能 :star2:"
+
+    - feat: 新增 MiniMax 作为一级 LLM 提供商
+    - feat: 改进 SQL/图表生成质量
+    - feat: MCP 支持配置禁用图表渲染
+    - feat: MCP 支持选择工作空间 #926
+    - feat(Data Source): SQLBot 支持数据源中的自定义数据类型 #768
+    - feat(Mobile): 移动端聊天窗口适配
+    - feat(System): 语言切换，支持繁体中文
+
+!!! Tip  "功能优化 :sunflower:"
+
+    - perf(X-Pack): 钉钉获取用户信息增加超时时间
+    - perf: 高级助手支持第三方前后端分离集成
+    - perf: 助手嵌入支持 zh_TW 语言
+    - perf: 优化前端 localStorage 键冲突
+
+!!! Tip  "问题修复 :palm_tree:"
+
+    - fix: 修复 Excel 字段名为纯数字时的错误提示
+    - fix: 修复使用 Redis 缓存时数据源保存失败的问题
+    - fix: 修复 ES 自签名证书的问题
+    - fix: 修复 MySQL 添加 SSL 配置的问题
+    - fix: 修复权限提升漏洞
+    - fix: 修复 DM 数据源字段备注无法同步的问题 #1079
+    - fix: 修复上传包含空值的 Excel 文件时系统报错的问题
+    - fix(assistant): 修复助手高分辨率图标的问题
+    - fix(Assistant): 修复嵌入式小助手在第三方环境中使用的临时方法，及缩放方法模拟高分辨率导致小助手图表几乎不可见的问题
+    - fix(dashboard): 修复预测数据无法在数据仪表板上显示的问题
+    - fix(Data Source): 修复数据源类型头部和下拉列表不对齐的问题
+    - fix(Data Source): 修复上传 Excel 数据源并在框内显示数据的问题
+    - fix(System Management): 修复外观设置下页面预览输入框中的文本显示问题
+
+
+
 ### v1.7.0
 
 2026 年 3 月 19 日
