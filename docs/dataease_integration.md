@@ -23,7 +23,7 @@
     
     添加调用所需的接口凭证，以下配置对于 DataEase 对接来说都是固定的：
 
-    - 凭证名称: user.token
+    - 凭证名称: user.token （DataEase v2.10.21 及以上需改为 de_v2_user.token）
     - 源系统凭证类型: localStorage
     - 目标凭证名称: x-de-token
     - 目标凭证位置: header
