@@ -268,13 +268,13 @@
                         "fields": [
                             {
                                 "name": "age",               //（字段名 | 类型：string）
-                                "type": "bigint" ,          //（字段描述 | 类型：string）
-                                "comment": "字段 1备注信息"  //（字段的数据类型 | 类型：string）
+                                "type": "bigint" ,          //（字段的数据类型 | 类型：string）
+                                "comment": "字段 1备注信息"  //（字段描述 | 类型：string）
                             },
                             {
                                 "name": "gender",            //（字段名 | 类型：string）
-                                "type": "text" ,            //（字段描述 | 类型：string）
-                                "comment": "字段 2备注信息"  //（字段的数据类型 | 类型：string）
+                                "type": "text" ,            //（字段的数据类型 | 类型：string）
+                                "comment": "字段 2备注信息"  //（字段描述 | 类型：string）
                             }
                         ]
                     },
