@@ -1933,7 +1933,7 @@
   <span class="md-ellipsis">
     
   
-    自定义提示词
+    自定义提示词（x-pack）
   
 
     
@@ -1961,7 +1961,7 @@
   <span class="md-ellipsis">
     
   
-    登录认证
+    登录认证（x-pack）
   
 
     
@@ -1989,7 +1989,7 @@
   <span class="md-ellipsis">
     
   
-    平台对接
+    平台对接（x-pack）
   
 
     
@@ -2017,7 +2017,7 @@
   <span class="md-ellipsis">
     
   
-    外观设置
+    外观设置（x-pack）
   
 
     
@@ -2045,7 +2045,7 @@
   <span class="md-ellipsis">
     
   
-    第三方平台设置
+    参数配置（x-pack）
   
 
     
@@ -2073,7 +2073,7 @@
   <span class="md-ellipsis">
     
   
-    操作日志
+    操作日志（x-pack）
   
 
     
@@ -2532,10 +2532,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
+  <a href="#23-mcp_ws_list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 对接流程说明
+        2.3 mcp_ws_list 工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mcp_datasource_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 mcp_datasource_list 工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 对接流程说明
       
     </span>
   </a>
@@ -2821,10 +2843,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
+  <a href="#23-mcp_ws_list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 对接流程说明
+        2.3 mcp_ws_list 工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mcp_datasource_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 mcp_datasource_list 工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 对接流程说明
       
     </span>
   </a>
@@ -3024,7 +3068,8 @@ networks:
 </div>
 <h2 id="2-mcp">2 MCP 工具说明<a class="headerlink" href="#2-mcp" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p>SQLBot 的 MCP Server 提供两个内置工具：mcp_start 和 mcp_question，分别用于初始化对话和提交问题。</p>
+<p>SQLBot 的 MCP Server 提供两个内置工具：mcp_start 和 mcp_question，分别用于初始化对话和提交问题。
+另提供辅助工具 mcp_ws_list、mcp_datasource_list，用于获取工作空间与数据源列表。</p>
 </div>
 <h3 id="21-mcp_start">2.1 mcp_start 工具<a class="headerlink" href="#21-mcp_start" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
@@ -3065,7 +3110,105 @@ networks:
 <h3 id="22-mcp_question">2.2 mcp_question 工具<a class="headerlink" href="#22-mcp_question" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p>用于在已初始化的问数上下文中提交用户问题，并返回对应 SQL、可视化结果及图表图片地址。</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>是</td>
+<td>—</td>
+<td><code>mcp_start</code> 返回的 <code>access_token</code></td>
+</tr>
+<tr>
+<td>chat_id</td>
+<td>integer</td>
+<td>是</td>
+<td>—</td>
+<td><code>mcp_start</code> 返回的 <code>chat_id</code></td>
+</tr>
+<tr>
+<td>question</td>
+<td>string</td>
+<td>是</td>
+<td>—</td>
+<td>用户的自然语言提问</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>boolean</td>
+<td>否</td>
+<td><code>true</code></td>
+<td>是否流式输出。<code>true</code> 时以 Markdown 流式返回；<code>false</code> 时返回 JSON 对象</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>string</td>
+<td>否</td>
+<td><code>zh-CN</code></td>
+<td>响应语言，可选值：<code>zh-CN</code>、<code>zh-TW</code>、<code>en</code>、<code>ko-KR</code></td>
+</tr>
+<tr>
+<td>datasource_id</td>
+<td>integer / string</td>
+<td>否</td>
+<td><code>null</code></td>
+<td>数据源 ID，仅当当前对话尚未确定数据源时有效</td>
+</tr>
+<tr>
+<td>oid</td>
+<td>string</td>
+<td>否</td>
+<td><code>null</code></td>
+<td>组织（工作空间）ID，仅当 <code>datasource_id</code> 为空时有效；不传则使用用户最后一次登录 SQLBot 时所使用的组织 ID</td>
+</tr>
+<tr>
+<td>return_img</td>
+<td>boolean</td>
+<td>否</td>
+<td><code>true</code></td>
+<td>是否返回图表图片。<code>false</code> 时仅返回数据，不生成图表图片</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="admonition tip">
+<p>返回结果示例（Markdown 格式）：</p>
+<div class="highlight"><pre><span></span><code>```sql SELECT &quot;s&quot;.&quot;区域&quot;, COUNT(*) AS &quot;count&quot; FROM &quot;public&quot;.&quot;Sheet1_c27345b66e&quot; &quot;s&quot; GROUP BY &quot;s&quot;.&quot;区域&quot; ORDER BY &quot;s&quot;.&quot;区域&quot; ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
+</code></pre></div>
+</div>
+<h3 id="23-mcp_ws_list">2.3 mcp_ws_list 工具<a class="headerlink" href="#23-mcp_ws_list" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>用于获取当前用户可访问的工作空间（组织）列表，便于在问数前选择目标组织。</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>mcp_start</code> 返回的 <code>access_token</code></td>
+</tr>
+</tbody>
+</table>
+<p>返回示例：
+<div class="highlight"><pre><span></span><code>{ &quot;code&quot;: 0, &quot;data&quot;: [ { &quot;id&quot;: 1, &quot;name&quot;: &quot;默认工作空间&quot; } ], &quot;msg&quot;: null }
+</code></pre></div></p>
+</div>
+<h3 id="24-mcp_datasource_list">2.4 mcp_datasource_list 工具<a class="headerlink" href="#24-mcp_datasource_list" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p>用于获取指定组织下可用的数据源列表，便于在问数时通过 <code>datasource_id</code> 指定数据源。</p>
 <table>
 <thead>
 <tr>
@@ -3079,21 +3222,16 @@ networks:
 <td><code>mcp_start</code> 返回的 <code>access_token</code></td>
 </tr>
 <tr>
-<td>chat_id</td>
-<td><code>mcp_start</code> 返回的 <code>chat_id</code></td>
-</tr>
-<tr>
-<td>question</td>
-<td>用户的提问问题</td>
+<td>oid</td>
+<td>可选，组织 ID；不传则使用用户最后一次登录时所使用的组织 ID</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p>返回结果示例（Markdown 格式）：</p>
-<div class="highlight"><pre><span></span><code>```sql SELECT &quot;s&quot;.&quot;区域&quot;, COUNT(*) AS &quot;count&quot; FROM &quot;public&quot;.&quot;Sheet1_c27345b66e&quot; &quot;s&quot; GROUP BY &quot;s&quot;.&quot;区域&quot; ORDER BY &quot;s&quot;.&quot;区域&quot; ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
-</code></pre></div>
+<p>返回示例：
+<div class="highlight"><pre><span></span><code>{ &quot;code&quot;: 0, &quot;data&quot;: [ { &quot;id&quot;: 10, &quot;name&quot;: &quot;销售数据源&quot;, &quot;type&quot;: &quot;mysql&quot;, ... } ], &quot;msg&quot;: null }
+</code></pre></div></p>
 </div>
-<h3 id="23">2.3 对接流程说明<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<h3 id="25">2.5 对接流程说明<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p>对接步骤：</p>
 <ul>
