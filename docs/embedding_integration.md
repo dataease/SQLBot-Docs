@@ -27,17 +27,17 @@
 ![示例](img/embedding/sqlbot_basic_assistant.png)
 
 !!! Abstract ""
-    填写名称、描述、以及跨域设置。
+    填写名称、描述、跨域设置以及模型的选择。
 
 ![示例](img/embedding/sqlbot_basic_info.png)
 
 !!! Abstract ""
-    选择对应的工作空间并设置数据源权限。
+    进行数据源权限的设置。
 
 ![示例](img/embedding/sqlbot_basic_datasource.png)
 
 !!! Abstract ""
-    小助手-基础应用有“游客/员工”简单权限模式，游客只能访问“公共”数据源
+    小助手-基础应用有“游客/员工”简单权限模式，游客只能访问“公共”数据源，模式的选择根据业务侧传递的 online 参数进行调整。
 
 
 #### 1.1.1 高级应用

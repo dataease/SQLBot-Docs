@@ -18,7 +18,7 @@
 !!! Tip ""
     - **OLTP 型数据库：** MySQL、SQL Server、Oracle、PostgreSQL、达梦、Kingbase
     - **OLAP 型数据库：** ClickHouse、Apache Doris、Elasticsearch、StarRocks
-    - **数据仓库/数据湖：** AWS RedShift
+    - **数据仓库/数据湖：** AWS RedShift、Apache Hive
     - **数据文件：** Excel/CSV
 
 ![支持的数据源类型](../img/user_manual/datasource/datasource_list.png)

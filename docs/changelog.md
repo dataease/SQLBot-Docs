@@ -9,6 +9,50 @@
 
 
 ## 2 更新内容
+### v1.9.0
+
+2026 年 6 月 9 日
+
+
+!!! Warning "**安全漏洞修复（SQLBot - 2026.06.09）** "
+
+    - fix: 修复Excel工作表名称注入SQL的问题
+    - fix: 修复parseExcel接口漏洞
+    - fix: 修复二阶SQL注入漏洞
+    - fix: 修复系统变量中的权限提升漏洞
+    - fix: 修复小助手图片上传接口存在的XSS漏洞
+
+!!! Tip  "新增功能 :star2:"
+
+    - feat(Application): 应用可配置指定模型
+    - feat(X-Pack): 添加参数配置以隐藏聊天界面中的显示SQL按钮和执行日志
+    - feat: 添加Hive数据库支持
+    - feat: 优化导出的Excel中的浮点数值显示
+    - feat: 支持配置应用的显示名称
+    - feat: 升级MiniMax默认模型至M3
+    - feat(chat): 规范化查询列名用于显示
+    - feat(querying data): 查询数据时，可通过点击"确定"跳过选择数据源步骤 #796
+
+!!! Tip  "功能优化 :sunflower:"
+
+    - refactor: 容器健康检查支持动态路径配置
+    - refactor(Table): 使用Ctrl+C复制数据时不复制表头
+    - refactor: 图表值显示默认添加千位分隔符
+
+!!! Tip  "问题修复 :palm_tree:"
+
+    - fix: 修复高级助手应用无法正确显示应用名称的问题
+    - fix: 修复自定义上下文路径后外观设置中的资源路径未更新的问题
+    - fix: 修复从DM数据源获取schema可能需要高权限账户的问题
+    - fix(chat): 规范化驱动程序列键（例如_u2.col → col）用于图表/表格绑定
+    - fix(Data Source): 修复同步表结构时未找到相应提示的问题
+    - fix(Hive): 规范化标识符引用并稳定元数据/查询路径
+    - fix(Login): 修复输入框中输入信息后显示浅蓝色背景的问题
+    - fix(Smart Questioning): 全屏查看输出图表时显示聊天列表和创建新聊天的图标
+    - fix(table relationship): 修复表关系编辑界面中，当浏览器缩放调整为150%时，拖拽表会导致周围元素闪烁的问题 #1123
+    - fix(X-Pack): 修复由于API Key过长导致无法保存模型的问题 #1090
+
+
 ### v1.8.0
 
 2026 年 4 月 30 日

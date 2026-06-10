@@ -95,6 +95,7 @@
 ## 2 MCP 工具说明
 !!! Tip ""
     SQLBot 的 MCP Server 提供两个内置工具：mcp_start 和 mcp_question，分别用于初始化对话和提交问题。
+    另提供辅助工具 mcp_ws_list、mcp_datasource_list，用于获取工作空间与数据源列表。
 
 ### 2.1 mcp_start 工具
 !!! Tip ""
@@ -125,12 +126,17 @@
 ### 2.2 mcp_question 工具
 !!! Tip ""
     用于在已初始化的问数上下文中提交用户问题，并返回对应 SQL、可视化结果及图表图片地址。
-    
-| 参数名      | 说明                             |
-    | -------- | ------------------------------ |
-    | token    |  `mcp_start` 返回的 `access_token` |
-    | chat\_id | `mcp_start` 返回的 `chat_id`      |
-    | question |  用户的提问问题 |
+
+    | 参数名 | 类型 | 必填 | 默认值 | 说明 |
+    | ------ | ---- | ---- | ------ | ---- |
+    | token | string | 是 | — | `mcp_start` 返回的 `access_token` |
+    | chat_id | integer | 是 | — | `mcp_start` 返回的 `chat_id` |
+    | question | string | 是 | — | 用户的自然语言提问 |
+    | stream | boolean | 否 | `true` | 是否流式输出。`true` 时以 Markdown 流式返回；`false` 时返回 JSON 对象 |
+    | lang | string | 否 | `zh-CN` | 响应语言，可选值：`zh-CN`、`zh-TW`、`en`、`ko-KR` |
+    | datasource_id | integer / string | 否 | `null` | 数据源 ID，仅当当前对话尚未确定数据源时有效 |
+    | oid | string | 否 | `null` | 组织（工作空间）ID，仅当 `datasource_id` 为空时有效；不传则使用用户最后一次登录 SQLBot 时所使用的组织 ID |
+    | return_img | boolean | 否 | `true` | 是否返回图表图片。`false` 时仅返回数据，不生成图表图片 |
 
 !!! Tip ""
     返回结果示例（Markdown 格式）：
@@ -138,7 +144,33 @@
     ```
     ```sql SELECT "s"."区域", COUNT(*) AS "count" FROM "public"."Sheet1_c27345b66e" "s" GROUP BY "s"."区域" ORDER BY "s"."区域" ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
     ```
-### 2.3 对接流程说明
+
+### 2.3 mcp_ws_list 工具
+!!! Tip ""
+    用于获取当前用户可访问的工作空间（组织）列表，便于在问数前选择目标组织。
+
+    | 参数名      | 说明                             |
+    | -------- | ------------------------------ |
+    | token    |  `mcp_start` 返回的 `access_token` |
+
+    返回示例：
+    ```
+    { "code": 0, "data": [ { "id": 1, "name": "默认工作空间" } ], "msg": null }
+    ```
+### 2.4 mcp_datasource_list 工具
+!!! Tip ""
+    用于获取指定组织下可用的数据源列表，便于在问数时通过 `datasource_id` 指定数据源。
+
+    | 参数名      | 说明                             |
+    | -------- | ------------------------------ |
+    | token    |  `mcp_start` 返回的 `access_token` |
+    | oid      |  可选，组织 ID；不传则使用用户最后一次登录时所使用的组织 ID |
+
+    返回示例：
+    ```
+    { "code": 0, "data": [ { "id": 10, "name": "销售数据源", "type": "mysql", ... } ], "msg": null }
+    ```
+### 2.5 对接流程说明
 !!! Tip ""
     对接步骤：
 

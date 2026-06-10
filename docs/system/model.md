@@ -53,6 +53,12 @@
 ![模型](../img/user_manual/system/sys_model.png)
 
 
+### 2.5 授权空间
 
+!!! Abstract ""
+    如需为模型授权可访问的工作空间，可在目标模型的菜单栏中点击【授权空间】，进入配置界面后完成模型与工作空间的绑定分配。
 
+![模型](../img/user_manual/system/workspace_model1.png)
+
+![模型](../img/user_manual/system/workspace_model2.png)
 
