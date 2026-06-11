@@ -1,7 +1,7 @@
 # 配置 Elasticsearch 数据源
 ## 1 前提条件
 !!! Tip ""
-    在配置 Elasticsearch 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：：
+    在配置 Elasticsearch 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：
 
     - Elasticsearch 版本：7+；
     - 网络连通：SQLBot 所在环境可直连  Elasticsearch 主机（若在内网或防火墙后，请先开放 9200 端口或映射安全端口）；

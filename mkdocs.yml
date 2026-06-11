@@ -67,6 +67,7 @@ nav:
             - 配置 Elasticsearch 数据源: user_manual/datasource_elasticsearch.md
             - 配置 Kingbase 数据源: user_manual/datasource_kingbase.md
             - 配置 StarRocks 数据源: user_manual/datasource_starrocks.md
+            - 配置 Apache Hive 数据源: user_manual/datasource_apachehive.md
         - 智能问数:  user_manual/smart_question_description.md
         - 仪表板: user_manual/dashboard_description.md
         - 小助手应用: user_manual/assistant.md
