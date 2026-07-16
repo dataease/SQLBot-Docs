@@ -2,246 +2,246 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sqlbot.cn/docs/v1/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/best_practice/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/buy/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/changelog/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/contact/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/dataease_integration/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/embedding_integration/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/mcp_server/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/quick_start/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system_arch/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/appearance_configuration/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/identification_setting/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/operation_log/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/platform_integration/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/prompt/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/X-Pack/third-party-platform-settings/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/assistant/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/datasource/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/installation/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/mcp/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/other/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/faq/smart_question_description/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/1panel_installtion/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/aliyun_installtion/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/cli/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/migration/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/offline_installtion/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/offline_upgrade/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/online_installtion/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/source_run/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/installation/windows_installation/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/model_integration/ollama/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/app/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/embedding/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/model/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/parameter_setting/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/user/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/variables/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/system/workspace/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/assistant/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/dashboard_description/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/data_training/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_DM/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_apachedoris/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_apachehive/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_clickhouse/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_description/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_elasticsearch/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_excel/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_kingbase/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_mysql/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_oracle/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_postgresql/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_redshift/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_sqlserver/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/datasource_starrocks/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/member/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/permission/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/professional/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/setting/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://sqlbot.cn/docs/v1/user_manual/smart_question_description/</loc>
-         <lastmod>2026-06-11</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
 </urlset>

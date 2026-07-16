@@ -3013,6 +3013,58 @@
 </ul>
 </div>
 <h2 id="2">2 更新内容<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>v1.10.0</p>
+<p>2026 年 7 月 16 日</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>安全漏洞修复（SQLBot - 2026.07.16）</strong> </p>
+<ul>
+<li>fix: 修复嵌入式安全漏洞</li>
+<li>fix: 修复通过基础应用UI设置界面提升权限级别的漏洞</li>
+<li>fix: 修复行权限过滤器中转义SQL值以防止注入(CWE-89)的问题</li>
+<li>fix: 修复SQL注入/LLM提示注入漏洞导致的未授权查询</li>
+<li>fix: 修复系统变量中的权限提升漏洞</li>
+<li>fix: 修复跨工作空间查看枚举值的漏洞</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>feat: mcp_start调用日志记录到系统日志</li>
+<li>feat: 新增隐藏思考块配置选项</li>
+<li>feat: 新增嵌入式应用的语言选项配置</li>
+<li>feat: 新增为指定高级应用配置自定义提示词的功能</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>refactor: 优化连接池配置</li>
+<li>refactor: 移除index.html中的默认标题</li>
+<li>refactor: 改进用户列表排序功能</li>
+<li>refactor: 调整MCP中对话的组织归属逻辑</li>
+<li>refactor: 新增alembic迁移脚本，补充内置数据库表字段备注</li>
+<li>fix: 优化登录页面背景图片逻辑</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>fix: 修复RSA加密因文本过长导致的失败问题</li>
+<li>fix: 修复高级应用中兼容旧版本MSSQL的问题</li>
+<li>fix: 修正模板中数据库查询示例</li>
+<li>fix: 修复聊天标题包含'/'字符时删除聊天出错的问题</li>
+<li>fix: 修复SQL示例管理的导出/导入功能</li>
+<li>fix: 扩展sys_logs表中user_agent列长度以支持钉钉代理</li>
+<li>fix: 修复MCP OID缺失验证问题</li>
+<li>fix: 修复记录列表中预测数据图表缺失的问题</li>
+<li>fix: 兼容低版本Chromium内核浏览器，解决内核81版本页面白屏问题</li>
+<li>fix: 修复基础应用中头部文字颜色不生效的问题</li>
+<li>fix: 从问答对话添加图表到仪表板时，遵循当前图表类型</li>
+<li>fix: 修复仪表板编辑界面无法执行cmd+c复制操作的问题</li>
+<li>fix: 修复启用千位分隔符时弹窗不关闭导致页面滚动异常的问题</li>
+<li>fix: 修复工作空间用户列表分页限制1000条，无法选择第1001个及以后用户的问题</li>
+</ul>
+</div>
 <h3 id="v190">v1.9.0<a class="headerlink" href="#v190" title="Permanent link">&para;</a></h3>
 <p>2026 年 6 月 9 日</p>
 <div class="admonition warning">
