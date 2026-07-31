@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="../../css/lightgallery.min.css">
     <link href="../../css/f2c-header.css" rel="stylesheet" type="text/css" />
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2395,6 +2395,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 SQLBot 的 MCP 中如何进行数据分析，数据预测？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 SQLBot 的 MCP 指定工作空间失效？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2735,6 +2757,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 SQLBot 的 MCP 中如何进行数据分析，数据预测？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 SQLBot 的 MCP 指定工作空间失效？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2779,6 +2823,35 @@
 </ul>
 </div>
 <p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_oid_id.png" /></p>
+<h2 id="3-sqlbot-mcp">3 SQLBot 的 MCP 中如何进行数据分析，数据预测？<a class="headerlink" href="#3-sqlbot-mcp" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>MCP 支持在 mcp_question 的 question 参数中使用快捷命令，对同一会话中已完成问数（且已生成图表）的记录进行数据分析与数据预测：</p>
+<ul>
+<li><strong>数据分析</strong>：在 <code>question</code> 中传入 <code>/analysis</code>。默认基于当前会话最近一条普通问数记录进行分析；</li>
+<li><strong>数据预测</strong>：在 <code>question</code> 中传入 <code>/predict</code>。默认基于当前会话最近一条普通问数记录进行预测；。</li>
+</ul>
+<p>使用说明：</p>
+<ol>
+<li>先通过 <code>mcp_question</code> 完成一次正常问数，并确保该记录已生成图表结果。</li>
+<li>再在同一 <code>chat_id</code> 下调用 <code>mcp_question</code>，将 <code>question</code> 设为 <code>/analysis</code> 或 <code>/predict</code>（可附带记录 ID）。</li>
+<li>不可对「分析记录」「预测记录」再次执行分析/预测；目标记录必须已生成图表，否则会报错。</li>
+<li>命令需作为独立词出现在 <code>question</code> 末尾（可带数字参数），且同一问题中不可混用多个命令。</li>
+</ol>
+</div>
+<p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_analysis.png" /></p>
+<h2 id="4-sqlbot-mcp">4 SQLBot 的 MCP 指定工作空间失效？<a class="headerlink" href="#4-sqlbot-mcp" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>1.10.0 版本及以后，MCP 指定工作空间的参数从 mcp_question 更改至 mcp_start 节点：若仍按 1.8.x / 1.9.x 文档在 mcp_question 中传 oid，将不会生效。</p>
+<p>使用说明：</p>
+<ul>
+<li>先调用 <code>mcp_access_token</code> 获取当前用户 <code>token</code>。</li>
+<li>再调用 <code>mcp_start</code> 创建会话时传入 <code>oid</code> 与 <code>token</code>，该会话将归属到指定工作空间。</li>
+<li>后续同一会话中的 <code>mcp_question</code> 无需再传 <code>oid</code>；会话创建时确定的工作空间会持续生效。</li>
+<li><code>mcp_datasource_list</code> 仍可通过 <code>oid</code> 查询指定工作空间下的数据源列表。
+ 若指定工作空间后仍异常，请检查：用户是否属于该工作空间；<code>oid</code> 是否在 <code>mcp_start</code> 阶段传入；<code>chat_id</code> 是否来自该次 <code>mcp_start</code> 返回结果。</li>
+</ul>
+</div>
+<p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_new_oid.png" /></p>
 
 
 
@@ -2872,7 +2945,7 @@
     
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
     <script>
