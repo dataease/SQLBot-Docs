@@ -23,3 +23,33 @@
     - **禁用图表渲染**：在调用 `mcp_question` 时，可通过 `return_img=false` 关闭图表图片渲染，仅返回 SQL、数据与图表配置结果，减少图片生成耗时。
 
 ![mcp数据源指定](../img/mcp/sqlbot_mcp_oid_id.png)
+
+## 3 SQLBot 的 MCP 中如何进行数据分析，数据预测？
+!!! Abstract ""
+    MCP 支持在 mcp_question 的 question 参数中使用快捷命令，对同一会话中已完成问数（且已生成图表）的记录进行数据分析与数据预测：
+
+    - **数据分析**：在 `question` 中传入 `/analysis`。默认基于当前会话最近一条普通问数记录进行分析；
+    - **数据预测**：在 `question` 中传入 `/predict`。默认基于当前会话最近一条普通问数记录进行预测；。
+
+    使用说明：
+
+    1. 先通过 `mcp_question` 完成一次正常问数，并确保该记录已生成图表结果。
+    2. 再在同一 `chat_id` 下调用 `mcp_question`，将 `question` 设为 `/analysis` 或 `/predict`（可附带记录 ID）。
+    3. 不可对「分析记录」「预测记录」再次执行分析/预测；目标记录必须已生成图表，否则会报错。
+    4. 命令需作为独立词出现在 `question` 末尾（可带数字参数），且同一问题中不可混用多个命令。
+
+![mcp数据源指定](../img/mcp/sqlbot_mcp_analysis.png)
+
+## 4 SQLBot 的 MCP 指定工作空间失效？
+!!! Abstract ""
+    1.10.0 版本及以后，MCP 指定工作空间的参数从 mcp_question 更改至 mcp_start 节点：若仍按 1.8.x / 1.9.x 文档在 mcp_question 中传 oid，将不会生效。
+
+    使用说明：
+
+    - 先调用 `mcp_access_token` 获取当前用户 `token`。
+    - 再调用 `mcp_start` 创建会话时传入 `oid` 与 `token`，该会话将归属到指定工作空间。
+    - 后续同一会话中的 `mcp_question` 无需再传 `oid`；会话创建时确定的工作空间会持续生效。
+    - `mcp_datasource_list` 仍可通过 `oid` 查询指定工作空间下的数据源列表。
+     若指定工作空间后仍异常，请检查：用户是否属于该工作空间；`oid` 是否在 `mcp_start` 阶段传入；`chat_id` 是否来自该次 `mcp_start` 返回结果。
+
+![mcp数据源指定](../img/mcp/sqlbot_mcp_new_oid.png)
