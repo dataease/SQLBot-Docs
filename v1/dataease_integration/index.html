@@ -2773,7 +2773,7 @@ DataEase 版本为 v2.10.13 及以上版本。</p>
 <li>目标凭证名称: x-de-token</li>
 <li>目标凭证位置: header</li>
 <li>目标凭证: 
-<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">source_val</span><span class="si">}</span><span class="sb">`</span><span class="p">)[</span><span class="s1">&#39;v&#39;</span><span class="p">].</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^[&#39;\&quot;]|[&#39;\&quot;]$/g</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">source_val</span><span class="si">}</span><span class="sb">`</span><span class="p">)[</span><span class="s1">'v'</span><span class="p">].</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^['\"]|['\"]$/g</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 </div>
@@ -2799,69 +2799,69 @@ DataEase 版本为 v2.10.13 及以上版本。</p>
 <p><img alt="示例" src="../img/dataease/dataease_sqlbot.png" /></p>
 <div class="admonition tip">
 <p>进入到 DataEase 的安装目录下，找到 DataEase 的配置文件，默认路径为 /opt/dataease2.0/conf/application.yml。在配置文件中添加 sqlbot 相关配置， 配置文件修改后大致如下：</p>
-<div class="highlight"><pre><span></span><code>dataease:
-    sqlbot:
-        encrypt:true                                 # 是否对敏感字段（host、user、password、database、schema）启用 AES-CBC-PKCS5Padding 加密
-        aes-key: X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2    # 32 位 AES 密钥，encrypt=true 时生效，可自定义
-        log: true                                    # 是否打印 SQLBot 接口（/de2api/sqlbot/datasource）调用日志 info 级别
+<div class="highlight"><pre><span></span><code><span class="nt">dataease</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sqlbot</span><span class="p">:</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">encrypt:true</span><span class="w">                                 </span><span class="c1"># 是否对敏感字段（host、user、password、database、schema）启用 AES-CBC-PKCS5Padding 加密</span>
+<span class="w">        </span><span class="nt">aes-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">X5iK8pL2oR9tY3vB6nM1cZ7xW4sV8hG2</span><span class="w">    </span><span class="c1"># 32 位 AES 密钥，encrypt=true 时生效，可自定义</span>
+<span class="w">        </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                                    </span><span class="c1"># 是否打印 SQLBot 接口（/de2api/sqlbot/datasource）调用日志 info 级别</span>
 </code></pre></div>
 <p>若包含 Excel 数据源或 API 数据源，还需要修改 DataEase 的配置文件。在配置文件中添加 "ds-host" 配置，取值为 DataEase 服务器的 ip。配置文件修改后大致如下：
-<div class="highlight"><pre><span></span><code>server:
-    tomcat:
-        connection-timeout: 70000
-    servlet:
-        context-path:
-spring:
-    servlet:
-        multipart:
-            max-file-size: 500MB
-            max-request-size: 500MB
-    datasource:
-        url: jdbc:mysql://mysql-de:3306/dataease?autoReconnect=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;allowPublicKeyRetrieval=true
-        username: root
-        password: Password123@mysql
-dataease:
-    ds-host: 40.92.20.215
-    apisix-api:
-        domain: http://apisix:9180
-        key: 7x1lZljpOvH5u9ednAg4wYRS9XPyGykpnHk3FKHKPzI=
-    export:
-        views:
-            limit: 100000
-        dataset:
-            limit: 100000
-    origin-list: http://localhost:8000
-    login_timeout: 960
-    selenium-server: http://de-selenium:4444/wd/hub
-    dataease-servers: dataease
-task:
-    executor:
-        address: http://sync-task-actuator:9001
-        log:
-            path: /opt/dataease2.0/logs/sync-task/task-handler-log
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tomcat</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">connection-timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">70000</span>
+<span class="w">    </span><span class="nt">servlet</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">context-path</span><span class="p">:</span>
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">servlet</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">multipart</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">max-file-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500MB</span>
+<span class="w">            </span><span class="nt">max-request-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500MB</span>
+<span class="w">    </span><span class="nt">datasource</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jdbc:mysql://mysql-de:3306/dataease?autoReconnect=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</span>
+<span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Password123@mysql</span>
+<span class="nt">dataease</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ds-host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40.92.20.215</span>
+<span class="w">    </span><span class="nt">apisix-api</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://apisix:9180</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7x1lZljpOvH5u9ednAg4wYRS9XPyGykpnHk3FKHKPzI=</span>
+<span class="w">    </span><span class="nt">export</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">views</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class="w">        </span><span class="nt">dataset</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class="w">    </span><span class="nt">origin-list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:8000</span>
+<span class="w">    </span><span class="nt">login_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">960</span>
+<span class="w">    </span><span class="nt">selenium-server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://de-selenium:4444/wd/hub</span>
+<span class="w">    </span><span class="nt">dataease-servers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataease</span>
+<span class="nt">task</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">executor</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://sync-task-actuator:9001</span>
+<span class="w">        </span><span class="nt">log</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/dataease2.0/logs/sync-task/task-handler-log</span>
 </code></pre></div>
 若使用的是 DataEase 内置的 MySQL，还需要将内置 MySQL 的运行端口暴露出来。修改 /opt/dataease2.0/docker-compose-mysql.yml，内容大致如下：
-<div class="highlight"><pre><span></span><code>version: &#39;3&#39;
-services:
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span>
+<span class="nt">services</span><span class="p">:</span>
 
-mysql-de:
-    image: registry.cn-qingdao.aliyuncs.com/dataease/mysql:8.4.5
-    container_name: ${DE_MYSQL_HOST}
-    healthcheck:
-        test: [&quot;CMD&quot;, &quot;mysqladmin&quot; ,&quot;ping&quot;, &quot;-h&quot;, &quot;localhost&quot;, &quot;-u${DE_MYSQL_USER}&quot;, &quot;-p${DE_MYSQL_PASSWORD}&quot;, &quot;--protocol&quot;,&quot;tcp&quot;]
-        interval: 5s
-        timeout: 3s
-        retries: 10
-    env_file:
-        - ${DE_BASE}/dataease2.0/conf/mysql.env
-    ports:
-        - 3306:3306
-    volumes:
-        - ${DE_BASE}/dataease2.0/conf/my.cnf:/etc/mysql/conf.d/my.cnf
-        - ${DE_BASE}/dataease2.0/bin/mysql:/docker-entrypoint-initdb.d/
-        - ${DE_BASE}/dataease2.0/data/mysql:/var/lib/mysql
-    networks:
-        - dataease-network
+<span class="nt">mysql-de</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.cn-qingdao.aliyuncs.com/dataease/mysql:8.4.5</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DE_MYSQL_HOST}</span>
+<span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"CMD"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"mysqladmin"</span><span class="w"> </span><span class="p p-Indicator">,</span><span class="s">"ping"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-h"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"localhost"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-u${DE_MYSQL_USER}"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-p${DE_MYSQL_PASSWORD}"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"--protocol"</span><span class="p p-Indicator">,</span><span class="s">"tcp"</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">        </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3s</span>
+<span class="w">        </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="nt">env_file</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DE_BASE}/dataease2.0/conf/mysql.env</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3306:3306</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DE_BASE}/dataease2.0/conf/my.cnf:/etc/mysql/conf.d/my.cnf</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DE_BASE}/dataease2.0/bin/mysql:/docker-entrypoint-initdb.d/</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DE_BASE}/dataease2.0/data/mysql:/var/lib/mysql</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataease-network</span>
 </code></pre></div></p>
 <p>修改完成后，执行 service dataease restart，重启 DataEase 服务即可。</p>
 </div>

@@ -3236,8 +3236,8 @@ Created<span class="w"> </span>symlink<span class="w"> </span>/etc/systemd/syste
 <div class="highlight"><pre><span></span><code>vim<span class="w"> </span>/etc/systemd/system/ollama.service
 </code></pre></div></p>
 <p>加入以下内容：
-<div class="highlight"><pre><span></span><code>Environment=&quot;OLLAMA_HOST=0.0.0.0:11434&quot;
-Environment=&quot;OLLAMA_ORIGINS=*
+<div class="highlight"><pre><span></span><code>Environment="OLLAMA_HOST=0.0.0.0:11434"
+Environment="OLLAMA_ORIGINS=*
 </code></pre></div></p>
 <p>文件内容如下：
 <div class="highlight"><pre><span></span><code>[Unit]
@@ -3250,9 +3250,9 @@ User=ollama
 Group=ollama
 Restart=always
 RestartSec=3
-Environment=&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin&quot;
-Environment=&quot;OLLAMA_HOST=0.0.0.0:11434&quot;
-Environment=&quot;OLLAMA_ORIGINS=*
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+Environment="OLLAMA_ORIGINS=*
 
 [Install]
 WantedBy=default.target
@@ -3329,7 +3329,7 @@ systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> 
 <p>OpenWebUI启动需要一些时间，需确认容器运行状态为「healthy」：
 <div class="highlight"><pre><span></span><code>root@iZt4n4e3wmu6ddsc0hb3wbZ:~#<span class="w"> </span>docker<span class="w"> </span>ps<span class="w"> </span>-a
 CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">                                </span>COMMAND<span class="w">           </span>CREATED<span class="w">          </span>STATUS<span class="w">                   </span>PORTS<span class="w">                                         </span>NAMES
-ba913b54d026<span class="w">   </span>ghcr.io/open-webui/open-webui:main<span class="w">   </span><span class="s2">&quot;bash start.sh&quot;</span><span class="w">   </span><span class="m">10</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">9</span><span class="w"> </span>minutes<span class="w"> </span><span class="o">(</span>healthy<span class="o">)</span><span class="w">   </span><span class="m">0</span>.0.0.0:3000-&gt;8080/tcp,<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:3000-&gt;8080/tcp<span class="w">   </span>open-webui
+ba913b54d026<span class="w">   </span>ghcr.io/open-webui/open-webui:main<span class="w">   </span><span class="s2">"bash start.sh"</span><span class="w">   </span><span class="m">10</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">9</span><span class="w"> </span>minutes<span class="w"> </span><span class="o">(</span>healthy<span class="o">)</span><span class="w">   </span><span class="m">0</span>.0.0.0:3000-&gt;8080/tcp,<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:3000-&gt;8080/tcp<span class="w">   </span>open-webui
 </code></pre></div></p>
 <p>启动完成后，可在浏览器上通过 IP:3000来访问，如下图所示：
 <img alt="openwebui" src="../../img/model_integration/openwebui.png" /></p>

@@ -2967,13 +2967,13 @@
 <li>
 <p>准备标准SQL：针对提前收集好的提问，编写一个逻辑正确、高性能的SQL答案。例如“今年第三季度东区制造业赢单总数”问题，涉及的SQL如下：</p>
 <div class="highlight"><pre><span></span><code><span class="k">WITH</span><span class="w"> </span><span class="k">RECURSIVE</span><span class="w"> </span><span class="n">DepartmentHierarchy</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
-<span class="c1">-- 锚点成员: 找出 &#39;东区&#39; 部门本身</span>
+<span class="c1">-- 锚点成员: 找出 '东区' 部门本身</span>
 <span class="w">    </span><span class="k">SELECT</span>
 <span class="w">        </span><span class="n">id</span>
 <span class="w">    </span><span class="k">FROM</span>
 <span class="w">        </span><span class="n">sys_department</span>
 <span class="w">    </span><span class="k">WHERE</span>
-<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;东区&#39;</span>
+<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'东区'</span>
 
 <span class="w">    </span><span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
 
@@ -2997,18 +2997,18 @@
 <span class="k">JOIN</span>
 <span class="w">    </span><span class="n">customer_field</span><span class="w"> </span><span class="n">t3</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t2</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">resource_id</span><span class="w"> </span><span class="c1">-- 联接客户自定义属性表</span>
 <span class="k">WHERE</span>
-<span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="n">stage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SUCCESS&#39;</span><span class="w"> </span><span class="c1">-- 筛选赢单阶段</span>
+<span class="w">    </span><span class="n">t1</span><span class="p">.</span><span class="n">stage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'SUCCESS'</span><span class="w"> </span><span class="c1">-- 筛选赢单阶段</span>
 
 <span class="w">    </span><span class="c1">-- **部门范围过滤：**</span>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t4</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">DepartmentHierarchy</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c1">-- **行业过滤 (自定义属性，使用模糊匹配)：**</span>
-<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1751888184000005&#39;</span><span class="w"> </span><span class="c1">-- 行业字段 ID</span>
-<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_value</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%制造%&#39;</span><span class="w">    </span><span class="c1">-- 筛选行业值中包含 &#39;制造&#39; 关键词的客户</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'1751888184000005'</span><span class="w"> </span><span class="c1">-- 行业字段 ID</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">t3</span><span class="p">.</span><span class="n">field_value</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%制造%'</span><span class="w">    </span><span class="c1">-- 筛选行业值中包含 '制造' 关键词的客户</span>
 
 <span class="w">    </span><span class="c1">-- **时间范围过滤：当前年份的第三季度 (7月1日到9月30日)**</span>
-<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">&#39;-07-01 00:00:00&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;%Y-%m-%d %H:%i:%s&#39;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">&#39;-09-30 23:59:59&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;%Y-%m-%d %H:%i:%s&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">'-07-01 00:00:00'</span><span class="p">),</span><span class="w"> </span><span class="s1">'%Y-%m-%d %H:%i:%s'</span><span class="p">)</span>
+<span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">FROM_UNIXTIME</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">expected_end_time</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="k">YEAR</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">()),</span><span class="w"> </span><span class="s1">'-09-30 23:59:59'</span><span class="p">),</span><span class="w"> </span><span class="s1">'%Y-%m-%d %H:%i:%s'</span><span class="p">);</span>
 </code></pre></div>
 </li>
 <li>

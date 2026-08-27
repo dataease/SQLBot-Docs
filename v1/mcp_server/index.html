@@ -3000,9 +3000,9 @@
 <div class="admonition tip">
 <p>SQLBot MCP Server 默认监听端口为 8001，使用 SSE 协议进行通信。基本配置如下：</p>
 <div class="highlight"><pre><span></span><code>{
-   &quot;sqlbot_mcp&quot;: {
-       &quot;url&quot;: &quot;http://&lt;your-server-ip&gt;:8001/mcp&quot;, // 将 IP 替换为部署机器的地址
-       &quot;transport&quot;: &quot;sse&quot;
+   "sqlbot_mcp": {
+       "url": "http://&lt;your-server-ip&gt;:8001/mcp", // 将 IP 替换为部署机器的地址
+       "transport": "sse"
     }
 }
 </code></pre></div>
@@ -3053,44 +3053,44 @@
 <li>docker-compose 一键运行方式<ul>
 <li>若之前运行方式没有加上 SERVER_IMAGE_HOST 参数，或者参数值不对，则停止 SQLBot 服务并删除容器</li>
 <li>修改 docker-compose.yml 文件中的 MCP 参数 SERVER_IMAGE_HOST，注意将 IP 和端口替换成自己的实际 IP 和端口：
-    <div class="highlight"><pre><span></span><code>services:
-  sqlbot:
-    image: dataease/sqlbot:v1.1.0
-    container_name: sqlbot
-    restart: always
-    networks:
-      - sqlbot-network
-    ports:
-      - 8000:8000
-      - 8001:8001
-    environment:
-    # Database configuration
-      POSTGRES_SERVER: localhost
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: sqlbot
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: Password123@pg
-      # Project basic settings
-      PROJECT_NAME: &quot;SQLBot&quot;
-      DEFAULT_PWD: &quot;SQLBot@123456&quot;
-      # MCP settings
-      SERVER_IMAGE_HOST: http://47.92.75.231:8001/images/
-      # Auth &amp; Security
-      SECRET_KEY: y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s
-      # CORS settings
-      BACKEND_CORS_ORIGINS: &quot;http://localhost,http://localhost:5173,https://localhost,https://localhost:5173&quot;
-      # Logging
-      LOG_LEVEL: &quot;INFO&quot;
-      SQL_DEBUG: False
-    volumes:
-      - data/sqlbot/excel:/opt/sqlbot/data/excel
-      - data/sqlbot/file:/opt/sqlbot/data/file
-      - data/sqlbot/images:/opt/sqlbot/images
-      - data/sqlbot/logs:/opt/sqlbot/logs
-      - data/postgresql:/var/lib/postgresql/data
+    <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sqlbot</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dataease/sqlbot:v1.1.0</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlbot</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlbot-network</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000:8000</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8001:8001</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Database configuration</span>
+<span class="w">      </span><span class="nt">POSTGRES_SERVER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">      </span><span class="nt">POSTGRES_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432</span>
+<span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqlbot</span>
+<span class="w">      </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Password123@pg</span>
+<span class="w">      </span><span class="c1"># Project basic settings</span>
+<span class="w">      </span><span class="nt">PROJECT_NAME</span><span class="p">:</span><span class="w"> </span><span class="s">"SQLBot"</span>
+<span class="w">      </span><span class="nt">DEFAULT_PWD</span><span class="p">:</span><span class="w"> </span><span class="s">"SQLBot@123456"</span>
+<span class="w">      </span><span class="c1"># MCP settings</span>
+<span class="w">      </span><span class="nt">SERVER_IMAGE_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://47.92.75.231:8001/images/</span>
+<span class="w">      </span><span class="c1"># Auth &amp; Security</span>
+<span class="w">      </span><span class="nt">SECRET_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">y5txe1mRmS_JpOrUzFzHEu-kIQn3lf7ll0AOv9DQh0s</span>
+<span class="w">      </span><span class="c1"># CORS settings</span>
+<span class="w">      </span><span class="nt">BACKEND_CORS_ORIGINS</span><span class="p">:</span><span class="w"> </span><span class="s">"http://localhost,http://localhost:5173,https://localhost,https://localhost:5173"</span>
+<span class="w">      </span><span class="c1"># Logging</span>
+<span class="w">      </span><span class="nt">LOG_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="s">"INFO"</span>
+<span class="w">      </span><span class="nt">SQL_DEBUG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/sqlbot/excel:/opt/sqlbot/data/excel</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/sqlbot/file:/opt/sqlbot/data/file</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/sqlbot/images:/opt/sqlbot/images</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/sqlbot/logs:/opt/sqlbot/logs</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data/postgresql:/var/lib/postgresql/data</span>
 
-networks:
-  sqlbot-network:
+<span class="nt">networks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sqlbot-network</span><span class="p">:</span>
 </code></pre></div></li>
 </ul>
 </li>
@@ -3124,12 +3124,12 @@ networks:
 </table>
 <p>返回示例：
 <div class="highlight"><pre><span></span><code>{
-    &quot;code&quot;: 0,
-    &quot;data&quot;: {
-        &quot;access_token&quot;: &quot;&lt;JWT_TOKEN&gt;&quot;,
-        &quot;chat_id&quot;: 1330
+    "code": 0,
+    "data": {
+        "access_token": "&lt;JWT_TOKEN&gt;",
+        "chat_id": 1330
     },
-    &quot;msg&quot;: null
+    "msg": null
 }
 </code></pre></div>
  - access_token：身份验证使用；</p>
@@ -3212,7 +3212,7 @@ networks:
 </div>
 <div class="admonition tip">
 <p>返回结果示例（Markdown 格式）：</p>
-<div class="highlight"><pre><span></span><code>```sql SELECT &quot;s&quot;.&quot;区域&quot;, COUNT(*) AS &quot;count&quot; FROM &quot;public&quot;.&quot;Sheet1_c27345b66e&quot; &quot;s&quot; GROUP BY &quot;s&quot;.&quot;区域&quot; ORDER BY &quot;s&quot;.&quot;区域&quot; ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
+<div class="highlight"><pre><span></span><code>```sql SELECT "s"."区域", COUNT(*) AS "count" FROM "public"."Sheet1_c27345b66e" "s" GROUP BY "s"."区域" ORDER BY "s"."区域" ``` | 区域 | 数量 | |:-----|-----:| | 东区 | 269 | | 北区 | 321 | | 南区 | 275 | | | 4 | ### generated chart picture ![column](https://sqlbot.fit2cloud.cn/images/c_1330_r_2976.png)
 </code></pre></div>
 </div>
 <h3 id="23-mcp_ws_list">2.3 mcp_ws_list 工具<a class="headerlink" href="#23-mcp_ws_list" title="Permanent link">&para;</a></h3>
@@ -3233,7 +3233,7 @@ networks:
 </tbody>
 </table>
 <p>返回示例：
-<div class="highlight"><pre><span></span><code>{ &quot;code&quot;: 0, &quot;data&quot;: [ { &quot;id&quot;: 1, &quot;name&quot;: &quot;默认工作空间&quot; } ], &quot;msg&quot;: null }
+<div class="highlight"><pre><span></span><code>{ "code": 0, "data": [ { "id": 1, "name": "默认工作空间" } ], "msg": null }
 </code></pre></div></p>
 </div>
 <h3 id="24-mcp_datasource_list">2.4 mcp_datasource_list 工具<a class="headerlink" href="#24-mcp_datasource_list" title="Permanent link">&para;</a></h3>
@@ -3258,7 +3258,7 @@ networks:
 </tbody>
 </table>
 <p>返回示例：
-<div class="highlight"><pre><span></span><code>{ &quot;code&quot;: 0, &quot;data&quot;: [ { &quot;id&quot;: 10, &quot;name&quot;: &quot;销售数据源&quot;, &quot;type&quot;: &quot;mysql&quot;, ... } ], &quot;msg&quot;: null }
+<div class="highlight"><pre><span></span><code>{ "code": 0, "data": [ { "id": 10, "name": "销售数据源", "type": "mysql", ... } ], "msg": null }
 </code></pre></div></p>
 </div>
 <h3 id="25">2.5 对接流程说明<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
@@ -3289,9 +3289,9 @@ networks:
 <ul>
 <li>MCP Server Config 服务配置：
     <div class="highlight"><pre><span></span><code>{
-    &quot;sqlbot_mcp&quot;: {
-        &quot;url&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
-        &quot;transport&quot;: &quot;sse&quot;
+    "sqlbot_mcp": {
+        "url": "http://&lt;SQLBot_MCP_IP&gt;:8001/mcp",
+        "transport": "sse"
     }
 }
 </code></pre></div></li>
@@ -3307,7 +3307,7 @@ MCP 工具返回包含 sqlbot_chat_id 和 sqlbot_token 的 JSON。添加输入�
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">main1</span><span class="p">(</span><span class="n">arg1</span><span class="p">):</span>
     <span class="n">json_obj</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;token&quot;</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;sqlbot_token&quot;</span><span class="p">],</span> <span class="s2">&quot;sqlbot_chat_id&quot;</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chat_id&quot;</span><span class="p">]}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"token"</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">"data"</span><span class="p">][</span><span class="s2">"sqlbot_token"</span><span class="p">],</span> <span class="s2">"sqlbot_chat_id"</span><span class="p">:</span><span class="n">json_obj</span><span class="p">[</span><span class="s2">"data"</span><span class="p">][</span><span class="s2">"chat_id"</span><span class="p">]}</span>
 </code></pre></div></li>
 </ul>
 <p>步骤六： 变量赋值
@@ -3317,9 +3317,9 @@ MCP 工具返回包含 sqlbot_chat_id 和 sqlbot_token 的 JSON。添加输入�
 <ul>
 <li>MCP Server Config 服务配置：
 <div class="highlight"><pre><span></span><code>{
-    &quot;sqlbot_mcp&quot;: {
-        &quot;url&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
-        &quot;transport&quot;: &quot;sse&quot;
+    "sqlbot_mcp": {
+        "url": "http://&lt;SQLBot_MCP_IP&gt;:8001/mcp",
+        "transport": "sse"
     }
 }
 </code></pre></div></li>
@@ -3345,15 +3345,15 @@ question 选择「开始&gt;用户问题」，chat_id 选择「会话变量&gt;s
 <ul>
 <li>输入参数：
 <div class="highlight"><pre><span></span><code>{
-&quot;username&quot;: &quot;{{开始节点的username}}&quot;,
-&quot;password&quot;: &quot;{{开始节点的password}}&quot;
+"username": "{{开始节点的username}}",
+"password": "{{开始节点的password}}"
 }
 </code></pre></div></li>
 <li>MCP 服务配置：
 <div class="highlight"><pre><span></span><code>{
-    &quot;sqlbot_mcp&quot;: {
-        &quot;url&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
-        &quot;transport&quot;: &quot;sse&quot;
+    "sqlbot_mcp": {
+        "url": "http://&lt;SQLBot_MCP_IP&gt;:8001/mcp",
+        "transport": "sse"
     }
 }
 </code></pre></div></li>
@@ -3370,8 +3370,8 @@ question 选择「开始&gt;用户问题」，chat_id 选择「会话变量&gt;s
 def main(arg1: str) -&gt; dict:
 json_obj = json.loads(arg1)
 return {
-&quot;chat_id&quot;: json_obj[&quot;data&quot;][&quot;chat_id&quot;],
-&quot;access_token&quot;: json_obj[&quot;data&quot;][&quot;access_token&quot;]
+"chat_id": json_obj["data"]["chat_id"],
+"access_token": json_obj["data"]["access_token"]
 }
 </code></pre></div></p>
 </li>
@@ -3386,17 +3386,17 @@ return {
 <ul>
 <li>参数设置
     <div class="highlight"><pre><span></span><code>{
-    &quot;chat_id&quot;:{{#conversation.chat_id#}}, 
-    &quot;question&quot;:&quot;{{#sys.query#}}&quot;,
-    &quot;token&quot;:&quot;{{#conversation.access_token#}}&quot;
+    "chat_id":{{#conversation.chat_id#}}, 
+    "question":"{{#sys.query#}}",
+    "token":"{{#conversation.access_token#}}"
 }
 </code></pre></div></li>
 <li>
 <p>执行后续 MCP 业务调用</p>
 <div class="highlight"><pre><span></span><code>{
-    &quot;sqlbot_mcp&quot;: {
-        &quot;url&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
-        &quot;transport&quot;: &quot;sse&quot;
+    "sqlbot_mcp": {
+        "url": "http://&lt;SQLBot_MCP_IP&gt;:8001/mcp",
+        "transport": "sse"
     }
 }
 </code></pre></div>
@@ -3411,7 +3411,7 @@ return {
 <p>步骤⼀：进入工作空间，创建一个新的应用或进入已有应用。</p>
 <p>步骤二：在开始节点中设置输入变量： username（必填） 、password（必填）；</p>
 <p>步骤三：在开始节点后添加文本处理节点（文本处理节点用于字符串拼接），传入 username 和 password，编辑表达式如下：
-<div class="highlight"><pre><span></span><code>{&quot;username&quot;:&quot;{{String1}}&quot;,&quot;password&quot;:&quot;{{String2}}&quot;}
+<div class="highlight"><pre><span></span><code>{"username":"{{String1}}","password":"{{String2}}"}
 </code></pre></div>
 步骤四：调用 MCP 工具 mcp_start。在文本处理节点后添加 MCP SSE Client 工具节点，设置如下：</p>
 <ul>
@@ -3433,26 +3433,26 @@ def main(args) -&gt; dict:
 params = args.params
 
 # 从params字典获取input值（这是我们需要的JSON字符串）
-input_json_str = params.get(&#39;input&#39;)
+input_json_str = params.get('input')
 
 # 解析JSON字符串
 json_obj = json.loads(input_json_str)
 
 # 获取data部分
-data = json_obj.get(&#39;data&#39;)
+data = json_obj.get('data')
 
 # 提取所需字段
-chat_id = data.get(&#39;chat_id&#39;)
-access_token = data.get(&#39;access_token&#39;)
+chat_id = data.get('chat_id')
+access_token = data.get('access_token')
 
 return {
- &quot;chat_id&quot;: chat_id,
- &quot;access_token&quot;: access_token
+ "chat_id": chat_id,
+ "access_token": access_token
 }
 </code></pre></div>
 设置输出：返回 access_token（String）和 chat_id（String）。</p>
 <p>步骤六：添加文本处理节点，将代码节点返回的 access_token 和 chat_id 与开始节点的 question 变量进行拼接，表达式如下：
-<div class="highlight"><pre><span></span><code>{&quot;token&quot;:&quot;{{String1}}&quot;,&quot;chat_id&quot;:&quot;{{String2}}&quot;,&quot;question&quot;:&quot;{{String3}}&quot;}
+<div class="highlight"><pre><span></span><code>{"token":"{{String1}}","chat_id":"{{String2}}","question":"{{String3}}"}
 </code></pre></div>
 步骤七：调用 MCP 工具 mcp_question。在文本处理节点后添加 MCP SSE Client 工具节点，设置如下：</p>
 <ul>
@@ -3476,9 +3476,9 @@ return {
 <p>步骤二：定义输入变量。在开始节点中设置以下必填输入变量：username、password、question。</p>
 <p>步骤三：添加大模型节点，选择合适的模型。添加技能：MCP Compatible/call_tool。配置输入参数如下：
 <div class="highlight"><pre><span></span><code>{
-&quot;sqlbot_mcp&quot;: {
-&quot;uri&quot;: &quot;http://&lt;SQLBot_MCP_IP&gt;:8001/mcp&quot;,
-&quot;transport&quot;: &quot;sse&quot;
+"sqlbot_mcp": {
+"uri": "http://&lt;SQLBot_MCP_IP&gt;:8001/mcp",
+"transport": "sse"
 }
 }
 </code></pre></div>

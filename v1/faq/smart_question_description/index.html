@@ -2918,14 +2918,14 @@
 <h2 id="7-oracle-12-limit-1000-sql">7 为什么低于 Oracle 12 版本会出现 limit 1000 加在 SQL 最外层？<a class="headerlink" href="#7-oracle-12-limit-1000-sql" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>如下所示，在问数请求发起后，模型生成的限制1000行条件：ROWNUM &lt;= 1000，增加到了 SQL 语句的最外层，可能会影响结果的准确性。</p>
-<div class="highlight"><pre><span></span><code>SELECT &quot;d1&quot;.&quot;CITYNAME&quot; AS &quot;city_name&quot;,
-COUNT(*) AS &quot;case_count&quot;
-FROM &quot;WGHZHDZ&quot;.&quot;DANGECASE_INFO&quot; &quot;d1&quot;
-WHERE TO_CHAR(&quot;d1&quot;.&quot;OCCURTIME&quot;, &#39;YYYY&#39;) = &#39;2025&#39;
-AND &quot;d1&quot;.&quot;PROVINCENAME&quot; = &#39;江西省&#39;
+<div class="highlight"><pre><span></span><code>SELECT "d1"."CITYNAME" AS "city_name",
+COUNT(*) AS "case_count"
+FROM "WGHZHDZ"."DANGECASE_INFO" "d1"
+WHERE TO_CHAR("d1"."OCCURTIME", 'YYYY') = '2025'
+AND "d1"."PROVINCENAME" = '江西省'
 AND ROWNUM &lt;= 1000
-GROUP BY &quot;d1&quot;.&quot;CITYNAME&quot;
-ORDER BY &quot;city_name&quot;
+GROUP BY "d1"."CITYNAME"
+ORDER BY "city_name"
 </code></pre></div>
 </div>
 <div class="admonition abstract">
