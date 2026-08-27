@@ -9,7 +9,45 @@
 
 
 ## 2 更新内容
-v1.10.0
+
+### v1.10.1
+
+2026 年 8 月 27 日
+
+!!! Tip  "新增功能 :star2:"
+
+    - feat (MCP): 支持模型配置
+    - feat (SQL示例): 支持过滤搜索功能
+    - feat (术语列表): 支持过滤搜索功能
+    - feat (系统变量): 支持key-value格式 #1310
+    - feat: 添加助手验证接口
+    - feat: Hive数据源支持LDAP认证 #1209
+
+!!! Tip  "功能优化 :sunflower:"
+
+    - refactor: 优化连接池配置 #1256
+    - refactor: 优化权限字段类型
+    - refactor: 优化聊天列表排序功能
+    - refactor: 在成员管理中添加用户时增加回车键搜索功能
+    - refactor (系统变量): 变量选择时仅有一个选项时无需再次选择
+    - refactor (X-Pack): 改进自定义提示词过滤搜索
+    - refactor (X-Pack): 替换dicttoxml为标准库实现以避免GPL许可证风险
+
+!!! Tip  "问题修复 :palm_tree:"
+
+    - fix: 避免嵌入式作业重复启动
+    - fix: 修复推荐问题中存在的CWE漏洞
+    - fix: 修复extract_tables_from_sql错误包含CTE名称作为表名的问题
+    - fix: get_chart_usage接口中加入对未定义值的检查
+    - fix: 修复CORS错误导致助手嵌入失败的问题
+    - fix: 修复Hive DESCRIBE返回列数与ColumnSchema构造函数不匹配的问题 #1210
+    - fix: 修复connect pool预连接问题
+    - fix: 修复i18n国际化问题
+    - fix: 修复术语Excel上传中的路径遍历漏洞(CWE-22)
+    - fix: 修复模板文件中繁体字转简体字的问题
+    - fix: 修复工作区页面添加用户时页面冻结的问题
+
+### v1.10.0
 
 2026 年 7 月 16 日
 
