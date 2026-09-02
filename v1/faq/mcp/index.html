@@ -2869,9 +2869,9 @@
 <li>先调用 <code>access_token</code> 获取当前用户 <code>token</code>。</li>
 <li>再调用 <code>mcp_start</code> 创建会话时传入 <code>oid</code> 与 <code>token</code>，该会话将归属到指定工作空间。</li>
 <li>后续同一会话中的 <code>mcp_question</code> 无需再传 <code>oid</code>；会话创建时确定的工作空间会持续生效。</li>
-<li><code>mcp_datasource_list</code> 仍可通过 <code>oid</code> 查询指定工作空间下的数据源列表。
- 若指定工作空间后仍异常，请检查：用户是否属于该工作空间；<code>oid</code> 是否在 <code>mcp_start</code> 阶段传入；<code>chat_id</code> 是否来自该次 <code>mcp_start</code> 返回结果。</li>
+<li><code>mcp_datasource_list</code> 仍可通过 <code>oid</code> 查询指定工作空间下的数据源列表。</li>
 </ul>
+<p>若指定工作空间后仍异常，请检查：用户是否属于该工作空间；<code>oid</code> 是否在 <code>mcp_start</code> 阶段传入；<code>chat_id</code> 是否来自该次 <code>mcp_start</code> 返回结果。</p>
 </div>
 <p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_new_oid.png" /></p>
 <h2 id="5-sqlbot-mcp">5 SQLBot 的 MCP 如何指定问数使用的模型？<a class="headerlink" href="#5-sqlbot-mcp" title="Permanent link">&para;</a></h2>
