@@ -2417,6 +2417,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 SQLBot 的 MCP 如何指定问数使用的模型？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2779,6 +2790,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-sqlbot-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 SQLBot 的 MCP 如何指定问数使用的模型？
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2818,7 +2840,7 @@
 <p>1.8.0 版本及以后，MCP 支持选择工作空间与禁用图表渲染：</p>
 <ul>
 <li><strong>选择工作空间</strong>：新增 <code>mcp_ws_list</code> 工具用于获取当前用户可访问的工作空间列表。
-  在调用 <code>mcp_datasource_list</code> 或 <code>mcp_question</code> 时，可通过 <code>oid</code> 参数指定工作空间 ID。</li>
+  1.10.0 及以后，请在调用 <code>mcp_start</code> 时通过 <code>oid</code> 指定工作空间；<code>mcp_datasource_list</code> 仍可通过 <code>oid</code> 查询指定工作空间下的数据源。<code>mcp_question</code> 中传 <code>oid</code> 不会生效。</li>
 <li><strong>禁用图表渲染</strong>：在调用 <code>mcp_question</code> 时，可通过 <code>return_img=false</code> 关闭图表图片渲染，仅返回 SQL、数据与图表配置结果，减少图片生成耗时。</li>
 </ul>
 </div>
@@ -2844,7 +2866,7 @@
 <p>1.10.0 版本及以后，MCP 指定工作空间的参数从 mcp_question 更改至 mcp_start 节点：若仍按 1.8.x / 1.9.x 文档在 mcp_question 中传 oid，将不会生效。</p>
 <p>使用说明：</p>
 <ul>
-<li>先调用 <code>mcp_access_token</code> 获取当前用户 <code>token</code>。</li>
+<li>先调用 <code>access_token</code> 获取当前用户 <code>token</code>。</li>
 <li>再调用 <code>mcp_start</code> 创建会话时传入 <code>oid</code> 与 <code>token</code>，该会话将归属到指定工作空间。</li>
 <li>后续同一会话中的 <code>mcp_question</code> 无需再传 <code>oid</code>；会话创建时确定的工作空间会持续生效。</li>
 <li><code>mcp_datasource_list</code> 仍可通过 <code>oid</code> 查询指定工作空间下的数据源列表。
@@ -2852,6 +2874,15 @@
 </ul>
 </div>
 <p><img alt="mcp数据源指定" src="../../img/mcp/sqlbot_mcp_new_oid.png" /></p>
+<h2 id="5-sqlbot-mcp">5 SQLBot 的 MCP 如何指定问数使用的模型？<a class="headerlink" href="#5-sqlbot-mcp" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p>1.10.1 版本及以后，MCP 支持为问数指定 AI 模型：</p>
+<ul>
+<li>调用 <code>mcp_model_list</code>，传入工作空间 <code>oid</code>，获取该空间下可用模型列表（含 <code>id</code>、<code>name</code>、是否默认模型）。</li>
+<li>在调用 <code>mcp_question</code> 时通过 <code>custom_model</code> 传入模型 ID；不传则使用默认模型。</li>
+<li><code>mcp_model_list</code> 的 <code>oid</code> 与创建会话时 <code>mcp_start</code> 使用的工作空间保持一致，避免选到其他空间的模型。</li>
+</ul>
+</div>
 
 
 
