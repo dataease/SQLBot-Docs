@@ -19,7 +19,7 @@
     1.8.0 版本及以后，MCP 支持选择工作空间与禁用图表渲染：
 
     - **选择工作空间**：新增 `mcp_ws_list` 工具用于获取当前用户可访问的工作空间列表。
-      在调用 `mcp_datasource_list` 或 `mcp_question` 时，可通过 `oid` 参数指定工作空间 ID。
+      1.10.0 及以后，请在调用 `mcp_start` 时通过 `oid` 指定工作空间；`mcp_datasource_list` 仍可通过 `oid` 查询指定工作空间下的数据源。`mcp_question` 中传 `oid` 不会生效。
     - **禁用图表渲染**：在调用 `mcp_question` 时，可通过 `return_img=false` 关闭图表图片渲染，仅返回 SQL、数据与图表配置结果，减少图片生成耗时。
 
 ![mcp数据源指定](../img/mcp/sqlbot_mcp_oid_id.png)
@@ -46,10 +46,18 @@
 
     使用说明：
 
-    - 先调用 `mcp_access_token` 获取当前用户 `token`。
+    - 先调用 `access_token` 获取当前用户 `token`。
     - 再调用 `mcp_start` 创建会话时传入 `oid` 与 `token`，该会话将归属到指定工作空间。
     - 后续同一会话中的 `mcp_question` 无需再传 `oid`；会话创建时确定的工作空间会持续生效。
     - `mcp_datasource_list` 仍可通过 `oid` 查询指定工作空间下的数据源列表。
      若指定工作空间后仍异常，请检查：用户是否属于该工作空间；`oid` 是否在 `mcp_start` 阶段传入；`chat_id` 是否来自该次 `mcp_start` 返回结果。
 
 ![mcp数据源指定](../img/mcp/sqlbot_mcp_new_oid.png)
+
+## 5 SQLBot 的 MCP 如何指定问数使用的模型？
+!!! Abstract ""
+    1.10.1 版本及以后，MCP 支持为问数指定 AI 模型：
+
+    - 调用 `mcp_model_list`，传入工作空间 `oid`，获取该空间下可用模型列表（含 `id`、`name`、是否默认模型）。
+    - 在调用 `mcp_question` 时通过 `custom_model` 传入模型 ID；不传则使用默认模型。
+    - `mcp_model_list` 的 `oid` 与创建会话时 `mcp_start` 使用的工作空间保持一致，避免选到其他空间的模型。
