@@ -90,3 +90,8 @@
     POSTGRES_USER=root
     POSTGRES_PASSWORD=Password123@pg
     ```
+
+## 5 如何备份和还原 SQLBot？
+
+!!! Abstract ""
+    SQLBot 没有独立的备份命令。内置 PostgreSQL 建议停服后打包运行目录中的 `data`、`conf` 和 `.env`；外置 PostgreSQL 请使用 `pg_dump`，并同时备份 Excel、图片等文件目录。完整步骤见 [备份还原](../installation/backup.md)。

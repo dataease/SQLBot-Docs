@@ -1,5 +1,6 @@
 site_name: 'SQLBot 文档'
 site_url: 'https://sqlbot.cn/docs'
+use_directory_urls: false
 site_description: 'SQLBot 是基于大模型和 RAG 的智能问数系统'
 site_author: '飞致云'
 repo_name: 'SQLBot'
@@ -51,6 +52,7 @@ nav:
         - Windows 下安装: installation/windows_installation.md
         - 命令行工具: installation/cli.md
         - 源码运行: installation/source_run.md
+        - 备份还原: installation/backup.md
         - 数据迁移: installation/migration.md
     - 功能手册:
         - 数据源:
