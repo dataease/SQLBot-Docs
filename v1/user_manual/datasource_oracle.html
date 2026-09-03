@@ -12,32 +12,34 @@
         <meta name="author" content="飞致云">
       
       
-        <link rel="canonical" href="https://sqlbot.cn/docs/v1/index.html">
+        <link rel="canonical" href="https://sqlbot.cn/docs/v1/user_manual/datasource_oracle.html">
       
       
+        <link rel="prev" href="datasource_mysql.html">
       
-        <link rel="next" href="quick_start.html">
+      
+        <link rel="next" href="datasource_postgresql.html">
       
       
         
       
       
-      <link rel="icon" href="img/favicon.png">
+      <link rel="icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>SQLBot 文档</title>
+        <title>配置 Oracle 数据源 - SQLBot 文档</title>
       
     
     
-    <link rel="stylesheet" href="./css/lightgallery.min.css">
-    <link href="./css/f2c-header.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+    <link href="../css/f2c-header.css" rel="stylesheet" type="text/css" />
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,10 +50,10 @@
     
       
     
-    <script src="./js/lightgallery.min.js"></script>
-    <script src="./js/jquery-3.5.1.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/mega.js"></script>
+    <script src="../js/lightgallery.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/mega.js"></script>
         <!--<script async defer src="https://maxkb.fit2cloud.com/api/application/embed?protocol=https&host=maxkb.fit2cloud.com&token=05b106be72d62386"></script>-->
 
     
@@ -64,9 +66,9 @@
       
     
     
-      <link rel="stylesheet" href="css/extra.css">
+      <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -101,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#oracle" class="md-skip">
           跳转至
         </a>
       
@@ -116,12 +118,12 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="../.">
+  <a href="../..">
     <strong>Click here to go to latest.</strong>
   </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -143,7 +145,7 @@
             <div class="container">
                 <div class="mega-nav-banner-item">
                     <a class="mega-nav-banner-logo" href="https://www.fit2cloud.com/"><img
-                            src="./img/logo/logo-light-FIT2CLOUD.svg" alt="FIT2CLOUD Logo" /></a>
+                            src="../img/logo/logo-light-FIT2CLOUD.svg" alt="FIT2CLOUD Logo" /></a>
                 </div>
                 <div class="mega-nav-banner-item">
                     <p class="mega-nav-tagline">
@@ -190,9 +192,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="index.html" title="SQLBot 文档" class="md-header__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
+    <a href="../index.html" title="SQLBot 文档" class="md-header__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
       
-  <img src="img/logo-white.png" alt="logo">
+  <img src="../img/logo-white.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -209,7 +211,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              产品介绍
+              配置 Oracle 数据源
             
           </span>
         </div>
@@ -333,9 +335,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="SQLBot 文档" class="md-nav__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
+    <a href="../index.html" title="SQLBot 文档" class="md-nav__button md-logo" aria-label="SQLBot 文档" data-md-component="logo">
       
-  <img src="img/logo-white.png" alt="logo">
+  <img src="../img/logo-white.png" alt="logo">
 
     </a>
     SQLBot 文档
@@ -359,37 +361,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    产品介绍
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -405,81 +380,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1 工作原理
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2 产品优势
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 界面展示
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4 主要功能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5 了解更多
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -491,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quick_start.html" class="md-nav__link">
+      <a href="../quick_start.html" class="md-nav__link">
         
   
   
@@ -518,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="changelog.html" class="md-nav__link">
+      <a href="../changelog.html" class="md-nav__link">
         
   
   
@@ -545,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system_arch.html" class="md-nav__link">
+      <a href="../system_arch.html" class="md-nav__link">
         
   
   
@@ -641,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/offline_installtion.html" class="md-nav__link">
+      <a href="../installation/offline_installtion.html" class="md-nav__link">
         
   
   
@@ -669,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/offline_upgrade.html" class="md-nav__link">
+      <a href="../installation/offline_upgrade.html" class="md-nav__link">
         
   
   
@@ -697,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/1panel_installtion.html" class="md-nav__link">
+      <a href="../installation/1panel_installtion.html" class="md-nav__link">
         
   
   
@@ -725,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/aliyun_installtion.html" class="md-nav__link">
+      <a href="../installation/aliyun_installtion.html" class="md-nav__link">
         
   
   
@@ -753,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/online_installtion.html" class="md-nav__link">
+      <a href="../installation/online_installtion.html" class="md-nav__link">
         
   
   
@@ -781,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/windows_installation.html" class="md-nav__link">
+      <a href="../installation/windows_installation.html" class="md-nav__link">
         
   
   
@@ -809,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/cli.html" class="md-nav__link">
+      <a href="../installation/cli.html" class="md-nav__link">
         
   
   
@@ -837,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/source_run.html" class="md-nav__link">
+      <a href="../installation/source_run.html" class="md-nav__link">
         
   
   
@@ -865,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/backup.html" class="md-nav__link">
+      <a href="../installation/backup.html" class="md-nav__link">
         
   
   
@@ -893,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="installation/migration.html" class="md-nav__link">
+      <a href="../installation/migration.html" class="md-nav__link">
         
   
   
@@ -925,8 +825,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -948,11 +850,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -973,7 +875,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -988,8 +890,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1025,11 +929,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -1050,7 +954,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1068,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_description.html" class="md-nav__link">
+      <a href="datasource_description.html" class="md-nav__link">
         
   
   
@@ -1096,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_excel.html" class="md-nav__link">
+      <a href="datasource_excel.html" class="md-nav__link">
         
   
   
@@ -1124,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_mysql.html" class="md-nav__link">
+      <a href="datasource_mysql.html" class="md-nav__link">
         
   
   
@@ -1149,10 +1053,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="user_manual/datasource_oracle.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置 Oracle 数据源
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="datasource_oracle.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1168,6 +1099,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 前提条件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 配置数据源链接步骤
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1180,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_postgresql.html" class="md-nav__link">
+      <a href="datasource_postgresql.html" class="md-nav__link">
         
   
   
@@ -1208,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_sqlserver.html" class="md-nav__link">
+      <a href="datasource_sqlserver.html" class="md-nav__link">
         
   
   
@@ -1236,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_clickhouse.html" class="md-nav__link">
+      <a href="datasource_clickhouse.html" class="md-nav__link">
         
   
   
@@ -1264,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_DM.html" class="md-nav__link">
+      <a href="datasource_DM.html" class="md-nav__link">
         
   
   
@@ -1292,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_apachedoris.html" class="md-nav__link">
+      <a href="datasource_apachedoris.html" class="md-nav__link">
         
   
   
@@ -1320,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_redshift.html" class="md-nav__link">
+      <a href="datasource_redshift.html" class="md-nav__link">
         
   
   
@@ -1348,7 +1321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_elasticsearch.html" class="md-nav__link">
+      <a href="datasource_elasticsearch.html" class="md-nav__link">
         
   
   
@@ -1376,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_kingbase.html" class="md-nav__link">
+      <a href="datasource_kingbase.html" class="md-nav__link">
         
   
   
@@ -1404,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_starrocks.html" class="md-nav__link">
+      <a href="datasource_starrocks.html" class="md-nav__link">
         
   
   
@@ -1432,7 +1405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/datasource_apachehive.html" class="md-nav__link">
+      <a href="datasource_apachehive.html" class="md-nav__link">
         
   
   
@@ -1468,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/smart_question_description.html" class="md-nav__link">
+      <a href="smart_question_description.html" class="md-nav__link">
         
   
   
@@ -1496,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/dashboard_description.html" class="md-nav__link">
+      <a href="dashboard_description.html" class="md-nav__link">
         
   
   
@@ -1524,7 +1497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/assistant.html" class="md-nav__link">
+      <a href="assistant.html" class="md-nav__link">
         
   
   
@@ -1609,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/member.html" class="md-nav__link">
+      <a href="member.html" class="md-nav__link">
         
   
   
@@ -1637,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/permission.html" class="md-nav__link">
+      <a href="permission.html" class="md-nav__link">
         
   
   
@@ -1665,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/professional.html" class="md-nav__link">
+      <a href="professional.html" class="md-nav__link">
         
   
   
@@ -1693,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user_manual/data_training.html" class="md-nav__link">
+      <a href="data_training.html" class="md-nav__link">
         
   
   
@@ -1788,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/user.html" class="md-nav__link">
+      <a href="../system/user.html" class="md-nav__link">
         
   
   
@@ -1816,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/workspace.html" class="md-nav__link">
+      <a href="../system/workspace.html" class="md-nav__link">
         
   
   
@@ -1844,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/model.html" class="md-nav__link">
+      <a href="../system/model.html" class="md-nav__link">
         
   
   
@@ -1872,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/embedding.html" class="md-nav__link">
+      <a href="../system/embedding.html" class="md-nav__link">
         
   
   
@@ -1953,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/parameter_setting.html" class="md-nav__link">
+      <a href="../system/parameter_setting.html" class="md-nav__link">
         
   
   
@@ -1981,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system/variables.html" class="md-nav__link">
+      <a href="../system/variables.html" class="md-nav__link">
         
   
   
@@ -2086,7 +2059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/prompt.html" class="md-nav__link">
+      <a href="../X-Pack/prompt.html" class="md-nav__link">
         
   
   
@@ -2114,7 +2087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/identification_setting.html" class="md-nav__link">
+      <a href="../X-Pack/identification_setting.html" class="md-nav__link">
         
   
   
@@ -2142,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/platform_integration.html" class="md-nav__link">
+      <a href="../X-Pack/platform_integration.html" class="md-nav__link">
         
   
   
@@ -2170,7 +2143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/appearance_configuration.html" class="md-nav__link">
+      <a href="../X-Pack/appearance_configuration.html" class="md-nav__link">
         
   
   
@@ -2198,7 +2171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/third-party-platform-settings.html" class="md-nav__link">
+      <a href="../X-Pack/third-party-platform-settings.html" class="md-nav__link">
         
   
   
@@ -2226,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="X-Pack/operation_log.html" class="md-nav__link">
+      <a href="../X-Pack/operation_log.html" class="md-nav__link">
         
   
   
@@ -2330,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/installation.html" class="md-nav__link">
+      <a href="../faq/installation.html" class="md-nav__link">
         
   
   
@@ -2358,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/datasource.html" class="md-nav__link">
+      <a href="../faq/datasource.html" class="md-nav__link">
         
   
   
@@ -2386,7 +2359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/smart_question_description.html" class="md-nav__link">
+      <a href="../faq/smart_question_description.html" class="md-nav__link">
         
   
   
@@ -2414,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/assistant.html" class="md-nav__link">
+      <a href="../faq/assistant.html" class="md-nav__link">
         
   
   
@@ -2442,7 +2415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/mcp.html" class="md-nav__link">
+      <a href="../faq/mcp.html" class="md-nav__link">
         
   
   
@@ -2470,7 +2443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/other.html" class="md-nav__link">
+      <a href="../faq/other.html" class="md-nav__link">
         
   
   
@@ -2556,7 +2529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="model_integration/ollama.html" class="md-nav__link">
+      <a href="../model_integration/ollama.html" class="md-nav__link">
         
   
   
@@ -2591,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mcp_server.html" class="md-nav__link">
+      <a href="../mcp_server.html" class="md-nav__link">
         
   
   
@@ -2618,7 +2591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dataease_integration.html" class="md-nav__link">
+      <a href="../dataease_integration.html" class="md-nav__link">
         
   
   
@@ -2645,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="embedding_integration.html" class="md-nav__link">
+      <a href="../embedding_integration.html" class="md-nav__link">
         
   
   
@@ -2672,7 +2645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="best_practice.html" class="md-nav__link">
+      <a href="../best_practice.html" class="md-nav__link">
         
   
   
@@ -2699,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="buy.html" class="md-nav__link">
+      <a href="../buy.html" class="md-nav__link">
         
   
   
@@ -2726,7 +2699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contact.html" class="md-nav__link">
+      <a href="../contact.html" class="md-nav__link">
         
   
   
@@ -2776,7 +2749,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 工作原理
+        1 前提条件
       
     </span>
   </a>
@@ -2787,40 +2760,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2 产品优势
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 界面展示
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4 主要功能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5 了解更多
+        2 配置数据源链接步骤
       
     </span>
   </a>
@@ -2847,52 +2787,41 @@
   
 
 
-<h1 id="_1">产品介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="oracle">配置 Oracle 数据源<a class="headerlink" href="#oracle" title="Permanent link">&para;</a></h1>
+<h2 id="1">1 前提条件<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p>SQLBot 是一款基于大语言模型（Large Language Model，LLM）和 RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。借助 SQLBot，用户可以实现数据的即问即答，快速提炼获取所需的数据信息及可视化图表，并且支持进一步开展智能分析。</p>
-<p>SQLBot 由飞致云的 <a href="https://dataease.cn/">DataEase</a> 开源团队出品。</p>
-</div>
-<h2 id="1">1 工作原理<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p><img alt="工作原理" src="img/index/arch.png" /></p>
-<h2 id="2">2 产品优势<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
+<p>在配置 Oracle 数据源之前，请确保以下准备工作已完成，以避免连接失败或数据读取异常：</p>
 <ul>
-<li>
-<p><strong>开箱即用</strong>    <br />
-  仅需简单配置大模型与数据源，无需复杂开发，即可快速开启智能问数；依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换。</p>
-</li>
-<li>
-<p><strong>安全可控</strong>    <br />
-  提供工作空间级资源隔离机制，构建清晰数据边界，保障数据访问安全；支持细粒度数据权限配置，强化权限管控能力，确保使用过程合规可控。</p>
-</li>
-<li>
-<p><strong>易于集成</strong>  <br />
-  支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用，让各类应用快速拥有智能问数能力。</p>
-</li>
-<li>
-<p><strong>越问越准</strong><br />
-  支持自定义提示词、术语库配置，可维护 SQL 示例校准逻辑，精准匹配业务场景；高效运营，基于用户交互数据持续迭代优化，问数效果随使用逐步提升，越问越准。</p>
-</li>
+<li>Oracle 版本：服务端版本 ≥ 12c；</li>
+<li>网络连通：SQLBot 所在环境可直连  Oracle 主机（若在内网或防火墙后，请先开放 1521 端口或映射安全端口）；</li>
+<li>账号权限：提供的用户名需具备 SELECT 权限；</li>
 </ul>
 </div>
-<h2 id="3">3 界面展示<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p><img alt="界面展示图" src="img/index/index.gif" /></p>
-<h2 id="4">4 主要功能<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="2">2 配置数据源链接步骤<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<ul>
-<li>提问分析：用户聊天对话方式提问，大模型解析问题意图，结合所选数据源生成图表与分析。</li>
-<li>深度探索：在获得基础图表结果后，进一步进行分析、解释、验证和预测，支持更强的业务决策支持。</li>
-<li>数据管理：支持用户配置、管理多种类型的数据源和数据表，支持按需配置和管理。</li>
-<li>看板搭建：将多个问数对话生成的图表统一布局，构建成适用于汇报、监控或展示的仪表板。</li>
-</ul>
+<p>以下是将 Oracle 数据库 作为数据源接入的详细流程：</p>
 </div>
-<h2 id="5">5  了解更多<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<ul>
-<li><a href="https://www.fit2cloud.com/">了解飞致云</a> </li>
-<li><a href="https://bbs.fit2cloud.com/">飞致云开源社区论坛</a></li>
-</ul>
+<p>步骤一：选择数据源类型。在【新建数据源】页面选择 “ Oracle” 作为数据源类型。</p>
 </div>
+<p><img alt="支持的数据源类型" src="../img/user_manual/datasource/datasource_list.png" /></p>
+<div class="admonition tip">
+<p>步骤二：填写连接与认证信息。进入【配置信息】页后，填入收集的 IP 、端口、数据库等相关的信息。连接方式可选择【服务名】或【SID】。数据源检验，校验成功后即可进行下一步。</p>
+</div>
+<p><img alt="配置Oracle" src="../img/user_manual/datasource/add_oracle.png" /></p>
+<div class="admonition tip">
+<p>步骤三：选择数据表，系统会拉取该库下所有表/视图并以列表形式展示：</p>
+<ul>
+<li>搜索：可在顶部搜索框输入关键词快速过滤；</li>
+<li>全选/反选：点击表名左侧复选框，支持批量选择；</li>
+</ul>
+<p>数据量过大可能会导致操作超时或者无响应，在勾选的数据表数量超过 30 张时，系统会在【保存】前弹出二次确认。</p>
+</div>
+<p><img alt="配置Oracle" src="../img/user_manual/datasource/save_orcale.png" /></p>
+<div class="admonition tip">
+<p>对创建完成的 Oracle 数据源对可直接开启智能问数。</p>
+</div>
+<p><img alt="配置Oracle" src="../img/user_manual/datasource/question_oracle.png" /></p>
 
 
 
@@ -2982,11 +2911,11 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
     
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
     <script>

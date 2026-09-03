@@ -12,11 +12,13 @@
         <meta name="author" content="飞致云">
       
       
-        <link rel="canonical" href="https://sqlbot.cn/docs/v1/index.html">
+        <link rel="canonical" href="https://sqlbot.cn/docs/v1/system_arch.html">
       
       
+        <link rel="prev" href="changelog.html">
       
-        <link rel="next" href="quick_start.html">
+      
+        <link rel="next" href="installation/offline_installtion.html">
       
       
         
@@ -27,7 +29,7 @@
     
     
       
-        <title>SQLBot 文档</title>
+        <title>系统架构 - SQLBot 文档</title>
       
     
     
@@ -101,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -209,7 +211,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              产品介绍
+              系统架构
             
           </span>
         </div>
@@ -359,37 +361,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    产品介绍
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -405,81 +380,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1 工作原理
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2 产品优势
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 界面展示
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4 主要功能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5 了解更多
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -542,10 +442,35 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="system_arch.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统架构
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="system_arch.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -561,6 +486,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 整体架构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 技术栈
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2763,8 +2728,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2776,7 +2739,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1 工作原理
+        1 整体架构
       
     </span>
   </a>
@@ -2787,40 +2750,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2 产品优势
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3 界面展示
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4 主要功能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5 了解更多
+        2 技术栈
       
     </span>
   </a>
@@ -2847,50 +2777,18 @@
   
 
 
-<h1 id="_1">产品介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="admonition tip">
-<p>SQLBot 是一款基于大语言模型（Large Language Model，LLM）和 RAG（Retrieval Augmented Generation，检索增强生成）的智能问数系统。借助 SQLBot，用户可以实现数据的即问即答，快速提炼获取所需的数据信息及可视化图表，并且支持进一步开展智能分析。</p>
-<p>SQLBot 由飞致云的 <a href="https://dataease.cn/">DataEase</a> 开源团队出品。</p>
-</div>
-<h2 id="1">1 工作原理<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p><img alt="工作原理" src="img/index/arch.png" /></p>
-<h2 id="2">2 产品优势<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
+  <h1>系统架构</h1>
+
+<h2 id="1">1 整体架构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract"></div>
+<p><img alt="整体架构" src="img/index/system-arch.png" width="900px" /></p>
+<h2 id="2">2 技术栈<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
 <ul>
-<li>
-<p><strong>开箱即用</strong>    <br />
-  仅需简单配置大模型与数据源，无需复杂开发，即可快速开启智能问数；依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换。</p>
-</li>
-<li>
-<p><strong>安全可控</strong>    <br />
-  提供工作空间级资源隔离机制，构建清晰数据边界，保障数据访问安全；支持细粒度数据权限配置，强化权限管控能力，确保使用过程合规可控。</p>
-</li>
-<li>
-<p><strong>易于集成</strong>  <br />
-  支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用，让各类应用快速拥有智能问数能力。</p>
-</li>
-<li>
-<p><strong>越问越准</strong><br />
-  支持自定义提示词、术语库配置，可维护 SQL 示例校准逻辑，精准匹配业务场景；高效运营，基于用户交互数据持续迭代优化，问数效果随使用逐步提升，越问越准。</p>
-</li>
-</ul>
-</div>
-<h2 id="3">3 界面展示<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p><img alt="界面展示图" src="img/index/index.gif" /></p>
-<h2 id="4">4 主要功能<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<ul>
-<li>提问分析：用户聊天对话方式提问，大模型解析问题意图，结合所选数据源生成图表与分析。</li>
-<li>深度探索：在获得基础图表结果后，进一步进行分析、解释、验证和预测，支持更强的业务决策支持。</li>
-<li>数据管理：支持用户配置、管理多种类型的数据源和数据表，支持按需配置和管理。</li>
-<li>看板搭建：将多个问数对话生成的图表统一布局，构建成适用于汇报、监控或展示的仪表板。</li>
-</ul>
-</div>
-<h2 id="5">5  了解更多<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<ul>
-<li><a href="https://www.fit2cloud.com/">了解飞致云</a> </li>
-<li><a href="https://bbs.fit2cloud.com/">飞致云开源社区论坛</a></li>
+<li>后端：<a href="https://www.python.org/">Python</a></li>
+<li>前端：<a href="https://vuejs.org/">Vue.js</a>、<a href="https://element.eleme.cn/">Element</a></li>
+<li>中间件：<a href="https://www.postgresql.org/">PostgreSQL</a></li>
+<li>基础设施：<a href="https://www.docker.com/">Docker</a></li>
 </ul>
 </div>
 
