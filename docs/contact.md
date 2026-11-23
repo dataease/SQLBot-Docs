@@ -17,5 +17,5 @@
     - 邮箱：support@fit2cloud.com
     - 电话：400-052-0755
     - 微信交流群：    
-    ![微信交流群](https://docs.fit2cloud.com/img/sqlbot/index/wechat.jpg){ width="135px" }
+    ![企业微信](https://resource-fit2cloud-com.oss-cn-hangzhou.aliyuncs.com/sqlbot/contact_me_qr.png){ width="135px" }
 
