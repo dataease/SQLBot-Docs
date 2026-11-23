@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -36,10 +36,10 @@
     <link rel="stylesheet" href="../css/lightgallery.min.css">
     <link href="../css/f2c-header.css" rel="stylesheet" type="text/css" />
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2822,7 +2822,7 @@
 <p>SQLBot 全版本均支持 API 调用，但不同版本的认证方式、密钥获取逻辑存在差异，以下为 v1.4.0 及之前版本的核心规则：</p>
 <p>采用 RSA 非对称加密认证：调用 API 时，需将用户名和密码通过 RSA 公钥加密后传输；对应的 RSA 密钥对存储在 PostgreSQL 数据库的 rsa 表中。</p>
 <p>如需了解 SQLBot 自身的 API 调用方式，可通过浏览器开发者工具查看其网络请求。目前版本尚未提供基于 API Key 的认证方式，但支持通过 Token 进行接口调用。用户可在登录过程中获取 Token，相应的获取接口可在登录时观察请求获得。</p>
-<p>完整的 API 接口列表可在 SQLBot 访问地址后追加 /docs进行查看，例如：<a href="https://your-sqlbot-domain/docs">https://your-sqlbot-domain/docs</a>。</p>
+<p>完整的 API 接口列表可在 SQLBot 访问地址后追加 /docs进行查看，例如：https://your-sqlbot-domain/docs。</p>
 </div>
 <h2 id="3-sqlbot-api">3 如何使用 SQLBot 的 API？<a class="headerlink" href="#3-sqlbot-api" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
@@ -2830,11 +2830,11 @@
 </div>
 <p><img alt="api_key" src="../img/faq/api_key.png" /></p>
 <div class="admonition abstract">
-<p>生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（<a href="https://www.bejson.com/jwt/">https://www.bejson.com/jwt/</a>）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：</p>
+<p>生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（https://www.bejson.com/jwt/）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：</p>
 </div>
 <p><img alt="api_jwt" src="../img/faq/api_jwt.png" /></p>
 <div class="admonition abstract">
-<p>生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（<a href="https://getman.cn/">https://getman.cn/</a>）举例。将生成的 token 复制下来，在请求的 header 里输入：
+<p>生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（https://getman.cn/）举例。将生成的 token 复制下来，在请求的 header 里输入：
 <div class="highlight"><pre><span></span><code># 下面的 xxx 为 token
 x-sqlbot-ask-token: sk xxx
 </code></pre></div>
@@ -2930,11 +2930,11 @@ x-sqlbot-ask-token: sk xxx
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike", "warning": false}}</script>
     
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
     <script>
